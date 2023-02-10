@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: auto;
+
+  padding: 5% 0;
+}
+
+.form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  width: 70vw;
+  height: 700px;
+
+  border-radius: 35px;
+  box-shadow: 10px 10px 30px rgba(133, 133, 133, 0.255),
+    -3px -3px 20px rgba(133, 133, 133, 0.255);
+  border-radius: 30px;
+}
+
+.form > img {
+  width: 350px;
+  min-height: 100%;
+
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+
+  filter: brightness(0.6);
+
+  object-fit: cover;
+}
