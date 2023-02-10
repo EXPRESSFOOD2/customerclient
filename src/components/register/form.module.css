@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
+  max-width: 100vw;
   height: auto;
 
   padding: 5% 0;
@@ -13,6 +13,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  position: relative;
 
   width: 70vw;
   height: 600px;
@@ -23,9 +24,12 @@
   border-radius: 30px;
 }
 
-.form > img {
+.form > div {
+  min-height: 600px;
+}
+.form > div > img {
   width: 350px;
-  min-height: 100%;
+  height: 600px;
 
   border-top-left-radius: 35px;
   border-bottom-left-radius: 35px;
@@ -47,6 +51,11 @@
   height: 100%;
 }
 
+.infoContainer > h2 {
+  font-family: "Rubik Dirt", cursive;
+  font-weight: 600;
+}
+
 .infoContainer > input {
   width: 55%;
   height: 30px;
@@ -56,4 +65,29 @@
   padding: 0 1em;
 
   background-color: rgba(217, 217, 217, 1);
+}
+
+.centerTextImg {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+
+  font-family: "Rubik Dirt", cursive;
+  color: white;
+  font-weight: 300;
+
+  font-size: 36px;
+}
+
+.infoContainer > button {
+  background-color: rgba(252, 172, 3, 1);
+  font-size: 20px;
+  color: white;
+  border: none;
+
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 900;
 }

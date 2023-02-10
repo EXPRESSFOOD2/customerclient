@@ -6,15 +6,18 @@ export default function Form() {
   return (
     <div className={style.container}>
       <form action="" className={style.form}>
-        <img src={formIMG} alt="" />
+        <div>
+          <img src={formIMG} alt="" />
+          <h3 className={style.centerTextImg}>Acá te logueas</h3>
+        </div>
         <div className={style.infoContainer}>
           <h2>Crear cuenta</h2>
           <input type="text" placeholder="Nombre" />
           <input type="text" placeholder="Apellido" />
           <input type="text" placeholder="Nombre de usuario" />
           <input type="text" placeholder="Email" />
-          <input type="text" placeholder="Password" />
-          <input type="text" placeholder="Teléfono" />
+          <input type="password" placeholder="Password" />
+          <input type="number" placeholder="Teléfono" />
           <button>Crear</button>
         </div>
       </form>
