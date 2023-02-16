@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
+import Home from './pages/home/Home'
+import Register from './pages/register/Register';
+/*
+import PageNotFound from './components/PageNotFound/PageNotFound';
+import Home from './components/Home/Home';
+
+import RecipeForm from './components/Forms/Recipe-Form';
+import RecipeFull from './components/Recipe/Recipe-Full';
+*/
+
 
 function App() {
+  //const location = useLocation();
+  //const pathname = location.pathname;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+          <Route exact path={"/"} element={<Home/>}> </Route>
+          <Route path="/register" element={<Register/>}></Route>
+          {/* <Route path="/recipe/:id" element={<RecipeFull />}></Route>
+          <Route path="/create" element={<RecipeForm/>}></Route>
+          <Route path="*" element={<PageNotFound/>}></Route> */}
+      </Routes>
     </div>
   );
 }

@@ -14,7 +14,7 @@
 .infoContainer {
   display: flex;
   justify-self: center;
-  align-items: start;
+  /*align-items: start;*/
   flex-direction: column;
 
   margin-bottom: 40px;
