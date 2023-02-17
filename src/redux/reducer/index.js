@@ -3,7 +3,7 @@ import { GET_FULL_MENU, GET_MENU_BY_ID } from "../actions/index"
 // @initialState == estado inicial del REDUCER
 const initialState = {
     fullMenu: [],
-    detailMenu: [],
+    detailMenu: {},
 };
 
   // @state   = Estado Actual
