@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./card.module.css";
 
-const Card = (props) => {
+const Card = ({menuItem}) => {
+  const {name, price} = menuItem;
   return (
     <div className={style.contentCard}>
       <img
@@ -18,13 +19,14 @@ const Card = (props) => {
             className={style.imageLocal}
           />
           <div className={style.info}>
-            <h3>Nombre </h3>
+            <h3>{name}</h3>
             <h5>10-40 min</h5>
           </div>
         </div>
         {/*  */}
         <div className={style.km}>
-          <h5>4 km away</h5>
+          {/* <h5>4 km away</h5> */}
+          <h5>{price}</h5>
         </div>
       </div>
     </div>

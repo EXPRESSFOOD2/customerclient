@@ -1,10 +1,25 @@
-//import axios from "axios";
+import axios from "axios";
 
 // Action Type!!
-/*
-export const GET_FULL_DETAIL = "GET_FULL_DETAIL";
-export const GET_DIETS = "GET_DIETS";
-*/
+export const GET_FULL_MENU = "GET_ALL_MENU";
+export const GET_MENU_BY_ID = "GET_MENU_BY_ID";
+
+export const getFullMenu = () => {
+  return async (dispatch) => {
+    const result = await axios.get(`http://localhost:3001/menu/get`)
+    let data = result.data;
+    dispatch({type: GET_FULL_MENU, payload: data})
+  }
+}
+
+export const getMenuById = (id) => {
+  return async (dispatch) => {
+    const result = await axios.get(`http://localhost:3001/menu/get/${id}`)
+    let data = result.data;
+    dispatch({type: GET_MENU_BY_ID, payload: data})
+  }
+}
+
 
 /*
 
@@ -22,14 +37,6 @@ function dispatchSort(sort) {
       default:
         return await dispatch(unSorted())
     }
-  }
-}
-export const createRecipe = (name, description, score, stepByStep, url, dietsIds) => {
-  return async (dispatch) => {
-    const result = await axios.post(window.env.URL_POST_RECIPE, {name, description, score, stepByStep, url, dietsIds})
-    let data = result.data;
-    dispatch({type: CREATE_RECIPE, payload: data})
-    alert("Su receta se ha creado con exito")
   }
 }
 */

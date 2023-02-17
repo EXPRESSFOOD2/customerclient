@@ -19,8 +19,8 @@ function App() {
       <Routes>
           <Route exact path={"/"} element={<Home/>}> </Route>
           <Route path="/register" element={<Register/>}></Route>
-          {/* <Route path="/recipe/:id" element={<RecipeFull />}></Route>
-          <Route path="/create" element={<RecipeForm/>}></Route>
+          {/* <Route path="/menu/:id" element={<RecipeFull />}></Route>
+          <Route path="/menu" element={<RecipeForm/>}></Route>
           <Route path="*" element={<PageNotFound/>}></Route> */}
       </Routes>
     </div>
