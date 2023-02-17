@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 50%;
+    border-radius: .8rem;
+	border: 1px solid #292929;
+	color: #292929;
+    background: rgba(233, 246, 250, 0.3);
+}
+.container img {
+    width: 90%;
+}
