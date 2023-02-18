@@ -15,8 +15,8 @@
   align-items: center;
   position: relative;
 
-  width: 70vw;
-  height: 600px;
+  width: 60vw;
+  height: 500px;
 
   border-radius: 35px;
   box-shadow: 10px 10px 30px rgba(133, 133, 133, 0.255),
@@ -25,11 +25,11 @@
 }
 
 .form > div {
-  min-height: 600px;
+  min-height: 500px;
 }
 .form > div > img {
   width: 350px;
-  height: 600px;
+  height: 500px;
 
   border-top-left-radius: 35px;
   border-bottom-left-radius: 35px;
@@ -52,12 +52,32 @@
 }
 
 .infoContainer > h2 {
-  font-family: "Rubik Dirt", cursive;
-  font-weight: 600;
+  font-family: "Roboto", cursive;
+  font-weight: bolder;
 }
 
 .infoContainer > input {
   width: 55%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+
+  padding: 0 1em;
+
+  background-color: rgba(217, 217, 217, 1);
+}
+
+.col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1em;
+  width: 60%;
+}
+
+.col > input {
+  width: 35%;
   height: 30px;
   border-radius: 5px;
   border: none;
@@ -89,5 +109,5 @@
 
   border-radius: 5px;
   padding: 5px 10px;
-  font-weight: 900;
+  font-weight: bold;
 }
