@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Register from "./pages/register/Register";
-import Store from "./pages/store/Store";
-import Navbar from "./components/home/navbar/Navbar";
+import Home from './pages/home/Home'
+import Register from './pages/register/Register';
+import Store from './pages/store/Store'
+import Navbar from "./shared/navbar/Navbar";
 import DetailMenu from "./pages/detailMenu/DetailMenu";
 import Login from "./pages/Login/Login";
 /*
@@ -12,8 +11,7 @@ import Home from './components/Home/Home';
 */
 
 function App() {
-  const location = useLocation();
-  const pathname = location.pathname;
+
   return (
     <div>
       <Navbar />
