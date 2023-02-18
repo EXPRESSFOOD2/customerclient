@@ -16,13 +16,13 @@ function App() {
   const pathname = location.pathname;
   return (
     <div>
-      {pathname !== "/" &&  <Navbar />}
+      {pathname !== "/" && <Navbar />}
       <Routes>
-          <Route exact path={"/"} element={<Home/>}> </Route>
-          <Route path="/register" element={<Register/>}></Route>
-          <Route path="/store" element={<Store />}></Route>
-          <Route path="/store/:id" element={<DetailMenu/>}></Route>
-          {/* <Route path="*" element={<PageNotFound/>}></Route> */}
+        <Route exact path={"/"} element={<Home />}> </Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/store" element={<Store />}></Route>
+        <Route path="/store/menu/:id" element={<DetailMenu />}></Route>
+        {/* <Route path="*" element={<PageNotFound/>}></Route> */}
       </Routes>
     </div>
   );
