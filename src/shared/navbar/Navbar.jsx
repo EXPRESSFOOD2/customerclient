@@ -21,7 +21,9 @@ export default function Navbar() {
   return (
     <div className={style.container}>
       <div className={style.logo}>
-        <img src={logo} className={style.logo} alt="" />
+        <NavLink to="/">
+          <img src={logo} className={style.logo} alt="" />
+        </NavLink>
       </div>
       <div className={style.linkContainer}>
         <NavLink to="/store">
