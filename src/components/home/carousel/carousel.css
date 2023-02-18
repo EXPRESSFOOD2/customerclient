@@ -1,0 +1,15 @@
+.swiper {
+  max-width: 100vw;
+  height: 300px;
+}
+
+.img {
+  object-fit: contain;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
