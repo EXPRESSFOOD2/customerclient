@@ -16,7 +16,7 @@ function App() {
   const pathname = location.pathname;
   return (
     <div>
-      {pathname !== "/" && <Navbar />}
+      <Navbar />
       <Routes>
         <Route exact path={"/"} element={<Home />}> </Route>
         <Route path="/register" element={<Register />}></Route>
