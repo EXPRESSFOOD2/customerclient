@@ -51,7 +51,7 @@ const CreateLogin = ({ formik }) => {
           </div>
         </form>
         <div className={style.question}>
-          <p>¿primera vez en SARASASASA? </p>{" "}
+          <p>¿primera vez en Express Food? </p>{" "}
           <a href="/register"> ¡Registrate! </a>
         </div>
       </div>
