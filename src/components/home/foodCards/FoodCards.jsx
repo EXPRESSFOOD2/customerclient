@@ -7,8 +7,9 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./swiper.css";
+import Card from "./card/Card";
 
-export default function FoodCards() {
+export default function FoodCards({ menus }) {
   return (
     <div className={style.container}>
       <div className={style.titleCol}>
@@ -22,12 +23,18 @@ export default function FoodCards() {
           navigation={true}
           className="mySwiper"
         >
-          <SwiperSlide>Img 1</SwiperSlide>
-          <SwiperSlide>Img 1</SwiperSlide>
-          <SwiperSlide>Img 1</SwiperSlide>
-          <SwiperSlide>Img 1</SwiperSlide>
-          <SwiperSlide>Img 1</SwiperSlide>
-          <SwiperSlide>Img 1</SwiperSlide>
+          {menus.map((menu, i) => {
+            return (
+              <SwiperSlide key={i}>
+                <Card
+                  img={menu.url_image}
+                  name={menu.name}
+                  price={menu.price}
+                  id={menu.id}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>
