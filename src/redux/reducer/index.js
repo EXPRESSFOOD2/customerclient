@@ -1,8 +1,9 @@
-import { GET_FULL_MENU, GET_MENU_BY_ID } from "../actions/index"
+import { GET_FULL_MENU, GET_MENU_BY_ID, GET_FULL_INGREDIENTS } from "../actions/index"
 
 // @initialState == estado inicial del REDUCER
 const initialState = {
     fullMenu: [],
+    allIngredients: [],
     detailMenu: {},
 };
 
@@ -14,6 +15,8 @@ const rootReducer = (state = initialState, action) => {
             return { ...state, fullMenu: action.payload }
         case GET_MENU_BY_ID:
             return { ...state, detailMenu: action.payload }
+        case GET_FULL_INGREDIENTS:
+            return { ...state, allIngredients: action.payload }
         default:
             return { ...state };
     }
