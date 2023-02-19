@@ -18,6 +18,7 @@ const CreateLogin = ({ formik }) => {
               className={formik.errors.email ? style.errorInput : ""}
               id="email"
               name="email"
+              placeholder="E-mail"
               {...formik.getFieldProps("email")}
             />
             {formik.touched.email && formik.errors.email ? (
@@ -31,6 +32,7 @@ const CreateLogin = ({ formik }) => {
               className={formik.errors.password ? style.errorInput : ""}
               id="password"
               name="password"
+              placeholder="Contraseña"
               {...formik.getFieldProps("password")}
             />
             {formik.touched.password && formik.errors.password ? (
