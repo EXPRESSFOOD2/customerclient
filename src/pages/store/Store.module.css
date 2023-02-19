@@ -5,3 +5,7 @@
     padding: 1.4rem;
     margin: 0 4rem;
 }
+.rows{
+    display: flex;
+    flex-direction: row;
+}
