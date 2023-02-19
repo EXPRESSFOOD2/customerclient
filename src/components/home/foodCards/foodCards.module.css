@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100vw;
+  height: auto;
+
+  padding: 20px 0px;
+  margin-top: 50px;
+}
+
+.titleCol {
+  width: 80%;
+  text-align: start;
+}
+
+.titleCol > h3 {
+  font-weight: 300;
+
+  font-size: 22px;
+
+  font-family: Helvetica, Helvetica, sans-serif;
+  color: gray;
+  text-align: start;
+}
+
+.carousel {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 80%;
+}

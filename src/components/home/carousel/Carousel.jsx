@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Pagination, Autoplay } from "swiper";
 import data from "./imgCarousel.json";
 // import Swiper and modules styles
 import "swiper/css";
@@ -10,19 +10,25 @@ import "swiper/css/pagination";
 import "./carousel.css";
 
 export default function Carousel() {
+  SwiperCore.use([Autoplay]);
+
   return (
     <Swiper
       slidesPerView={1}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      spaceBetween={30}
       pagination={true}
       scrollbar={{ draggable: true }}
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       className="mySwiper"
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      loop={true}
     >
-      {data.img.map((link) => {
+      {data.img.map((link, i) => {
         return (
-          <SwiperSlide>
+          <SwiperSlide key={i}>
             <img src={link} alt="noc" />
           </SwiperSlide>
         );
