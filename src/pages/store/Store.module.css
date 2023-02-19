@@ -1,5 +1,6 @@
 .container {
     display: grid;
+
     gap: 1.4rem;
     grid-template-columns: repeat(3, 1fr);
     padding: 1.4rem;
@@ -8,4 +9,17 @@
 .rows{
     display: flex;
     flex-direction: row;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(10vw, auto);
+ position: absolute;
+width: auto;
+height: auto;
+margin-left: 50vw;
+top: 5rem;
+
+background: #D9D9D9;
+border-radius: 15px;
+
 }
