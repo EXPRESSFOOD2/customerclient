@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row wrap;
     position: absolute;
-    border: 3px solid red;
+
     height: 60vw;
     width: 80%;
     left: 10%;
@@ -10,7 +10,7 @@
 }
 
 .containerPagination {
-    border: 3px solid pink;
+
     height: 3vw;
     right: 20vw;
     top: .5vw;
@@ -25,7 +25,7 @@
 .divFilters {
     display: flex;
     flex-direction: column wrap;
-    border: 3px solid green;
+
     width: 25vw;
     align-items: center;
     justify-items: flex-start;
@@ -47,14 +47,14 @@
     padding-top: 2%;
     padding-bottom: 2%;
 
-    border: 3px solid blueviolet;
+
 
     margin-left: 5vw;
     margin-top: -10vw;
     width: 20%;
 }
 
-.tagFilterIngredient{
+.tagFilter{
     position: absolute;
     margin-bottom: 65%;
     left: 5%;
@@ -72,7 +72,7 @@
     grid-template-columns: repeat(3, 1fr);
 
     position: relative;
-    border: 3px solid blueviolet;
+
     height: 45vw;
     width: 50vw;
     top: 5vw;

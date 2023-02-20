@@ -37,7 +37,7 @@ export default function Store() {
           <h3 className={style.tagFilter}>Por ingredientes:</h3>
      <div className={style.containerButtonFilters}>{     ingredientsButtons}</div>
       
-          <h3 className={style.tagFilterIngredient}>Por producto:</h3>
+         
         </div>
         <div className={style.containerPagination}>
       <Pagination pagina={pagina} setPagina={setPagina} maximo={maximo} />
