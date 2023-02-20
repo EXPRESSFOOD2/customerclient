@@ -5,7 +5,7 @@ import logo from "./1675954366314.png";
 export default function Loading() {
   return (
     <div className={style.container}>
-      <img src={logo} class={style.ball} alt="logo" />
+      <img src={logo} className={style.ball} alt="logo" />
       <div class={style.shadow}></div>
     </div>
   );

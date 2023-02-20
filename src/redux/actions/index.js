@@ -12,7 +12,7 @@ export const ERROR = 'ERROR';
 export const getRecommendedMenu = () => {
   return async (dispatch) => {
     try {
-      const result = await axios.get(`localhost:3001/menu/get/recommended`)
+      const result = await axios.get(`http://localhost:3001/menu/get/recommended`)
       let data = result.data;
       dispatch({ type: GET_MENU_RECOMMENDED, payload: data })
     } catch (error) {
