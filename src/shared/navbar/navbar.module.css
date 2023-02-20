@@ -65,6 +65,7 @@
 .linkContainer > a > p:hover {
   color: rgba(252, 172, 3, 1);
 }
+
 .current {
   border-radius: 30px;
 

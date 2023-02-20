@@ -32,20 +32,21 @@
 }
 
 .containerButtonFilters {
-    display: grid;
+  display: grid;
 
-    justify-items: center;
-    gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
 
-    position: absolute;
-    height: auto;
+  position: absolute;
+  height: auto;
 
+  background-color: #eaeaea;
+  border-radius: 3%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 
-    background-color: #eaeaea;
-    border-radius: 3%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+  border: 3px solid blueviolet;
 
 
 
@@ -59,7 +60,6 @@
     margin-bottom: 65%;
     left: 5%;
 }
-
 
 .containerMenu {
     display: grid;
@@ -80,22 +80,29 @@
     background-color: #eaeaea;
     border-radius: 3%;
 
+  position: relative;
+  border: 3px solid blueviolet;
+  height: 45vw;
+  width: 50vw;
+  top: 5vw;
+  left: 1vw;
+  background-color: #eaeaea;
+  border-radius: 3%;
 }
 
 .rows {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    grid-auto-rows: minmax(10vw, auto);
-    position: relative;
-    width: auto;
-    height: auto;
-    margin-left: 50vw;
-    top: 5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(10vw, auto);
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-left: 50vw;
+  top: 5rem;
 
-    background: #D9D9D9;
-    border-radius: 15px;
-
+  background: #d9d9d9;
+  border-radius: 15px;
 }
