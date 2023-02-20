@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import ProductCard from "../../components/store/Product/ProductCard";
+import ButtonFilter from "../..//components/buttonsFilter/ButtonFilter";
 import style from "./Store.module.css";
 import { NavLink } from "react-router-dom";
 import Pagination from "../../shared/Pagination/Pagination";
-import Filter from "../../shared/Filter/Filter"
-import FILTER_OPTIONS from "../../shared/Filter/Filter_Options"
 
 export default function Store() {
   const menu = useSelector((state) => state.fullMenu); // Hook de traer data del estado global
+  const ingredients = useSelector((state) => state.allIngredients); // Hook de traer data del estado global
   let products = menu.map((menuItem, index) => {
     return (
       <NavLink key={index} to={`/store/menu/${menuItem.id}`}>
@@ -16,24 +16,38 @@ export default function Store() {
       </NavLink>
     );
   });
-  const { f1, f2, f3 } = FILTER_OPTIONS;
+  // eslint-disable-next-line array-callback-return
+  let ingredientsButtons = ingredients.map((ingredient, index) => {
+    if(ingredient.layer ===0){
+    return (
+      
+        <ButtonFilter key={index} name={ingredient.name} />
+  
+    )};
+  });
+
   const [pagina, setPagina] = useState(1);
   const [porPagina] = useState(9);
   let maximo = Math.ceil(menu.length / porPagina);
-  console.log("F1: "+f1.title);
+ 
   return (
-    <>
+    <div className={style.container}>
+   
+      <div className={style.divFilters}>
+          <h3 className={style.tagFilter}>Por ingredientes:</h3>
+     <div className={style.containerButtonFilters}>{     ingredientsButtons}</div>
+      
+          <h3 className={style.tagFilterIngredient}>Por producto:</h3>
+        </div>
+        <div className={style.containerPagination}>
       <Pagination pagina={pagina} setPagina={setPagina} maximo={maximo} />
-      <div className={style.rows}>
-        <div>
-          <Filter title={f1.title} options={f1.options} action={f1.action} />
-          <Filter title={f2.title} options={f2.options} action={f2.action} />
-          <Filter title={f3.title} options={f3.options} action={f3.action} />
-        </div>
-        <div className={style.container}>
-          {products.slice(((pagina-1)*porPagina), (pagina)*porPagina)}
-        </div>
       </div>
-    </>
-  )
+   
+       
+        <div className={style.containerMenu}>
+          {products.slice((pagina - 1) * porPagina, pagina * porPagina)}
+        </div>
+
+    </div>
+  );
 }

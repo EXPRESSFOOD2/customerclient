@@ -4,7 +4,7 @@ import logo from "./logo.png";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
-import { getFullMenu } from "../../redux/actions/index";
+import { getFullMenu, getFullIngredients } from "../../redux/actions/index";
 
 export default function Navbar() {
   /* Siempre que está el Navbar se carga el State */
@@ -13,6 +13,7 @@ export default function Navbar() {
   const dispatch = useDispatch(); // Dispachador de Redux
   useEffect(() => {
     dispatch(getFullMenu());
+    dispatch(getFullIngredients());
   }, [dispatch]); // Precarga los elementos a mostrar
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

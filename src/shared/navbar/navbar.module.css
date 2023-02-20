@@ -19,15 +19,24 @@
   width: 80px;
   height: 80px;
   border-radius: 360px;
+  transition: 0.5s;
+}
+
+.logo:hover {
+  filter: brightness(1.1);
+  transform: translateY(20px);
 }
 
 .logo::before {
   content: "";
   position: absolute;
-  top: -10px;
+  top: -40px;
   width: 80px;
-  height: 70px;
+  height: 100px;
   background-color: rgba(143, 20, 20, 1);
+}
+.logo::before:hover {
+  width: 130px;
 }
 
 .linkContainer {
@@ -51,6 +60,10 @@
 
 .linkContainer > a > p {
   padding: 5px 10px;
+}
+
+.linkContainer > a > p:hover {
+  color: rgba(252, 172, 3, 1);
 }
 .current {
   border-radius: 30px;

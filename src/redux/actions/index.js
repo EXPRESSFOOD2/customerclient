@@ -2,6 +2,7 @@ import axios from "axios";
 
 // Action Type!!
 export const GET_FULL_MENU = "GET_ALL_MENU";
+export const GET_FULL_INGREDIENTS = "GET_FULL_INGREDIENTS";
 export const GET_MENU_BY_ID = "GET_MENU_BY_ID";
 
 export const getFullMenu = () => {
@@ -9,6 +10,13 @@ export const getFullMenu = () => {
     const result = await axios.get(`http://localhost:3001/menu/get`)
     let data = result.data;
     dispatch({type: GET_FULL_MENU, payload: data})
+  }
+}
+export const getFullIngredients = () => {
+  return async (dispatch) => {
+    const result = await axios.get(`http://localhost:3001/ingredients/get`)
+    let data = result.data;
+    dispatch({type: GET_FULL_INGREDIENTS, payload: data})
   }
 }
 
