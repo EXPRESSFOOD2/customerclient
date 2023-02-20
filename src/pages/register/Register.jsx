@@ -18,6 +18,7 @@ export default function Register() {
       phone: "",
       email: "",
       password: "",
+      profile_image: "",
     },
 
     validationSchema: Yup.object({
@@ -37,6 +38,7 @@ export default function Register() {
       password: Yup.string()
         .matches(passwordRegex, "contraseña invalida")
         .required("Se requiere una contraseña"),
+      profile_image: Yup.string(),
     }),
 
     onSubmit: (values) => {
@@ -44,9 +46,14 @@ export default function Register() {
     },
   });
 
+  const image = (e) => {
+    const value = e.target.value;
+    formik.values.profile_image = value;
+  };
+
   return (
     <div>
-      <Form formik={formik} />
+      <Form formik={formik} image={image} />
     </div>
   );
 }

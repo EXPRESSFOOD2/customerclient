@@ -1,8 +1,9 @@
 import React from "react";
 import style from "./form.module.css";
 import formIMG from "./image/formImg.jpg";
+import Buttonimg from "./buttonimg";
 
-export default function Form({ formik }) {
+export default function Form({ formik, image }) {
   return (
     <div className={style.superDiv}>
       <div className={style.container}>
@@ -14,6 +15,7 @@ export default function Form({ formik }) {
             <div className={style.divi}>
               <h2>Crear cuenta</h2>
             </div>
+            <Buttonimg image={image} />
             <div className={style.col}>
               <div className={style.col1}>
                 <label htmlFor="">Nombre</label>
