@@ -4,6 +4,7 @@ import axios from "axios";
 export const GET_FULL_MENU = "GET_ALL_MENU";
 export const GET_FULL_INGREDIENTS = "GET_FULL_INGREDIENTS";
 export const GET_MENU_BY_ID = "GET_MENU_BY_ID";
+export const FILTER_MENU = "FILTER_MENU";
 
 export const getFullMenu = () => {
   return async (dispatch) => {
@@ -27,6 +28,11 @@ export const getMenuById = (id) => {
     dispatch({type: GET_MENU_BY_ID, payload: data})
   }
 }
+export const filterMenu = (category) => (dispatch)=> {
+   
+    dispatch({type: FILTER_MENU, payload: category})
+  }
+
 
 
 /*
