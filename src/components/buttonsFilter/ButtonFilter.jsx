@@ -4,7 +4,7 @@ import style from "./ButtonFilter.module.css";
 const Button = (props) => {
 
   return (
-    <button> {props.name}
+    <button className={style.button}> {props.name}
 </button>
   );
 };

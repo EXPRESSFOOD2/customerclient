@@ -1,4 +1,4 @@
-button {
+.button {
     color: #090909;
     padding: 0.5% 1%;
     font-size: 80%;
@@ -12,7 +12,7 @@ button {
                 width:80%;
    }
    
-   button:active {
+   .button:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5,
                 inset -4px -4px 12px #ffffff;
