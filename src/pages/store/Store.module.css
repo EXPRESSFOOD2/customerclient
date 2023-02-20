@@ -1,34 +1,30 @@
 .container {
-    display: flex;
-    flex-direction: row wrap;
-    position: absolute;
+  display: flex;
+  flex-direction: row wrap;
+  position: relative;
 
-    height: 60vw;
-    width: 80%;
-    left: 10%;
-    top: 15%
+  height: 60vw;
+  width: 80%;
+  left: 10%;
+  top: 15%;
 }
 
 .containerPagination {
-
-    height: 3vw;
-    right: 20vw;
-    top: .5vw;
-    left: 53%;
-    position: absolute;
-    width: 20vw;
-
-
-
+  height: 3vw;
+  right: 20vw;
+  top: 0.5vw;
+  left: 53%;
+  position: absolute;
+  width: 20vw;
 }
 
 .divFilters {
-    display: flex;
-    flex-direction: column wrap;
+  display: flex;
+  flex-direction: column wrap;
 
-    width: 25vw;
-    align-items: center;
-    justify-items: flex-start;
+  width: 25vw;
+  align-items: center;
+  justify-items: flex-start;
 }
 
 .containerButtonFilters {
@@ -48,37 +44,35 @@
 
   border: 3px solid blueviolet;
 
-
-
-    margin-left: 5vw;
-    margin-top: -10vw;
-    width: 20%;
+  margin-left: 5vw;
+  margin-top: -10vw;
+  width: 20%;
 }
 
-.tagFilter{
-    position: absolute;
-    margin-bottom: 65%;
-    left: 5%;
+.tagFilter {
+  position: absolute;
+  margin-bottom: 65%;
+  left: 5%;
 }
 
 .containerMenu {
-    display: grid;
-    padding-top: 3vw;
-    padding-bottom: 3vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    justify-items: center;
-    gap: .5rem;
-    grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  justify-items: center;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
 
-    position: relative;
+  position: relative;
 
-    height: 45vw;
-    width: 50vw;
-    top: 5vw;
-    left: 1vw;
-    background-color: #eaeaea;
-    border-radius: 3%;
+  height: 45vw;
+  width: 50vw;
+  top: 5vw;
+  left: 1vw;
+  background-color: #eaeaea;
+  border-radius: 3%;
 
   position: relative;
   border: 3px solid blueviolet;
