@@ -1,0 +1,35 @@
+.page{
+    height: 37rem;
+    display: grid;
+    place-items: center;
+    background-image: url("https://thumbs.dreamstime.com/b/surtido-de-comida-r%C3%A1pida-y-vista-superior-doble-borde-lateral-en-un-fondo-banner-madera-oscura-variedad-alimentos-para-consumo-o-184617291.jpg");
+}
+
+.detail{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: rgba(233, 201, 176, 0.699);
+    /* background-color: rgba(219, 173, 136, 0.699); */
+    border-radius: 1rem;
+    box-shadow: 3rem 3rem 3rem rgba(0, 0, 0, 0.747);
+}
+
+.image{
+    width: 33%;
+    height: 20rem;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: .5rem;
+}
+
+.info{
+    width: 65%;
+    text-align: justify;
+}

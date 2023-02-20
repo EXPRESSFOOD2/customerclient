@@ -3,6 +3,7 @@ import { getMenuById } from "../../redux/actions/index"
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import styles from './DetailMenu.module.css';
 
 const DetailMenu = () => {
     const { id } = useParams();
@@ -11,12 +12,18 @@ const DetailMenu = () => {
     const {name, description, url_image, price} = useSelector((state) => state.detailMenu);          // Hook de traer data del estado global
     //name,description,price,recomend_first,stock,is_active,url_image
     return (
-      <div>
-        <img src={url_image} alt={name} style={{width: "30%"}}/>
-        <h1>{name}</h1>
-        <h2>{description}</h2>
-        <h3>$ {price}</h3>
-      </div>
+        <div className={styles.page}>
+        <div className={styles.detail}>
+          <div className={styles.image}>
+                <img src={url_image} alt={name} />
+          </div>
+          <div className={styles.info}>
+                <h1>{name}</h1>
+                <p>{description}</p>
+                <h3>$ {price}</h3>
+          </div>
+            </div>
+        </div>
     );
   }
   export default DetailMenu;
