@@ -5,6 +5,7 @@ import Store from './pages/store/Store'
 import Navbar from "./shared/navbar/Navbar";
 import DetailMenu from "./pages/detailMenu/DetailMenu";
 import Login from "./pages/Login/Login";
+import CreateFooter from "./shared/Footer/CretaeFooter";
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Home from './components/Home/Home';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         {/* <Route path="*" element={<PageNotFound/>}></Route> */}
       </Routes>
+      <CreateFooter />
     </div>
   );
 }
