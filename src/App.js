@@ -6,6 +6,7 @@ import Navbar from "./shared/navbar/Navbar";
 import DetailMenu from "./pages/detailMenu/DetailMenu";
 import Login from "./pages/Login/Login";
 import CreateFooter from "./shared/Footer/CretaeFooter";
+import Loading from "./shared/Loading/Loading";
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Home from './components/Home/Home';
@@ -22,7 +23,7 @@ function App() {
         <Route path="/store" element={<Store />}></Route>
         <Route path="/store/menu/:id" element={<DetailMenu />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        {/* <Route path="*" element={<PageNotFound/>}></Route> */}
+        <Route path="*" element={<Loading />}></Route>
       </Routes>
       <CreateFooter />
     </div>
