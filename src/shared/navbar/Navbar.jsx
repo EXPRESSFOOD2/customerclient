@@ -9,7 +9,7 @@ import { getFullMenu, getFullIngredients } from "../../redux/actions/index";
 export default function Navbar() {
   /* Siempre que está el Navbar se carga el State */
   const location = useLocation().pathname.split("/").at(1);
-  console.log(location);
+
   const dispatch = useDispatch(); // Dispachador de Redux
   useEffect(() => {
     dispatch(getFullMenu());

@@ -7,6 +7,7 @@ export const GET_MENU_BY_ID = "GET_MENU_BY_ID";
 export const FILTER_MENU = "FILTER_MENU";
 export const GET_MENU_RECOMMENDED = 'GET_MENU_RECOMMENDED';
 export const ERROR = 'ERROR';
+export const RESET_FILTER = 'RESET_FILTER';
 
 
 export const getRecommendedMenu = () => {
@@ -44,9 +45,13 @@ export const getMenuById = (id) => {
     dispatch({ type: GET_MENU_BY_ID, payload: data })
   }
 }
-export const filterMenu = (category) => (dispatch) => {
+export const filterMenu = (category) =>  (dispatch) => {
 
   dispatch({ type: FILTER_MENU, payload: category })
+}
+export const resetFilter = (boolean) =>  (dispatch) => {
+
+  dispatch({ type: RESET_FILTER })
 }
 
 

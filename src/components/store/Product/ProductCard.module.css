@@ -17,7 +17,7 @@
         -ms-flex-pack: center;
             justify-content: center;
     background: #fff;
-    padding: 0.5em;
+   
     padding-bottom: 3.4em;
    }
    
@@ -65,5 +65,5 @@
             height: 100%;
             display: grid;
             place-items: center;
-            border: 1px solid green;
+      
         }
