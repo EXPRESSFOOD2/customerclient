@@ -23,7 +23,7 @@ function App() {
         <Route path="/store" element={<Store />}></Route>
         <Route path="/store/menu/:id" element={<DetailMenu />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="*" element={<Loading />}></Route>
+        <Route path="*" element={<Loading notfound={true} />}></Route>
       </Routes>
       <CreateFooter />
     </div>
