@@ -33,7 +33,18 @@ export const filterMenu = (category) => (dispatch)=> {
     dispatch({type: FILTER_MENU, payload: category})
   }
 
-
+export const getImageUrl = (imageStr, imageFn) => {
+    return async (dispatch) => {
+        try {
+          let result = await axios.post("http://localhost:3001/processImage/post", {imageStr: imageStr})
+          imageFn(result.data)
+          //! ?! manejar Success && Error
+          return result;
+        } catch(error) {
+          console.error(error)
+        }
+  }
+}
 
 /*
 
