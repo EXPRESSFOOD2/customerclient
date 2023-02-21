@@ -29,7 +29,7 @@ export default function Carousel() {
       {data.img.map((link, i) => {
         return (
           <SwiperSlide key={i}>
-            <img src={link} alt="noc" />
+            <img src={link} alt={i} />
           </SwiperSlide>
         );
       })}
