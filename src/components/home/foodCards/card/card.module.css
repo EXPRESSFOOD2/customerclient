@@ -7,9 +7,9 @@
   height: 100%;
 }
 
-.container > img {
+.container img {
   width: 100%;
-  height: 100%;
+  height: 11rem;
 }
 
 .container > a {
@@ -37,4 +37,15 @@
   line-height: 60px;
 
   font-weight: normal;
+}
+
+.toCart {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding: .2rem;
 }
