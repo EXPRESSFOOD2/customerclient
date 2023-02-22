@@ -91,7 +91,23 @@
 }
 
 .center {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cartCount {
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  background-color: rgba(252, 172, 3, 1);
+  color: white;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 360px;
 }
