@@ -47,6 +47,23 @@
   width: 100%;
 }
 
+.userContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 30%;
+  height: 30%;
+  gap: 2em;
+
+  color: white;
+  padding: 0 30px;
+}
+.userContainer > img {
+  border-radius: 360px;
+  width: 40px;
+  height: 40px;
+}
+
 .linkContainer > a {
   color: white;
   font-size: 16px;
@@ -71,4 +88,10 @@
 
   text-align: center;
   background-color: rgba(143, 20, 20, 1);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
