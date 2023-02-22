@@ -33,3 +33,13 @@
     width: 65%;
     text-align: justify;
 }
+
+.toCart{
+    border: none;
+    border-radius: .5rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    width: 11rem;
+    padding: .5rem;
+    margin-left: 4rem;
+    cursor: pointer;
+}

@@ -4,6 +4,11 @@ import style from "./ProductCard.module.css";
 
 const ProductCard = ({ menuItem }) => {
   const { name, price, url_image } = menuItem;
+
+  const handleCart = () => {
+    localStorage.setItem(name,JSON.stringify({...menuItem}))
+  }
+
   return (
     <div className={style.card}>
       {" "}
@@ -12,6 +17,7 @@ const ProductCard = ({ menuItem }) => {
      
       <h2 className={style.title}>{name}</h2>
       <span className={style.price}>${price}</span> 
+      <button className={style.toCart} onClick={handleCart}>Agregar al carrito</button>
     </div>
   );
 };
