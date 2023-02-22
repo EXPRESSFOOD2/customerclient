@@ -54,6 +54,9 @@ const CreateLogin = ({ formik }) => {
           <p>¿primera vez en Express Food? </p>{" "}
           <a href="/register"> ¡Registrate! </a>
         </div>
+        <div className={style.logins}>
+            <button type="submit" onClick={()=> window.location.href='http://localhost:3001/auth/google'}>Google</button>
+          </div>
       </div>
     </div>
   );
