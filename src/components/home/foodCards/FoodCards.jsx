@@ -31,6 +31,7 @@ export default function FoodCards({ menus }) {
                   name={menu.name}
                   price={menu.price}
                   id={menu.id}
+                  menu = {menu}
                 />
               </SwiperSlide>
             );
