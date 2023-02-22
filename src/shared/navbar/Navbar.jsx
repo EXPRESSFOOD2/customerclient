@@ -63,7 +63,7 @@ export default function Navbar() {
           </NavLink>
         )}
 
-        <NavLink to={"/"} className={style.center}>
+        <NavLink to={"/cart"} className={style.center}>
           <ShoppingCartIcon sx={{ fontSize: "25px" }} />
         </NavLink>
       </div>
