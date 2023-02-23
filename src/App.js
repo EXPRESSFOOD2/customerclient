@@ -12,8 +12,8 @@ import Cart from "./pages/Cart/Cart";
 
 //! socket
 
-// import io from 'socket.io-client'
-// export const socket = io('')
+import io from 'socket.io-client'
+export const socket = io('')
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
