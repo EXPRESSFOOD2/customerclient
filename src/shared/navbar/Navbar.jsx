@@ -2,7 +2,7 @@ import React from "react";
 import style from "./navbar.module.css";
 import logo from "./logo.png";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import { getFullMenu, getFullIngredients } from "../../redux/actions/index";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -12,8 +12,9 @@ export default function Navbar() {
   const location = useLocation().pathname.split("/").at(1);
 
   const queryParams = new URLSearchParams(window.location.search);
-
   const user = queryParams.get("user");
+  const fullMenu = useSelector((state) => state.fullMenu);
+  const cartCount = useSelector((state) => state.cartCount);
 
   if (user && !localStorage.getItem("user")) {
     localStorage.setItem("user", user);
@@ -23,9 +24,11 @@ export default function Navbar() {
 
   const dispatch = useDispatch(); // Dispachador de Redux
   useEffect(() => {
-    dispatch(getFullMenu());
+    if (!fullMenu.length) {
+      dispatch(getFullMenu());
+    }
     dispatch(getFullIngredients());
-  }, [dispatch]); // Precarga los elementos a mostrar
+  }, [dispatch, fullMenu]); // Precarga los elementos a mostrar
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   });
@@ -65,6 +68,7 @@ export default function Navbar() {
 
         <NavLink to={"/cart"} className={style.center}>
           <ShoppingCartIcon sx={{ fontSize: "25px" }} />
+          <div className={style.cartCount}>{cartCount}</div>
         </NavLink>
       </div>
     </div>
