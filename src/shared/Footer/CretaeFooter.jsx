@@ -5,31 +5,23 @@ const CreateFooter = (props) => {
   return (
     <div className={style.CreateFooter}>
       <div className={style.top}>
-        <h3>Express Food</h3>
+        <h3>Space Food</h3>
         <div className={style.top1}>
-          <p>algunas cosas mas</p>
-          <p>algo mas</p>
-          <p>algo mas</p>
+          <p>Garantía de confianza</p>
         </div>
       </div>
       <footer className={style.footer}>
         <hr />
         <div className={style.links}>
           <p>
-            <a href="#"> Accesibilidad Web</a> |
+            <a href="#"> Politica de privacidad </a> |
           </p>
           <p>
-            <a href="#"> Politica de privacidad</a> |{" "}
-          </p>
-          <p>
-            <a href="#"> Contacto</a> |{" "}
-          </p>
-          <p>
-            <a href="">Mapa del sitio</a>{" "}
+            <a href="#">Sobre nosotros</a>
           </p>
         </div>
         <div className={style.buttom}>
-          <div className={style.c}>&#169;2023. Express Food Company. </div>
+          <div className={style.c}>&#169;2023. Space Food Company. </div>
           <div className={style.icons}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
