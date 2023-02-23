@@ -14,14 +14,10 @@ export default function Navbar() {
   const queryParams = new URLSearchParams(window.location.search);
   const user = queryParams.get("user");
   const fullMenu = useSelector((state) => state.fullMenu);
-  let order = localStorage.getItem("order");
+  const cartCount = useSelector((state) => state.cartCount);
 
   if (user && !localStorage.getItem("user")) {
     localStorage.setItem("user", user);
-  }
-
-  if (order) {
-    order = JSON.parse(order);
   }
 
   const { photo, userName } = JSON.parse(localStorage.getItem("user")) || {};
@@ -72,7 +68,7 @@ export default function Navbar() {
 
         <NavLink to={"/cart"} className={style.center}>
           <ShoppingCartIcon sx={{ fontSize: "25px" }} />
-          <div className={style.cartCount}>{order.length}</div>
+          <div className={style.cartCount}>{cartCount}</div>
         </NavLink>
       </div>
     </div>

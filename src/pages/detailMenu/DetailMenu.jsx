@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getMenuById } from "../../redux/actions/index";
+import { changeCartCount, getMenuById } from "../../redux/actions/index";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -19,18 +19,13 @@ const DetailMenu = () => {
   const handleCart = () => {
     let orderArray = localStorage.getItem("order") || "[]";
 
-    const index = JSON.parse(orderArray).findIndex(
-      (item) => item.id + "" === "" + detail.id
-    );
     const aux = JSON.parse(orderArray);
+    const index = aux.findIndex((item) => item.id + "" === "" + detail.id);
 
-    // si no esta en el array le acumento la cantidad
-    if (index !== -1) {
-      aux[index].quantity += 1;
-      orderArray = aux;
-    } else {
-      // si esta lo agrego
+    // si no esta repetido lo agrego
+    if (index === -1) {
       orderArray = [...aux, { id: detail.id, quantity: 1 }];
+      dispatch(changeCartCount("+"));
     }
     // se transforma y se manda
     const transform = JSON.stringify(orderArray);
