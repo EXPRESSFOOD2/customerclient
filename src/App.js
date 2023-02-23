@@ -5,6 +5,9 @@ import Store from './pages/store/Store'
 import Navbar from "./shared/navbar/Navbar";
 import DetailMenu from "./pages/detailMenu/DetailMenu";
 import Login from "./pages/Login/Login";
+import CreateFooter from "./shared/Footer/CretaeFooter";
+import Loading from "./shared/Loading/Loading";
+import Cart from "./pages/Cart/Cart";
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Home from './components/Home/Home';
@@ -20,9 +23,11 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/store" element={<Store />}></Route>
         <Route path="/store/menu/:id" element={<DetailMenu />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        {/* <Route path="*" element={<PageNotFound/>}></Route> */}
+        <Route path="*" element={<Loading notfound={true} />}></Route>
       </Routes>
+      <CreateFooter />
     </div>
   );
 }

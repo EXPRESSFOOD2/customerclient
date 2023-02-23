@@ -13,7 +13,7 @@ export default function FoodCards({ menus }) {
   return (
     <div className={style.container}>
       <div className={style.titleCol}>
-        <h3>Basado en tu última visita</h3>
+        <h3>Recomendados</h3>
       </div>
       <div className={style.carousel}>
         <Swiper
@@ -31,6 +31,7 @@ export default function FoodCards({ menus }) {
                   name={menu.name}
                   price={menu.price}
                   id={menu.id}
+                  menu = {menu}
                 />
               </SwiperSlide>
             );

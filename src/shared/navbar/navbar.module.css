@@ -47,6 +47,23 @@
   width: 100%;
 }
 
+.userContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 30%;
+  height: 30%;
+  gap: 2em;
+
+  color: white;
+  padding: 0 30px;
+}
+.userContainer > img {
+  border-radius: 360px;
+  width: 40px;
+  height: 40px;
+}
+
 .linkContainer > a {
   color: white;
   font-size: 16px;
@@ -65,9 +82,32 @@
 .linkContainer > a > p:hover {
   color: rgba(252, 172, 3, 1);
 }
+
 .current {
   border-radius: 30px;
 
   text-align: center;
   background-color: rgba(143, 20, 20, 1);
+}
+
+.center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartCount {
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  background-color: rgba(252, 172, 3, 1);
+  color: white;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 360px;
 }

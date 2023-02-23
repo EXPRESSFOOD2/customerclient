@@ -2,7 +2,7 @@ import React from "react";
 import style from "./card.module.css";
 import { NavLink } from "react-router-dom";
 
-export default function Card({ img, name, price, id }) {
+export default function Card({ img, name, price, id, menu }) {
   return (
     <div className={style.container}>
       <NavLink to={`store/menu/${id}`}>

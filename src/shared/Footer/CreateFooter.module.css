@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: center;
 
-  padding: 20px 80px;
+  padding: 0 80px;
+  padding-top: 40px;
 }
 
 .top {

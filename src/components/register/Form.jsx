@@ -3,7 +3,7 @@ import style from "./form.module.css";
 import formIMG from "./image/formImg.jpg";
 import Buttonimg from "./buttonimg";
 
-export default function Form({ formik, image }) {
+export default function Form({ formik, imageFn }) {
   return (
     <div className={style.superDiv}>
       <div className={style.container}>
@@ -15,7 +15,8 @@ export default function Form({ formik, image }) {
             <div className={style.divi}>
               <h2>Crear cuenta</h2>
             </div>
-            <Buttonimg image={image} />
+            {/* ACA ESTA!!!!! */}
+            <Buttonimg imageFn={imageFn} />
             <div className={style.col}>
               <div className={style.col1}>
                 <label htmlFor="">Nombre</label>

@@ -46,14 +46,13 @@ export default function Register() {
     },
   });
 
-  const image = (e) => {
-    const value = e.target.value;
-    formik.values.profile_image = value;
+  const imageFn = (imageUrl) => {
+    formik.values.profile_image = imageUrl;
   };
 
   return (
     <div>
-      <Form formik={formik} image={image} />
+      <Form formik={formik} imageFn={imageFn} />
     </div>
   );
 }

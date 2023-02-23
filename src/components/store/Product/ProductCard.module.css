@@ -1,8 +1,8 @@
 .card {
     width: 11.875em;
-    height: 10vw;
-    -webkit-box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
-            box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+    height: 12vw;
+    -webkit-box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     -webkit-transition: all 120ms;
     transition: all 120ms;
@@ -11,19 +11,17 @@
     display: flex;
     flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     background: #fff;
-    padding: 0.5em;
-    padding-bottom: 3.4em;
-   }
-   
 
-   
-   .card .title {
+    padding-bottom: 3.4em;
+}
+
+.title {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9em;
     position: absolute;
@@ -31,17 +29,26 @@
     font-weight: 400;
     color: black;
     margin-top: 13vw;
-
 }
 
-.card .price {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.price {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: 0.9em;
     position: absolute;
 
     margin-top: 15vw;
     color: black;
+}
 
+.toCart {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    position: absolute;
+    margin-bottom: -15rem;
+    cursor: pointer;
+    border: none;
+    width: 11.5rem;
 }
 
 .card:hover::after {
@@ -51,19 +58,18 @@
 .card:active {
     -webkit-transform: scale(0.98);
     -ms-transform: scale(0.98);
-            transform: scale(0.98);
-        }
-        
-      
-        .text {
-            max-width: 55px;
-        }
-        
-        .image {
-            background: rgb(241, 241, 241);
-            width: 100%;
-            height: 100%;
-            display: grid;
-            place-items: center;
-            border: 1px solid green;
-        }
+    transform: scale(0.98);
+}
+
+.text {
+    max-width: 55px;
+}
+
+.image {
+    background: rgb(241, 241, 241);
+    width: 100%;
+    height: 85%;
+    display: grid;
+    place-items: center;
+    margin-top: -1.3rem;
+}
