@@ -8,6 +8,13 @@ import Login from "./pages/Login/Login";
 import CreateFooter from "./shared/Footer/CretaeFooter";
 import Loading from "./shared/Loading/Loading";
 import Cart from "./pages/Cart/Cart";
+
+
+//! socket
+
+// import io from 'socket.io-client'
+// export const socket = io('')
+
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Home from './components/Home/Home';
