@@ -32,7 +32,7 @@ export const changeCartCount = (op) => {
 }
 export const getFullMenu = () => {
   return async (dispatch) => {
-    console.log('a')
+
     const result = await axios.get(`http://localhost:3001/menu/get`)
     let data = result.data;
     dispatch({ type: GET_FULL_MENU, payload: data })

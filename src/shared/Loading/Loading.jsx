@@ -3,7 +3,7 @@ import style from "./loading.module.css";
 import logo from "./1675954366314.png";
 
 export default function Loading({ notfound }) {
-  console.log(notfound);
+ 
   return (
     <div className={style.container}>
       <img src={logo} className={style.ball} alt="logo" />
