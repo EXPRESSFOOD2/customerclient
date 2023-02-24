@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import style from "./CreateLogin.module.css";
 import img from "./image/logoSinFondo.png";

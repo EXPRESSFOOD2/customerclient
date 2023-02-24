@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import style from "./ButtonFilter.module.css";
+// import style from "./ButtonFilter.module.css";
 import { useDispatch } from "react-redux";
 import { filterMenu } from "../..//redux/actions/index";
 const Button = (props) => {

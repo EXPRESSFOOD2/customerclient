@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import style from "./form.module.css";
 import { getImageUrl } from "../../redux/actions/index"
