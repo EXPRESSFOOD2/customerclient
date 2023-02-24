@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { GET_FULL_MENU, GET_MENU_BY_ID, GET_FULL_INGREDIENTS, FILTER_MENU, GET_MENU_RECOMMENDED, ERROR, RESET_FILTER, CHANGE_CART_COUNT } from "../actions/index"
 
 // @initialState == estado inicial del REDUCER

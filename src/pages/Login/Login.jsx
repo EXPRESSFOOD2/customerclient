@@ -3,7 +3,7 @@ import CreateLogin from "../../components/Login/CreateLogin";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const Login = (props) => {
+const Login = () => {
   const emailRegex =
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 

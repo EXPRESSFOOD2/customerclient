@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import style from "./form.module.css";
 import formIMG from "./image/formImg.jpg";
