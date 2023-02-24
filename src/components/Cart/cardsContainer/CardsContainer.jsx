@@ -14,14 +14,14 @@ export default function CardsContainer() {
       <div className={style.title}>Cart</div>
       <div className={style.titleCol}> </div>
       {menus.length
-        ? cart.map((item, i) => {
+        ? cart?.map((item,i) => {
           
             return (
               <Card
                 key={i}
                 id={i}
                 data={item}
-                menu={menus.find((menu) => menu.id + "" === "" + item.id)}
+                menu={menus?.find((menu) => menu.id + "" === "" + item.id)}
               />
             );
           })

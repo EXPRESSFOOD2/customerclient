@@ -56,24 +56,15 @@ const CreateLogin = ({ formik }) => {
           <a href="/register"> ¡Registrate! </a>
         </div>
         <div className={style.logins}>
-
-
-            <button type="submit" onClick={()=> window.location.href='https://apiexpressfood.up.railway.app/auth/google'}>Google</button>
-          </div>
-
-         
-           
-           
-              
-         
-          
-
-       
-            
-           
-              
-            
-     
+          <button
+            type="submit"
+            onClick={() =>
+              (window.location.href =
+                "https://apiexpressfood.up.railway.app/auth/google")
+            }
+          >
+            Google
+          </button>
         </div>
       </div>
     </div>
