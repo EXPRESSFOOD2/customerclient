@@ -28,7 +28,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path={"/"} element={<Home />}></Route>
-        {/* <Route path="/register" element={<Register />}></Route> */}
+        <Route path="/register" element={<Register />}></Route> 
         <Route path="/store" element={<Store />}></Route>
         <Route path="/store/menu/:id" element={<DetailMenu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
