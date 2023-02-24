@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React from "react";
 
 import style from "./card.module.css";
 
@@ -9,7 +9,9 @@ import { changeCartTotal, changeCartCount } from "../../../redux/actions";
 
 export default function Card({ data, menu, id, deleteItem, handleChange }) {
   const totalRedux = useSelector((state) => state.cartTotal);
-  const [count, setCount] = useState(data.quantity);
+  let count = data.quantity;
+  // const [count, setCount] = useState(data.quantity);
+  console.log(count);
   const dispatch = useDispatch();
   const totalPrice = menu.price * count;
 
@@ -25,16 +27,16 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
     if (op === "-") {
       if (aux[id].quantity === 1) {
         aux = aux.filter((i) => i.id != menu.id);
-
+        localStorage.setItem("order", JSON.stringify(aux));
         deleteItem(menu.id);
       } else {
         aux[id].quantity -= 1;
-        setCount(aux[id].quantity);
+        count = aux[id].quantity;
       }
       localStorage.setItem("totalOrder", totalRedux - menu.price);
     } else {
       aux[id].quantity += 1;
-      setCount(aux[id].quantity);
+      count = aux[id].quantity;
       localStorage.setItem("totalOrder", totalRedux + menu.price);
     }
     handleChange(aux);

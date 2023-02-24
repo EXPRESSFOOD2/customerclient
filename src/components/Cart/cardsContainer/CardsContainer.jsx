@@ -17,8 +17,6 @@ export default function CardsContainer() {
     setCart(aux);
   }
 
-  // useEffect(() => {
-  // }, [cart]);
   return (
     <div className={style.container}>
       <div className={style.title}>Cart</div>
