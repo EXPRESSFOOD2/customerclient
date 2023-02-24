@@ -59,7 +59,7 @@ const CreateLogin = ({ formik }) => {
           <button
             type="submit"
             onClick={() =>
-              (window.location.href = "http://localhost:3001/auth/google")
+              (window.location.href = "/auth/google")
             }
           >
             Google
