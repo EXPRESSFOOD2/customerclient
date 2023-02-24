@@ -1,6 +1,5 @@
-
 /* eslint-disable react/prop-types */
-import React, { useState} from "react";
+import React from "react";
 
 import style from "./card.module.css";
 
@@ -8,42 +7,39 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCartTotal, changeCartCount } from "../../../redux/actions";
 
-export default function Card({ data, menu, id }) {
+export default function Card({ data, menu, id, deleteItem, handleChange }) {
   const totalRedux = useSelector((state) => state.cartTotal);
-  const [count, setCount] = useState(data.quantity);
+  let count = data.quantity;
+  // const [count, setCount] = useState(data.quantity);
+  console.log(count);
   const dispatch = useDispatch();
   const totalPrice = menu.price * count;
 
-  //meter productos en un estado 
+  //meter productos en un estado
 
   // let totalOrder = localStorage.getItem("totalOrder") || 0;
   // totalOrder = JSON.parse(totalOrder);
 
   const handleChangeCount = (op) => {
     const data = localStorage.getItem("order");
-    const aux = JSON.parse(data);
-    
+    let aux = JSON.parse(data);
 
     if (op === "-") {
-      //GENERA ERROR A VECES NI IDEA PORQUE!!!
-      console.log(aux)
-      console.log(id)
-      console.log(aux[id])
       if (aux[id].quantity === 1) {
-        aux.splice(id, 1);
-        //useRef
-        document.getElementById(`card${id}`).remove();
-        //no hacer esto
+        aux = aux.filter((i) => i.id != menu.id);
+        localStorage.setItem("order", JSON.stringify(aux));
+        deleteItem(menu.id);
       } else {
         aux[id].quantity -= 1;
-        setCount(aux[id].quantity);
+        count = aux[id].quantity;
       }
-      localStorage.setItem("totalOrder", (totalRedux - menu.price))
-    } else {      
+      localStorage.setItem("totalOrder", totalRedux - menu.price);
+    } else {
       aux[id].quantity += 1;
-      setCount(aux[id].quantity);
-      localStorage.setItem("totalOrder", (totalRedux + menu.price))
+      count = aux[id].quantity;
+      localStorage.setItem("totalOrder", totalRedux + menu.price);
     }
+    handleChange(aux);
     dispatch(changeCartCount(op));
     dispatch(changeCartTotal({ type: op, value: menu.price }));
     localStorage.setItem("order", JSON.stringify(aux));
