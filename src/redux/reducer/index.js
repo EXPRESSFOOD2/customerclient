@@ -35,18 +35,8 @@ const rootReducer = (state = initialState, action) => {
             const result = action.payload === "-" ? state.cartCount - 1 : state.cartCount + 1;
             return { ...state, cartCount: result }
         case FILTER_MENU:
-            let retorno = state.filteredMenu;
-            for (let i = 0; i < action.payload.length; i++) {
-                let j = 0;
-                let aux = []
-                while( j < retorno.length){
-                    if ( retorno[j].Tags.includes(action.payload[i]) ) aux.push(retorno[j]);
-                    j++;
-                }
-                retorno = aux;
-            }
             return {
-                    ...state, filteredMenu: [ ...retorno]
+                    ...state, filteredMenu: [ ...aplyFilter(action.payload, state.filteredMenu)]
                 }
         case ERROR:
             return { ...state, error: action.payload }
@@ -54,7 +44,7 @@ const rootReducer = (state = initialState, action) => {
             return { ...state };
     }
 }
-/*
+
 const aplyFilter = (filter, items) => {
     let retorno = items;
     for (let i = 0; i < filter.length; i++) {
@@ -68,5 +58,5 @@ const aplyFilter = (filter, items) => {
     }
     return retorno;
 }
-*/
+
 export default rootReducer;
