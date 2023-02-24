@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: row wrap;
+  position: relative;
+
+  height: 60vw;
+  width: 80%;
+  left: 10%;
+  top: 15%;
+}
+
+.containerPagination {
+  height: 3vw;
+  right: 20vw;
+  top: 0.5vw;
+  left: 53%;
+  position: absolute;
+  width: 20vw;
+}
+
+.divFilters {
+  display: flex;
+  flex-direction: column wrap;
+
+  width: 25vw;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.containerButtonFilters {
+  display: grid;
+
+  justify-items: center;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  position: absolute;
+  height: auto;
+
+  background-color: #eaeaea;
+  border-radius: 3%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+
+  margin-left: 5vw;
+  margin-top: -10vw;
+  width: 20%;
+}
+
+.tagFilter {
+  position: absolute;
+  margin-bottom: 65%;
+  left: 5%;
+}
+
+.containerMenu {
+  display: grid;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  justify-items: center;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  position: relative;
+
+  height: 45vw;
+  width: 50vw;
+  top: 5vw;
+  left: 1vw;
+  background-color: #eaeaea;
+  border-radius: 3%;
+
+  position: relative;
+
+  height: 45vw;
+  width: 50vw;
+  top: 5vw;
+  left: 1vw;
+  background-color: #eaeaea;
+  border-radius: 3%;
+}
+
+.rows {
+  display: flex;
+  flex-direction: row;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(10vw, auto);
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-left: 50vw;
+  top: 5rem;
+
+  background: #d9d9d9;
+  border-radius: 15px;
+}
+
+.button {
+  color: #090909;
+  padding: 0.5% 1%;
+  font-size: 80%;
+  text-align: center;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+      -6px -6px 12px #ffffff;
+  width: 80%;
+}
+
+.buttonactive {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+      inset -4px -4px 12px #ffffff;
+  padding: 0.5% 1%;
+  font-size: 80%;
+  text-align: center;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+}

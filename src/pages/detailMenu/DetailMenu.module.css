@@ -1,0 +1,86 @@
+.page {
+  height: 37rem;
+  display: grid;
+  place-items: center;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+  background-color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.253);
+}
+
+.detail {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 55%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: 28rem;
+  height: 26rem;
+  border-radius: 0.5rem;
+  margin-left: -1rem;
+}
+
+.info {
+  width: 40%;
+  text-align: justify;
+  margin-top: -2rem;
+  padding-right: 3rem;
+}
+.info h1 {
+  font-size: 3rem;
+}
+
+.toCart {
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Rubik one", sans-serif;
+  font-weight: 900;
+  font-size: medium;
+  width: 11rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.toCart:hover {
+  color: black;
+}
+
+.punctuation {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 10rem;
+}
+.punctuation div {
+  display: grid;
+  place-items: center;
+  margin-top: -1rem;
+}
+.starWith {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.star {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  fill: yellow;
+}

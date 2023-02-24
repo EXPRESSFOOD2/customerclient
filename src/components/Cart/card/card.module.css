@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 160px;
+
+  border-bottom: 2px solid rgba(194, 194, 194, 0.652);
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 70%;
+  width: 25%;
+}
+.infoCol {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  height: 70%;
+  width: 55%;
+
+  border-right: 2px solid rgba(201, 201, 201, 0.621);
+}
+
+.infoCol > p {
+  margin: 0;
+  color: rgb(135, 135, 135);
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 4px 10px;
+  background-color: rgb(216, 254, 216);
+  border: rgb(148, 254, 115) solid 1px;
+  color: rgb(39, 108, 34);
+  font-weight: lighter;
+}
+
+.infoCol > h3 {
+  margin: 0;
+  color: rgb(13, 12, 34);
+  font-weight: normal;
+}
+
+.infoCol > h5 {
+  margin: 0;
+  font-weight: normal;
+}
+.col > img {
+  width: 80px;
+  height: 80px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.buyCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  height: 70%;
+  width: 20%;
+}
+
+.cantCont {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2px;
+}
+
+.cantCont > span {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: #e4e4e4 solid 2px;
+  border-radius: 3px;
+  text-align: center;
+
+  color: rgb(145, 144, 144);
+
+  cursor: pointer;
+
+  padding: 3px;
+}
+/* button styles */
+.buttonsCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+  gap: 1em;
+}
+
+.buttonsCol > span {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  border-radius: 360px;
+  color: white;
+  background-color: rgba(143, 20, 20, 1);
+  transition: 0.2s;
+}
+
+.buttonsCol > span:hover {
+  background-color: rgb(234, 59, 59);
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+}
