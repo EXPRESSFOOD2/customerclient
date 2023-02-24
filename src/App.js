@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/home/Home'
-// import Register from './pages/register/Register';
+import Register from './pages/register/Register';
 import Store from './pages/store/Store'
 import Navbar from "./shared/navbar/Navbar";
 import DetailMenu from "./pages/detailMenu/DetailMenu";
@@ -28,7 +28,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path={"/"} element={<Home />}></Route>
-        {/* <Route path="/register" element={<Register />}></Route> */}
+        <Route path="/register" element={<Register />}></Route> 
         <Route path="/store" element={<Store />}></Route>
         <Route path="/store/menu/:id" element={<DetailMenu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
