@@ -5,23 +5,26 @@ import ButtonFilter from "../..//components/buttonsFilter/ButtonFilter";
 import style from "./Store.module.css";
 import { NavLink } from "react-router-dom";
 import Pagination from "../../shared/Pagination/Pagination";
-import { resetFilter } from "../../redux/actions";
+import { getTagsAction, processFilterAction } from "../../redux/actions";
 
 export default function Store() {
+      // Hooks para manejar las Busquedas
+  const dispatch = useDispatch();                               // Dispachador de Redux
+  useEffect(() => { dispatch(getTagsAction()) },[dispatch])     // Precarga los elementos a mostrar
+
   const menu = useSelector((state) => state.filteredMenu); // Hook de traer data del estado global
-  const ingredients = useSelector((state) => state.allIngredients); // Hook de traer data del estado global
+  const tags = useSelector((state) => state.tags); // Hook de traer data del estado global
+
   const [pagina, setPagina] = useState(1);
   const [porPagina] = useState(9);
   const [filters, setFilters] = useState([]);
+
   let maximo = Math.ceil(menu.length / porPagina);
-  const dispatch = useDispatch();
+
 
   useEffect(()=>{
-    if(!filters.length){
-      dispatch(resetFilter())
-      }
+    dispatch(processFilterAction(filters))
   }, [filters, dispatch])
- 
 
   let products = menu.map((menuItem, index) => {
     return (
@@ -31,30 +34,28 @@ export default function Store() {
     );
   });
   // eslint-disable-next-line array-callback-return
-  let ingredientsButtons = ingredients.map((ingredient, index) => {
-    if(ingredient.layer >0){
+  let tagsButtons = tags.map((tag, index) => {
     return (
-      filters.includes(ingredient.name) ?
-        <ButtonFilter key={index} style={style.buttonactive} state={filters} setState={setFilters} name={ingredient.name} /> :
-        <ButtonFilter key={index} style={style.button} state={filters} setState={setFilters} name={ingredient.name} />
-    )}
+        filters.includes(tag.name)
+          ? <ButtonFilter key={index} style={style.buttonactive} state={filters} setState={setFilters} name={tag.name} />
+          : <ButtonFilter key={index} style={style.button} state={filters} setState={setFilters} name={tag.name} />
+    );
+
   });
 
- 
   return (
     <div className={style.container}>
    
       <div className={style.divFilters}>
-          <h3 className={style.tagFilter}>Por ingredientes:</h3>
-     <div className={style.containerButtonFilters}>{     ingredientsButtons}</div>
+          <h3 className={style.tagFilter}>Por Tags:</h3>
+     <div className={style.containerButtonFilters}>{tagsButtons}</div>
       
          
         </div>
         <div className={style.containerPagination}>
       <Pagination pagina={pagina} setPagina={setPagina} maximo={maximo} />
       </div>
-   
-       
+
         <div className={style.containerMenu}>
           {products.slice((pagina - 1) * porPagina, pagina * porPagina)}
         </div>
