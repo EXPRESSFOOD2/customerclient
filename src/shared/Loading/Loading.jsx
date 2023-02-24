@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import style from "./loading.module.css";
 import logo from "./1675954366314.png";
