@@ -1,31 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./card.module.css";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import { useDispatch } from "react-redux";
-import { changeCartCount } from "../../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { changeCartTotal, changeCartCount } from "../../../redux/actions";
 
 export default function Card({ data, menu, id }) {
+  const totalRedux = useSelector((state) => state.cartTotal);
   const [count, setCount] = useState(data.quantity);
   const dispatch = useDispatch();
+  const totalPrice = menu.price * count;
+
+  let totalOrder = localStorage.getItem("totalOrder") || 0;
+  totalOrder = JSON.parse(totalOrder);
+
   const handleChangeCount = (op) => {
     const data = localStorage.getItem("order");
     const aux = JSON.parse(data);
+    
 
     if (op === "-") {
+      //GENERA ERROR A VECES NI IDEA PORQUE!!!
+      console.log(aux)
+      console.log(id)
+      console.log(aux[id])
       if (aux[id].quantity === 1) {
         aux.splice(id, 1);
-        dispatch(changeCartCount("-"));
         document.getElementById(`card${id}`).remove();
       } else {
         aux[id].quantity -= 1;
         setCount(aux[id].quantity);
       }
-    } else {
+      localStorage.setItem("totalOrder", (totalRedux - menu.price))
+    } else {      
       aux[id].quantity += 1;
       setCount(aux[id].quantity);
+      localStorage.setItem("totalOrder", (totalRedux + menu.price))
     }
-
+    dispatch(changeCartCount(op));
+    dispatch(changeCartTotal({ type: op, value: menu.price }));
     localStorage.setItem("order", JSON.stringify(aux));
   };
 
@@ -57,9 +70,10 @@ export default function Card({ data, menu, id }) {
           <span style={{ color: "black" }}>{count}</span>
           <span onClick={(e) => handleChangeCount("+")}>+</span>
         </div>
-
-        {" $"}
-        {menu.price + ".00"}
+        <div>
+          {" $"}
+          {totalPrice + ".00"}
+        </div>
       </div>
       <div></div>
     </div>
