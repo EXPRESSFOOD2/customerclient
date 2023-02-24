@@ -19,6 +19,7 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "socket.io-client": "^4.6.1",
     "swiper": "^9.0.5",
     "web-vitals": "^2.1.4",
     "yup": "^1.0.0"
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react": "^7.32.2",
     "webpack": "^5.75.0"
   }
 }

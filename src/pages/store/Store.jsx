@@ -37,7 +37,7 @@ export default function Store() {
       filters.includes(ingredient.name) ?
         <ButtonFilter key={index} style={style.buttonactive} state={filters} setState={setFilters} name={ingredient.name} /> :
         <ButtonFilter key={index} style={style.button} state={filters} setState={setFilters} name={ingredient.name} />
-    )};
+    )}
   });
 
  

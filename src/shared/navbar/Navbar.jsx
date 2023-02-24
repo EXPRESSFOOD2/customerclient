@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./navbar.module.css";
-import logo from "./logo.png";
+import logo from "./logo.jpg";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";

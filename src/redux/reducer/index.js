@@ -1,3 +1,4 @@
+
 import {
   GET_FULL_MENU,
   GET_MENU_BY_ID,
@@ -9,6 +10,8 @@ import {
   CHANGE_CART_COUNT,
   CHANGE_CART_TOTAL,
 } from "../actions/index";
+/* eslint-disable no-case-declarations */
+
 
 // @initialState == estado inicial del REDUCER
 const initialState = {

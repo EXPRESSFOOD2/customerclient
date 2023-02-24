@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+
+/* eslint-disable react/prop-types */
+import React, { useState,useEffect} from "react";
+
 import style from "./card.module.css";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -66,9 +69,9 @@ export default function Card({ data, menu, id }) {
       </div>
       <div className={style.buyCont}>
         <div className={style.cantCont}>
-          <span onClick={(e) => handleChangeCount("-")}>-</span>
+          <span onClick={() => handleChangeCount("-")}>-</span>
           <span style={{ color: "black" }}>{count}</span>
-          <span onClick={(e) => handleChangeCount("+")}>+</span>
+          <span onClick={() => handleChangeCount("+")}>+</span>
         </div>
         <div>
           {" $"}
