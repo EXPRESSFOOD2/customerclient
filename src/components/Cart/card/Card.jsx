@@ -1,6 +1,6 @@
 
 /* eslint-disable react/prop-types */
-import React, { useState,useEffect} from "react";
+import React, { useState} from "react";
 
 import style from "./card.module.css";
 
@@ -14,8 +14,10 @@ export default function Card({ data, menu, id }) {
   const dispatch = useDispatch();
   const totalPrice = menu.price * count;
 
-  let totalOrder = localStorage.getItem("totalOrder") || 0;
-  totalOrder = JSON.parse(totalOrder);
+  //meter productos en un estado 
+
+  // let totalOrder = localStorage.getItem("totalOrder") || 0;
+  // totalOrder = JSON.parse(totalOrder);
 
   const handleChangeCount = (op) => {
     const data = localStorage.getItem("order");
@@ -29,7 +31,9 @@ export default function Card({ data, menu, id }) {
       console.log(aux[id])
       if (aux[id].quantity === 1) {
         aux.splice(id, 1);
+        //useRef
         document.getElementById(`card${id}`).remove();
+        //no hacer esto
       } else {
         aux[id].quantity -= 1;
         setCount(aux[id].quantity);

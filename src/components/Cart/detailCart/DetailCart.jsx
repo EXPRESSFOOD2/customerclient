@@ -19,11 +19,11 @@ export default function DetailCart() {
 
   return (
     <div className={style.container}>
-      {total > 0 ? (
+      {totalRedux > 0 ? (
         <>
           <div className={style.title}>
             {" "}
-            <h2>Total pedido: ${total} </h2>
+            <h2>Total pedido: ${totalRedux} </h2>
           </div>
           <button onClick={hanldePayment}>Pagar!!</button>
         </>
