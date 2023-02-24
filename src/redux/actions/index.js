@@ -57,13 +57,13 @@ export const filterMenu = (category) => (dispatch) => {
 
   dispatch({ type: FILTER_MENU, payload: category })
 }
-export const resetFilter = (boolean) => (dispatch) => {
+export const resetFilter = () => (dispatch) => {
 
   dispatch({ type: RESET_FILTER })
 }
 
 export const getImageUrl = (imageStr, imageFn) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       let result = await axios.post("/processImage/post", { imageStr: imageStr })
       imageFn(result.data)
