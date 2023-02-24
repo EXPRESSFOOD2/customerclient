@@ -53,13 +53,13 @@ export default function Navbar() {
             <p className={location === "login" ? style.current : ""}>Login</p>
           </NavLink>
         )}
-        {!userName && (
+        {/* {!userName && (
           <NavLink to={"/register"}>
             <p className={location === "register" ? style.current : ""}>
               Registarte
             </p>
           </NavLink>
-        )}
+        )} */}
         {userName && (
           <NavLink to="/" onClick={() => localStorage.removeItem("user")}>
             <p className={location === "login" ? style.current : ""}>Salir</p>
