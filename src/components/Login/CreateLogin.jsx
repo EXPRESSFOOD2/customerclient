@@ -5,6 +5,7 @@ import img from "./image/logoSinFondo.png";
 
 const CreateLogin = ({ formik }) => {
   return (
+<>
     <div className={style.superDiv}>
       <div className={style.createLogin}>
         <div className={style.prev}>
@@ -75,8 +76,7 @@ const CreateLogin = ({ formik }) => {
             
      </div>
         </div>
-      </div>
-    </div>
+    </>
   );
 };
 
