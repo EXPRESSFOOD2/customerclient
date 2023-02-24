@@ -10,6 +10,26 @@ export const ERROR = 'ERROR';
 export const RESET_FILTER = 'RESET_FILTER';
 export const CHANGE_CART_COUNT = 'CHANGE_CART_COUNT'
 
+//*
+export const GET_TAGS = "GET_TAGS";
+
+export const processFilterAction = (filters) => async (dispatch) => {
+    //dispatch(getFullMenu());    Cuando como demora en ejecutarse... sobreescribe el filtrado
+    dispatch(resetFilter());
+    dispatch({type: FILTER_MENU, payload: filters});
+
+}
+export const getTagsAction = () => {
+  return async (dispatch) => {
+    try {
+      const result = await axios.get(`http://localhost:3001/tags/get`);
+      let data = result.data;
+      dispatch({type: GET_TAGS, payload: data})
+    } catch (error) {
+      dispatch({ type: ERROR, payload: error.response.data.error });
+    }
+  }
+}
 
 export const getRecommendedMenu = () => {
   return async (dispatch) => {
@@ -32,12 +52,12 @@ export const changeCartCount = (op) => {
 }
 export const getFullMenu = () => {
   return async (dispatch) => {
-    console.log('a')
     const result = await axios.get(`http://localhost:3001/menu/get`)
     let data = result.data;
     dispatch({ type: GET_FULL_MENU, payload: data })
   }
 }
+
 export const getFullIngredients = () => {
   return async (dispatch) => {
     const result = await axios.get(`http://localhost:3001/ingredients/get`)
@@ -70,27 +90,9 @@ export const getImageUrl = (imageStr, imageFn) => {
       //! ?! manejar Success && Error
       return result;
     } catch (error) {
-      console.error(error)
+      dispatch({ type: ERROR, payload: error.response.data.error });
     }
   }
 }
 
-/*
 
-function dispatchSort(sort) {
-  return async(dispatch) => {
-    switch( sort ){
-      case "desc":
-        return await dispatch(sortRecipesDesc());
-      case "asc":
-        return await dispatch(sortRecipesAsc());
-      case "high":
-        return await dispatch(sortRecipesHighScore())
-      case "low":
-        return await dispatch(sortRecipesLowScore())
-      default:
-        return await dispatch(unSorted())
-    }
-  }
-}
-*/
