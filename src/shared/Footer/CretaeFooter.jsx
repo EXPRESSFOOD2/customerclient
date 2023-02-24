@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./CreateFooter.module.css";
 
-const CreateFooter = (props) => {
+const CreateFooter = () => {
   return (
     <div className={style.CreateFooter}>
       <div className={style.top}>
