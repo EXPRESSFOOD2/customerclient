@@ -31,27 +31,35 @@ export const getTagsAction = () => {
   }
 }
 
+
 export const getRecommendedMenu = () => {
   return async (dispatch) => {
-    try {
-      const result = await axios.get(`http://localhost:3001/menu/get/recommended`)
+    try {  
+
+      const result = await axios.get(`/menu/get/recommended`)
+
       let data = result.data;
-      dispatch({ type: GET_MENU_RECOMMENDED, payload: data })
+      dispatch({ type: GET_MENU_RECOMMENDED, payload: data });
     } catch (error) {
       dispatch({ type: ERROR, payload: error.response.data.error });
     }
-
-  }
-}
+  };
+};
 
 export const changeCartCount = (op) => {
   return async (dispatch) => {
+    dispatch({ type: CHANGE_CART_COUNT, payload: op });
+  };
+};
+export const changeCartTotal = (obj) => {  
+  return async (dispatch) => {
+    dispatch({ type: CHANGE_CART_TOTAL, payload: obj });
+  };
+};
 
-    dispatch({ type: CHANGE_CART_COUNT, payload: op })
-  }
-}
 export const getFullMenu = () => {
   return async (dispatch) => {
+
     const result = await axios.get(`http://localhost:3001/menu/get`)
     let data = result.data;
     dispatch({ type: GET_FULL_MENU, payload: data })
@@ -60,39 +68,49 @@ export const getFullMenu = () => {
 
 export const getFullIngredients = () => {
   return async (dispatch) => {
-    const result = await axios.get(`http://localhost:3001/ingredients/get`)
+
+    const result = await axios.get(`/ingredients/get`)
+
     let data = result.data;
-    dispatch({ type: GET_FULL_INGREDIENTS, payload: data })
-  }
-}
+    dispatch({ type: GET_FULL_INGREDIENTS, payload: data });
+  };
+};
 
 export const getMenuById = (id) => {
   return async (dispatch) => {
-    const result = await axios.get(`http://localhost:3001/menu/get/${id}`)
+    const result = await axios.get(`/menu/get/${id}`)
+
     let data = result.data;
-    dispatch({ type: GET_MENU_BY_ID, payload: data })
-  }
-}
+    dispatch({ type: GET_MENU_BY_ID, payload: data });
+  };
+};
 export const filterMenu = (category) => (dispatch) => {
 
   dispatch({ type: FILTER_MENU, payload: category })
 }
-export const resetFilter = (boolean) => (dispatch) => {
+export const resetFilter = () => (dispatch) => {
 
   dispatch({ type: RESET_FILTER })
 }
 
+
 export const getImageUrl = (imageStr, imageFn) => {
-  return async (dispatch) => {
+  return async () => {
     try {
-      let result = await axios.post("http://localhost:3001/processImage/post", { imageStr: imageStr })
+
+      let result = await axios.post("/processImage/post", { imageStr: imageStr })
       imageFn(result.data)
+
       //! ?! manejar Success && Error
       return result;
     } catch (error) {
+
       dispatch({ type: ERROR, payload: error.response.data.error });
+
+
+
     }
-  }
-}
+  };
+};
 
 

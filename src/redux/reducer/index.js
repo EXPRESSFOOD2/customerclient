@@ -1,4 +1,6 @@
-import { GET_FULL_MENU, GET_MENU_BY_ID, GET_TAGS, GET_FULL_INGREDIENTS, FILTER_MENU, GET_MENU_RECOMMENDED, ERROR, RESET_FILTER, CHANGE_CART_COUNT } from "../actions/index"
+
+import { GET_FULL_MENU, GET_MENU_BY_ID, GET_TAGS, GET_FULL_INGREDIENTS, FILTER_MENU, 
+GET_MENU_RECOMMENDED, ERROR, RESET_FILTER, CHANGE_CART_COUNT } from "../actions/index"
 
 // @initialState == estado inicial del REDUCER
 const initialState = {
@@ -11,11 +13,13 @@ const initialState = {
     isFiltered: false,
     cartCount: 0,
     error: ''
+
 };
 
 // @state   = Estado Actual
 // @action  = Accion despachada
 const rootReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case GET_TAGS:
             return { ...state, tags: [...action.payload] }
@@ -70,3 +74,5 @@ const aplyFilter = (filter, items) => {
 }
 */
 export default rootReducer;
+
+
