@@ -28,7 +28,7 @@ export default function Store() {
 
   let products = menu.map((menuItem, index) => {
     return (
-      <NavLink key={index} to={`/store/menu/${menuItem.id}`}>
+      <NavLink key={index} to={`/menu/${menuItem.id}`}>
         <ProductCard key={index} menuItem={menuItem} />
       </NavLink>
     );

@@ -28,9 +28,8 @@ function App() {
       <Routes>
         <Route exact path={"/"} element={<Home />} />
         <Route path="/store" element={<Store />}></Route>
-        <Route path="/store/menu/:id" element={<DetailMenu />}></Route>
+        <Route path="/menu/:id" element={<DetailMenu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/cart/login" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Loading notfound={true} />}></Route>
       </Routes>
