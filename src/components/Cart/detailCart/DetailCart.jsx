@@ -1,21 +1,22 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCartTotal } from "../../../redux/actions";
 import style from "./detailCart.module.css";
+import { sendPayment } from "../../../redux/actions";
 
 export default function DetailCart() {
   const totalRedux = useSelector((state) => state.cartTotal);
   let total = window.localStorage.getItem("totalOrder");
   total = JSON.parse(total);
   const dispatch = useDispatch();
+  let cart = JSON.parse( window.localStorage.getItem("order")) 
 
   useEffect(()=>{
     dispatch(changeCartTotal({type:"init", value: total}))
   },[])
 
-  function hanldePayment() {
-    alert(window.localStorage.getItem("order") || "[]");
-  }
+
 
   return (
       <div className={style.container}>
@@ -26,7 +27,7 @@ export default function DetailCart() {
                           <h3>Total pedido:</h3>
                           <span>${totalRedux}.00</span>
                       </div>
-                      <button onClick={hanldePayment}>Finalizar la compra</button>
+                      <button onClick={()=>sendPayment(cart)}>Finalizar la compra</button>
                   </div>
               </>
           ) : (

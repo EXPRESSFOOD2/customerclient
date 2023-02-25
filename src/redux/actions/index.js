@@ -102,3 +102,9 @@ export const getImageUrl = (imageStr, imageFn) => {
     }
   };
 };
+
+export const sendPayment = async(cart) => {
+ const postPayment =  await axios.post("/payments/create",cart )
+
+return window.location.href = postPayment.data
+};
