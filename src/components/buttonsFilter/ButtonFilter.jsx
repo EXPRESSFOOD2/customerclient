@@ -1,19 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+
 // import style from "./ButtonFilter.module.css";
-import { useDispatch } from "react-redux";
-import { filterMenu } from "../..//redux/actions/index";
+// import { useDispatch } from "react-redux";
+// import { filterMenu } from "../..//redux/actions/index";
+
 const Button = (props) => {
-  const dispatch = useDispatch();
+
   return (
     <button
       className={props.style}
       disabled={props.disabled}
       onClick={(e) => {
-        dispatch(filterMenu(e.target.value));
+        
+        //dispatch(filterMenu(e.target.value));
         if(!props.state.includes(e.target.value))  props.setState([...props.state, e.target.value])
         else {
-          props.setState(props.state.filter(ingredient => ingredient !== e.target.value))
+          const info = props.state?.filter(tag => tag !== e.target.value)
+          props.setState([...info])
         }
      
       }}

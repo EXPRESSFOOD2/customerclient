@@ -1,141 +1,95 @@
 .superDiv {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("./image/fondoMadera.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  max-width: 100vw;
-  height: 660px;
+    background-color: rgba(70, 69, 69, 0.637);
+    width: 100vw;
+    height: 110vh;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 10;
 }
 
 .createLogin {
-  position: absolute;
-  width: 550px;
-  height: 550px;
-  left: 400px;
-  top: 50px;
-
-  background: rgba(16, 16, 16, 0.8);
-  border-radius: 5px;
+    width: 20rem;
+    height: fit-content;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: "Rubik", sans-serif;
+    color: black;
+    justify-content: center;
+    align-items: center;
 }
 
-.prev {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+.image {
+    width: 100.73px;
+    height: 100.73px;
+    transform: rotate(-14.54deg);
 }
 
-.prev > p {
-  color: #f5f5f5;
-  font-weight: 600;
-  font-size: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 5px;
+.loginsGo {
+    width: 15rem;
+    height: fit-content;
+    border: 1px solid rgb(228, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 2rem;
+    gap: .5rem;
+    padding: .3rem;
+    margin-top: 1rem;
+    /* background-color: #f5f5f5; */
 }
 
-.prev .image {
-  width: 100.73px;
-  height: 100.73px;
-  left: 214px;
-  top: 71.29px;
-  transform: rotate(-14.54deg);
+.loginsGo :hover {
+    transform: scale(1.1);
 }
 
-.form {
-  /* background-color: aqua; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.loginsGo img {
+    width: 2rem;
+    height: 2rem;
+}
+.loginsGo button {
+    background: none;
+    border: none;
+    color: rgb(228, 0, 0);
+    font-family: "Rubik", sans-serif;
+    font-size: larger;
+    font-weight: 1000;
+    cursor: pointer;
+    position: static;
 }
 
-.col {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+.loginsFa {
+    width: 15rem;
+    height: fit-content;
+    /* border: 1px solid #fcac03; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 2rem;
+    gap: .5rem;
+    padding: .3rem;
+    margin-top: 1rem;
+    background-color: #3b5998;
 }
 
-.col > label {
-  color: #f5f5f5;
-  font-size: 15px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+.loginsFa :hover {
+    transform: scale(1.1);
 }
 
-.col .errorText {
-  max-width: 329px;
-  color: rgb(247, 116, 116);
-  font-size: 13px;
+.loginsFa img {
+    width: 2rem;
+    height: 2rem;
 }
-
-.col > input {
-  border: 1px solid #f5f5f5;
-  border-radius: 5px;
-  background-color: transparent;
-  width: 329px;
-  height: 37px;
-  margin-top: 5px;
-  color: #f5f5f5;
-}
-
-.errorInput {
-  border: 2px rgb(247, 116, 116) solid !important;
-}
-
-.col > a {
-  color: #f5f5f5;
-  font-size: 13px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.logins > button {
-  width: 335px;
-  height: 40px;
-
-  background: #8f1414;
-  border-radius: 5px;
-  border: 0px;
-  font-weight: 300;
-  font-size: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #f5f5f5;
-  margin-top: 5px;
-}
-
-.checkbox {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-right: 230px;
-}
-
-.checkbox > label {
-  color: #f5f5f5;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.question {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin: 10px;
-}
-
-.question > p {
-  color: #b7b5b5;
-  margin: 0%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.question > a {
-  text-decoration: none;
-  color: #f5f5f5;
-  margin-left: 5px;
+.loginsFa button {
+    background: none;
+    border: none;
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: larger;
+    font-weight: 1000;
+    cursor: pointer;
+    position: static;
 }

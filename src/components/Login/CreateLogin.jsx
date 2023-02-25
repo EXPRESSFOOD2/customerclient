@@ -3,15 +3,15 @@ import React from "react";
 import style from "./CreateLogin.module.css";
 import img from "./image/logoSinFondo.png";
 
-const CreateLogin = ({ formik }) => {
+const CreateLogin = () => {
   return (
-    <div className={style.superDiv}>
-      <div className={style.createLogin}>
-        <div className={style.prev}>
-          <img src={img} alt="not found" className={style.image} />
-          <p>¡Te damos la bienvenida!</p>
-        </div>
-        <form action="" className={style.form} onSubmit={formik.handleSubmit}>
+      <div className={style.superDiv}>
+          <div className={style.createLogin}>
+              {/* <div className={style.prev}> */}
+              <img src={img} alt="not found" className={style.image} />
+              <p>Por favor logueate para hacer tu pago</p>
+              {/* </div> */}
+              {/* <form action="" className={style.form} onSubmit={formik.handleSubmit}>
           <div className={style.col}>
             <label htmlFor="email">E-mail</label>
             <input
@@ -50,23 +50,28 @@ const CreateLogin = ({ formik }) => {
             <input type="checkbox" name="" id="" value="rememberMe" />
             <label htmlFor="">Recuerdame</label>
           </div>
-        </form>
-        <div className={style.question}>
+        </form> */}
+              {/* <div className={style.question}>
           <p>¿primera vez en Space Food? </p>{" "}
           <a href="/register"> ¡Registrate! </a>
-        </div>
-        <div className={style.logins}>
-          <button
-            type="submit"
-            onClick={() =>
-              (window.location.href = "http://localhost:3001/auth/google")
-            }
-          >
-            Google
-          </button>
-        </div>
+        </div> */}
+              <div className={style.loginsGo}>
+                  <img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" alt="" />
+                  <button
+                      type="submit"
+                      onClick={() =>
+                          (window.location.href =
+                              "https://apiexpressfood.up.railway.app/auth/google")
+                      }>
+                      Google
+                  </button>
+              </div>
+              <div className={style.loginsFa}>
+                  <img src="https://cdn-icons-png.flaticon.com/128/747/747543.png" alt="" />
+                  <button>Facebook</button>
+              </div>
+          </div>
       </div>
-    </div>
   );
 };
 
