@@ -1,10 +1,11 @@
 .superDiv {
     background-color: rgba(70, 69, 69, 0.637);
     width: 100vw;
-    height: 91vh;
+    height: 110vh;
     display: grid;
     place-items: center;
-    position: fixed;
+    position: absolute;
+    z-index: 10;
 }
 
 .createLogin {

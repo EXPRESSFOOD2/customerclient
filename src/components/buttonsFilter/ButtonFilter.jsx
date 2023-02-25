@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-import style from "./ButtonFilter.module.css";
-import { useDispatch } from "react-redux";
-import { filterMenu } from "../..//redux/actions/index";
+// import style from "./ButtonFilter.module.css";
+// import { useDispatch } from "react-redux";
+// import { filterMenu } from "../..//redux/actions/index";
 
 const Button = (props) => {
 
@@ -16,7 +16,8 @@ const Button = (props) => {
         //dispatch(filterMenu(e.target.value));
         if(!props.state.includes(e.target.value))  props.setState([...props.state, e.target.value])
         else {
-          props.setState([...props.state?.filter(tag => tag !== e.target.value)])
+          const info = props.state?.filter(tag => tag !== e.target.value)
+          props.setState([...info])
         }
      
       }}

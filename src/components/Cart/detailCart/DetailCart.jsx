@@ -18,20 +18,22 @@ export default function DetailCart() {
   }
 
   return (
-    <div className={style.container}>
-      {totalRedux > 0 ? (
-        <>
-          <div className={style.title}>
-            {" "}
-            <h2>Total pedido: ${totalRedux} </h2>
-          </div>
-          <button onClick={hanldePayment}>Pagar!!</button>
-        </>
-      ) : (
-        <>
-          <h2>No tienes elementos en el carrito :(</h2>
-        </>
-      )}
-    </div>
+      <div className={style.container}>
+          {totalRedux > 0 ? (
+              <>
+                  <div className={style.totalDiv}>
+                      <div className={style.title}>
+                          <h3>Total pedido:</h3>
+                          <span>${totalRedux}.00</span>
+                      </div>
+                      <button onClick={hanldePayment}>Finalizar la compra</button>
+                  </div>
+              </>
+          ) : (
+              <>
+                  <h2>No tienes elementos en el carrito :(</h2>
+              </>
+          )}
+      </div>
   );
 }

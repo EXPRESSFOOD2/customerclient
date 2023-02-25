@@ -19,7 +19,7 @@ export default function CardsContainer() {
 
   return (
     <div className={style.container}>
-      <div className={style.title}>Cart</div>
+      <div className={style.title}>{`Carrito (${cart.length})`}</div>
       <div className={style.titleCol}> </div>
       {menus.length
         ? cart.map((item, i) => {
