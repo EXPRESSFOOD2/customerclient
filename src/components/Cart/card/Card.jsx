@@ -1,31 +1,47 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import React from "react";
+
 import style from "./card.module.css";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import { useDispatch } from "react-redux";
-import { changeCartCount } from "../../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { changeCartTotal, changeCartCount } from "../../../redux/actions";
 
-export default function Card({ data, menu, id }) {
-  const [count, setCount] = useState(data.quantity);
+export default function Card({ data, menu, id, deleteItem, handleChange }) {
+  const totalRedux = useSelector((state) => state.cartTotal);
+  let count = data.quantity;
+  // const [count, setCount] = useState(data.quantity);
+  console.log(count);
   const dispatch = useDispatch();
+  const totalPrice = menu.price * count;
+
+  //meter productos en un estado
+
+  // let totalOrder = localStorage.getItem("totalOrder") || 0;
+  // totalOrder = JSON.parse(totalOrder);
+
   const handleChangeCount = (op) => {
     const data = localStorage.getItem("order");
-    const aux = JSON.parse(data);
+    let aux = JSON.parse(data);
 
     if (op === "-") {
       if (aux[id].quantity === 1) {
-        aux.splice(id, 1);
-        dispatch(changeCartCount("-"));
-        document.getElementById(`card${id}`).remove();
+        aux = aux.filter((i) => i.id != menu.id);
+        localStorage.setItem("order", JSON.stringify(aux));
+        deleteItem(menu.id);
       } else {
         aux[id].quantity -= 1;
-        setCount(aux[id].quantity);
+        count = aux[id].quantity;
       }
+      localStorage.setItem("totalOrder", totalRedux - menu.price);
     } else {
       aux[id].quantity += 1;
-      setCount(aux[id].quantity);
+      count = aux[id].quantity;
+      localStorage.setItem("totalOrder", totalRedux + menu.price);
     }
-
+    handleChange(aux);
+    dispatch(changeCartCount(op));
+    dispatch(changeCartTotal({ type: op, value: menu.price }));
     localStorage.setItem("order", JSON.stringify(aux));
   };
 
@@ -53,13 +69,14 @@ export default function Card({ data, menu, id }) {
       </div>
       <div className={style.buyCont}>
         <div className={style.cantCont}>
-          <span onClick={(e) => handleChangeCount("-")}>-</span>
+          <span onClick={() => handleChangeCount("-")}>-</span>
           <span style={{ color: "black" }}>{count}</span>
-          <span onClick={(e) => handleChangeCount("+")}>+</span>
+          <span onClick={() => handleChangeCount("+")}>+</span>
         </div>
-
-        {" $"}
-        {menu.price + ".00"}
+        <div>
+          {" $"}
+          {totalPrice + ".00"}
+        </div>
       </div>
       <div></div>
     </div>

@@ -40,6 +40,7 @@ export default function Store() {
           ? <ButtonFilter key={index} style={style.buttonactive} state={filters} setState={setFilters} name={tag.name} />
           : <ButtonFilter key={index} style={style.button} state={filters} setState={setFilters} name={tag.name} />
     );
+
   });
 
   return (

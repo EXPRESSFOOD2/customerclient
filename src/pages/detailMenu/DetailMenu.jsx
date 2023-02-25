@@ -1,11 +1,16 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useState } from "react";
-import { changeCartCount, getMenuById } from "../../redux/actions/index";
+import {
+  changeCartCount,
+  getMenuById,
+  changeCartTotal,
+} from "../../redux/actions/index";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import styles from "./DetailMenu.module.css";
 
-const DetailMenu = () => {
+const DetailMenu = () => {  
   const { id } = useParams();
   const [punctuation, setPunctuation] = useState(0);
   const dispatch = useDispatch();
@@ -18,6 +23,9 @@ const DetailMenu = () => {
 
   const handleCart = () => {
     let orderArray = localStorage.getItem("order") || "[]";
+    let totalOrder = localStorage.getItem("totalOrder") || 0;
+    totalOrder = JSON.parse(totalOrder)
+    
 
     const aux = JSON.parse(orderArray);
     const index = aux.findIndex((item) => item.id + "" === "" + detail.id);
@@ -26,10 +34,12 @@ const DetailMenu = () => {
     if (index === -1) {
       orderArray = [...aux, { id: detail.id, quantity: 1 }];
       dispatch(changeCartCount("+"));
+      dispatch(changeCartTotal({ type: "+", value: price }));
+      const transform = JSON.stringify(orderArray);
+      localStorage.setItem("order", transform);
+      localStorage.setItem("totalOrder", totalOrder + price)
     }
     // se transforma y se manda
-    const transform = JSON.stringify(orderArray);
-    localStorage.setItem("order", transform);
   };
   const handlePunctuation = (id) => {
     if (id === 1 && punctuation > 0) setPunctuation(0);
