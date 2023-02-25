@@ -76,7 +76,6 @@ const rootReducer = (state = initialState, action) => {
       return { ...state };
   }
 };
-/*
 
 const aplyFilter = (filter, items) => {
     let retorno = items;
