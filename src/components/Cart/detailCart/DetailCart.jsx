@@ -14,6 +14,7 @@ export default function DetailCart() {
 
   useEffect(()=>{
     dispatch(changeCartTotal({type:"init", value: total}))
+    
   },[])
 
 

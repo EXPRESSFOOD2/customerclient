@@ -21,6 +21,7 @@ const initialState = {
   detailMenu: {},
   isFiltered: false,
   cartCount: 0,
+  cartTotal: 0,
   error: "",
 };
 
@@ -33,7 +34,10 @@ const rootReducer = (state = initialState, action) => {
     // Menu
     case GET_FULL_MENU:
       return {
-        ...state, fullMenu: action.payload, filteredMenu: action.payload };
+        ...state,
+        fullMenu: action.payload,
+        filteredMenu: action.payload,
+      };
     case GET_MENU_BY_ID:
       return { ...state, detailMenu: action.payload };
     case GET_MENU_RECOMMENDED:
@@ -43,17 +47,34 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, allIngredients: action.payload };
     case RESET_FILTER:
       return { ...state, filteredMenu: state.fullMenu };
-   /* 
+    /* 
     case CHANGE_CART_COUNT:
             const result = action.payload === "-" ? state.cartCount - 1 : state.cartCount + 1;
             return { ...state, cartCount: result }
    */
-     case FILTER_MENU:
-            return { ...state, filteredMenu: [ ...aplyFilter(action.payload, state.filteredMenu)] }
-            
+    case FILTER_MENU:
+      return {
+        ...state,
+        filteredMenu: [...aplyFilter(action.payload, state.filteredMenu)],
+      };
+
     case CHANGE_CART_COUNT: {
-      const result =
-        action.payload === "-" ? state.cartCount - 1 : state.cartCount + 1;
+      let result;
+      switch (action.payload) {
+        case "init":
+          result = action.payload;
+          break;
+        case "+":
+          result = state.cartCount + 1;          
+          break;
+        case "-":
+          result = state.cartCount - 1;
+          break;
+        default:
+          result = action.payload;
+          break;
+      }
+      window.localStorage.setItem("cartCount",JSON.stringify(result))
       return result < 0
         ? { ...state, cartCount: 0 }
         : { ...state, cartCount: result };
@@ -78,19 +99,17 @@ const rootReducer = (state = initialState, action) => {
 };
 
 const aplyFilter = (filter, items) => {
-    let retorno = items;
-    for (let i = 0; i < filter.length; i++) {
-        let j = 0;
-        let aux = []
-        while( j < retorno.length){
-            if ( retorno[j].Tags.includes(filter[i]) ) aux.push(retorno[j]);
-            j++;
-        }
-        retorno = aux;
+  let retorno = items;
+  for (let i = 0; i < filter.length; i++) {
+    let j = 0;
+    let aux = [];
+    while (j < retorno.length) {
+      if (retorno[j].Tags.includes(filter[i])) aux.push(retorno[j]);
+      j++;
     }
-    return retorno;
-}
+    retorno = aux;
+  }
+  return retorno;
+};
 
 export default rootReducer;
-
-
