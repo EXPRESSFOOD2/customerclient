@@ -199,9 +199,10 @@ const DetailMenu = () => {
             <p>Esto es una descripción temporal que deberá ser remplazada</p>
           </div>
         </div>
-        <button className={styles.toCart} onClick={handleCart}>
+        {stock ? (<button className={styles.toCart} onClick={handleCart}>
           Agregar al carrito
-        </button>
+        </button>): <h4>Producto agotado... Lo sentimos</h4>}
+        
       </div>
     </div>
   );
