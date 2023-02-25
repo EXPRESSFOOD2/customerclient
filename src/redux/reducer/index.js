@@ -33,10 +33,7 @@ const rootReducer = (state = initialState, action) => {
     // Menu
     case GET_FULL_MENU:
       return {
-        ...state,
-        fullMenu: action.payload,
-        filteredMenu: action.payload,
-      };
+        ...state, fullMenu: action.payload, filteredMenu: action.payload };
     case GET_MENU_BY_ID:
       return { ...state, detailMenu: action.payload };
     case GET_MENU_RECOMMENDED:
@@ -46,6 +43,14 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, allIngredients: action.payload };
     case RESET_FILTER:
       return { ...state, filteredMenu: state.fullMenu };
+   /* 
+    case CHANGE_CART_COUNT:
+            const result = action.payload === "-" ? state.cartCount - 1 : state.cartCount + 1;
+            return { ...state, cartCount: result }
+   */
+     case FILTER_MENU:
+            return { ...state, filteredMenu: [ ...aplyFilter(action.payload, state.filteredMenu)] }
+            
     case CHANGE_CART_COUNT: {
       const result =
         action.payload === "-" ? state.cartCount - 1 : state.cartCount + 1;
@@ -65,23 +70,6 @@ const rootReducer = (state = initialState, action) => {
         ? { ...state, cartTotal: 0 }
         : { ...state, cartTotal };
     }
-
-    case FILTER_MENU: {
-      let retorno = state.filteredMenu;
-      for (let i = 0; i < action.payload.length; i++) {
-        let j = 0;
-        let aux = [];
-        while (j < retorno.length) {
-          if (retorno[j].Tags.includes(action.payload[i])) aux.push(retorno[j]);
-          j++;
-        }
-        retorno = aux;
-      }
-      return {
-        ...state,
-        filteredMenu: [...retorno],
-      };
-    }
     case ERROR:
       return { ...state, error: action.payload };
     default:
@@ -89,6 +77,7 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 /*
+
 const aplyFilter = (filter, items) => {
     let retorno = items;
     for (let i = 0; i < filter.length; i++) {
@@ -102,5 +91,7 @@ const aplyFilter = (filter, items) => {
     }
     return retorno;
 }
-*/
+
 export default rootReducer;
+
+
