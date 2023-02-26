@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import style from "./card.module.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Card({ img, name, price, id,  }) {
   return (
     <div className={style.container}>
-      <NavLink to={`store/menu/${id}`}>
+      <Link to={`/menu/${id}`}>
         <img src={img} alt={name} />
-      </NavLink>
+      </Link>
       <h2>{name}</h2>
       <p>$ {price}</p>
     </div>

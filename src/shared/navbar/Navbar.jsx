@@ -4,17 +4,22 @@ import logo from "./logo.jpg";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
-import { getFullMenu, getFullIngredients } from "../../redux/actions/index";
+import { getFullMenu, getFullIngredients, changeCartCount } from "../../redux/actions/index";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Navbar() {
   /* Siempre que está el Navbar se carga el State */
   const location = useLocation().pathname.split("/").at(1);
+  const dispatch = useDispatch(); // Dispachador de Redux
 
   const queryParams = new URLSearchParams(window.location.search);
   const user = queryParams.get("user");
   const fullMenu = useSelector((state) => state.fullMenu);
   const cartCount = useSelector((state) => state.cartCount);
+  const localCartCount = JSON.parse(window.localStorage.getItem("cartCount")) || 0;
+
+  
+ 
 
   if (user && !localStorage.getItem("user")) {
     localStorage.setItem("user", user);
@@ -22,7 +27,6 @@ export default function Navbar() {
 
   const { photo, userName } = JSON.parse(localStorage.getItem("user")) || {};
 
-  const dispatch = useDispatch(); // Dispachador de Redux
   useEffect(() => {
     if (!fullMenu.length) {
       dispatch(getFullMenu());
@@ -32,6 +36,9 @@ export default function Navbar() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   });
+  useEffect(() => {
+    if(localCartCount) dispatch(changeCartCount(localCartCount))
+  },[]);
 
   return (
     <div className={style.container}>
@@ -53,13 +60,13 @@ export default function Navbar() {
             <p className={location === "login" ? style.current : ""}>Login</p>
           </NavLink>
         )}
-        {!userName && (
+        {/* {!userName && (
           <NavLink to={"/register"}>
             <p className={location === "register" ? style.current : ""}>
               Registarte
             </p>
           </NavLink>
-        )}
+        )} */}
         {userName && (
           <NavLink to="/" onClick={() => localStorage.removeItem("user")}>
             <p className={location === "login" ? style.current : ""}>Salir</p>
