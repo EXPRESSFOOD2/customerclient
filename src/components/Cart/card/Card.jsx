@@ -91,7 +91,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
             <Link to="/store">
               <span>Cargar más productos</span>
             </Link>
-            <button onClick={hanldeDelete}>Eliminar</button>
+            <span onClick={hanldeDelete}>Eliminar</span>
           </div>
         </div>
       </div>
