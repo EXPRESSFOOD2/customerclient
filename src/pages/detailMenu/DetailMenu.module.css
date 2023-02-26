@@ -1,8 +1,8 @@
 .page {
-    height: 100vh;
+    min-height: 30rem;
     display: grid;
     place-items: center;
-    font-family: "Rubik one", sans-serif;
+    font-family: "Rubik", sans-serif;
     padding: 2rem;
 }
 .data {
@@ -12,20 +12,24 @@
     height: fit-content;
     padding: 1rem;
     padding-top: 2rem;
-    gap: 2rem;
+    padding-bottom: 2rem;
+    gap: 1rem;
     background-color: white;
     border-radius: 0.3rem;
     box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.253);
-    margin-top: -4rem;
+}
+.data p{
+    text-align: justify;
+    padding: 0 4rem;
 }
 
 .detail {
     height: fit-content;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    padding-right: .5rem;
+    gap: 1rem;
 }
 
 .image {
@@ -46,7 +50,7 @@
     position: absolute;
     margin-left: -1rem;
     color: rgb(255, 255, 255);
-    font-family: "Rubik One", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: xx-large;
     background-color: rgba(0, 0, 0, 0.589);
     display: grid;
@@ -61,7 +65,7 @@
 }
 
 .info {
-    width: 40%;
+    width: 45%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -83,7 +87,7 @@
 .price {
     margin-top: 1rem;
     font-size: 2rem;
-    font-family: "Arial", sans-serif;
+    font-family: "Rubik", sans-serif;
     letter-spacing: -1px;
 }
 
@@ -117,7 +121,6 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 1rem;
-    /* border: 1px solid rgb(192, 192, 192); */
     padding: 0 1rem 1rem 1rem;
     margin-left: -0.2rem;
     margin-right: -0.2rem;
@@ -164,8 +167,8 @@
 .toCart {
     border: none;
     border-radius: 1rem;
-    font-family: "Rubik one", sans-serif;
-    font-weight: 900;
+    font-family: "Rubik", sans-serif;
+    font-weight: 1000;
     font-size: medium;
     width: 11rem;
     padding: 0.5rem;
@@ -178,7 +181,7 @@
 
 .punctuation {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     width: 10rem;
 }
 .punctuation div {
@@ -186,7 +189,11 @@
     place-items: center;
     margin-top: -1rem;
 }
-.starWith {
+.punctuation span{
+    margin-left: .5rem;
+    margin-top: -1rem;
+}
+.starWhite {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
@@ -195,5 +202,5 @@
     width: 1rem;
     height: 1rem;
     cursor: pointer;
-    fill: yellow;
+    fill: rgb(255, 196, 0);
 }
