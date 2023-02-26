@@ -46,6 +46,7 @@ const DetailMenu = () => {
     };
 
     return (
+      
         <div className={styles.page}>
             {!loged && <CreateLogin />}
             <div className={styles.data}>
