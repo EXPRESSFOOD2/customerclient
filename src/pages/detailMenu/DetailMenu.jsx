@@ -1,10 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useState } from "react";
-import {
-  changeCartCount,
-  getMenuById,
-  changeCartTotal,
-} from "../../redux/actions/index";
+import { changeCartCount, getMenuById, changeCartTotal } from "../../redux/actions/index";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -12,7 +8,6 @@ import styles from "./DetailMenu.module.css";
 import CreateLogin from "../../components/Login/CreateLogin";
 
 const DetailMenu = () => {
-
     const { id } = useParams();
     const [punctuation] = useState(3);
     const dispatch = useDispatch();
@@ -22,22 +17,20 @@ const DetailMenu = () => {
     const detail = useSelector((state) => state.detailMenu);
     const { name, url_image, price, Tags, stock, description } = detail;
 
+    const [loged, setLoged] = useState(true);
 
-  const [loged, setLoged] = useState(true);
+    const userName = JSON.parse(localStorage.getItem("user"));
 
-  const userName = JSON.parse(localStorage.getItem("user"));
+    const handleCart = () => {
+        if (!userName) {
+            setLoged(false);
+        } else {
+            let orderArray = localStorage.getItem("order") || "[]";
+            let totalOrder = localStorage.getItem("totalOrder") || 0;
+            totalOrder = JSON.parse(totalOrder);
 
-  const handleCart = () => {
-    if (!userName) {
-      setLoged(false);
-    } else {
-      let orderArray = localStorage.getItem("order") || "[]";
-      let totalOrder = localStorage.getItem("totalOrder") || 0;
-      totalOrder = JSON.parse(totalOrder);
-
-      const aux = JSON.parse(orderArray);
-      const index = aux.findIndex((item) => item.id + "" === "" + detail.id);
-
+            const aux = JSON.parse(orderArray);
+            const index = aux.findIndex((item) => item.id + "" === "" + detail.id);
 
             // si no esta repetido lo agrego
             if (index === -1) {
