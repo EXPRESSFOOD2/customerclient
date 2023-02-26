@@ -13,8 +13,8 @@ import Login from "./pages/Login/Login"
 
 //! socket
 
-import io from 'socket.io-client'
-export const socket = io('')
+// import io from 'socket.io-client'
+// export const socket = io('')
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
