@@ -22,7 +22,9 @@ export const processFilterAction = (filters) => async (dispatch) => {
 export const getTagsAction = () => {
   return async (dispatch) => {
     try {
-      const result = await axios.get(`http://localhost:3002/tags/get`);
+
+      const result = await axios.get(`/tags/get`);
+
       let data = result.data;
       dispatch({ type: GET_TAGS, payload: data });
     } catch (error) {
