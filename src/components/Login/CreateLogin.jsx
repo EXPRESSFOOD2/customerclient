@@ -6,6 +6,7 @@ import img from "./image/logoSinFondo.png";
 
 const CreateLogin = () => {
   return (
+
       <div className={style.superDiv}>
           <div className={style.createLogin}>
               {/* <div className={style.prev}> */}
@@ -13,6 +14,7 @@ const CreateLogin = () => {
               <p>Por favor logueate para hacer tu pago</p>
               {/* </div> */}
               {/* <form action="" className={style.form} onSubmit={formik.handleSubmit}>
+
           <div className={style.col}>
             <label htmlFor="email">E-mail</label>
             <input
@@ -71,7 +73,10 @@ const CreateLogin = () => {
                   <button>Facebook</button>
               </div>
           </div>
+
       </div>
+
+
   );
 };
 
