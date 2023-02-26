@@ -15,7 +15,7 @@ const DetailMenu = () => {
         dispatch(getMenuById(id));
     }, [dispatch, id]);
     const detail = useSelector((state) => state.detailMenu);
-    const { name, url_image, price, Tags, stock } = detail;
+    const { name, url_image, price, Tags, stock, description } = detail;
 
     const [loged, setLoged] = useState(true)
 
@@ -187,13 +187,13 @@ const DetailMenu = () => {
                                 <span>Envío gratis</span>
                             </div>
                         </div>
-                        <span
+                        {parseInt(stock) < 20 && <span
                             className={
                                 parseInt(stock) === 0 ? styles.stockRed : styles.stock
-                            }>{`Stock disponible : ${stock}`}</span>
-                        <p>Esto es una descripción temporal que deberá ser remplazada</p>
+                            }>{`Stock disponible : ${stock}`}</span>}
                     </div>
                 </div>
+                        <p>{ description}</p>
                 <button className={styles.toCart} onClick={handleCart}>
                     Agregar al carrito
                 </button>
