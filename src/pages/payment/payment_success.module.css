@@ -1,0 +1,25 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .checkmark {
+    width: 30%;
+    height: 30%;
+
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424');
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+  .failure {
+    width: 30%;
+    height: 30%;
+    background-image: url('https://png.pngtree.com/element_our/20200610/ourmid/pngtree-red-error-icon-image_2248553.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
