@@ -1,15 +1,10 @@
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 5px 5px 30px rgba(192, 192, 192, 0.36) -5px -5px 30px
-    rgba(192, 192, 192, 0.36);
-
-  border-radius: 5px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 17rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.473);
+    border-radius: 5px;
 }

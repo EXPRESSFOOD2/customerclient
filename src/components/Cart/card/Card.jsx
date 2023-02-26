@@ -12,7 +12,6 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
   const countRedux = useSelector((state) => state.cartCount);
   let count = data.quantity;
   // const [count, setCount] = useState(data.quantity);
-  console.log(count);
   const dispatch = useDispatch();
   const totalPrice = menu.price * count;
 
@@ -26,7 +25,10 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
     let aux = JSON.parse(data);
 
     if (op === "-") {
-      if (aux[id].quantity === 1) {
+      if (count === 1) {
+        return;
+      }
+      else if (aux[id].quantity === 1) {
         aux = aux.filter((i) => i.id != menu.id);
         localStorage.setItem("order", JSON.stringify(aux));
         deleteItem(menu.id);
@@ -36,6 +38,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
       }
       localStorage.setItem("totalOrder", totalRedux - menu.price);
     } else {
+      if (count === menu.stock) return;
       aux[id].quantity += 1;
       count = aux[id].quantity;
       localStorage.setItem("totalOrder", totalRedux + menu.price);
@@ -86,6 +89,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
             <span onClick={() => handleChangeCount("-")}>-</span>
             <span style={{ color: "black" }}>{count}</span>
             <span onClick={() => handleChangeCount("+")}>+</span>
+            {/* <p>{`(${menu.stock} disponibles)`}</p> */}
           </div>
           <div className={style.counterSpan}>
             <Link to="/store">
