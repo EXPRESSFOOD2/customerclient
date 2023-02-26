@@ -2,7 +2,7 @@
     height: 100vh;
     display: grid;
     place-items: center;
-    font-family: "Rubik one", sans-serif;
+    font-family: "Rubik", sans-serif;
     padding: 2rem;
 }
 .data {
@@ -25,7 +25,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    padding-right: .5rem;
+    padding-right: 0.5rem;
 }
 
 .image {
@@ -46,7 +46,7 @@
     position: absolute;
     margin-left: -1rem;
     color: rgb(255, 255, 255);
-    font-family: "Rubik One", sans-serif;
+    font-family: "Rubik", sans-serif;
     font-size: xx-large;
     background-color: rgba(0, 0, 0, 0.589);
     display: grid;
@@ -83,7 +83,7 @@
 .price {
     margin-top: 1rem;
     font-size: 2rem;
-    font-family: "Arial", sans-serif;
+    font-family: "Rubik", sans-serif;
     letter-spacing: -1px;
 }
 
@@ -117,7 +117,6 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 1rem;
-    /* border: 1px solid rgb(192, 192, 192); */
     padding: 0 1rem 1rem 1rem;
     margin-left: -0.2rem;
     margin-right: -0.2rem;
@@ -164,8 +163,8 @@
 .toCart {
     border: none;
     border-radius: 1rem;
-    font-family: "Rubik one", sans-serif;
-    font-weight: 900;
+    font-family: "Rubik", sans-serif;
+    font-weight: 1000;
     font-size: medium;
     width: 11rem;
     padding: 0.5rem;
@@ -178,7 +177,7 @@
 
 .punctuation {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     width: 10rem;
 }
 .punctuation div {
@@ -186,7 +185,11 @@
     place-items: center;
     margin-top: -1rem;
 }
-.starWith {
+.punctuation span{
+    margin-left: .5rem;
+    margin-top: -1rem;
+}
+.starWhite {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
@@ -195,5 +198,5 @@
     width: 1rem;
     height: 1rem;
     cursor: pointer;
-    fill: yellow;
+    fill: rgb(255, 196, 0);
 }
