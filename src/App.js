@@ -9,8 +9,8 @@ import CreateFooter from "./shared/Footer/CretaeFooter";
 import Loading from "./shared/Loading/Loading";
 import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login"
-
-
+import PaymentSuccess from "./pages/payment/payment_success"
+import PaymentFailure from "./pages/payment/payment_failure"
 //! socket
 
 // import io from 'socket.io-client'
@@ -33,6 +33,9 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Loading notfound={true} />}></Route>
+        {/* <Route path="/orderSuccess" component={<PaymentSuccess />}></Route> */}
+        <Route path="/orderSuccess/:code" element={<PaymentSuccess/>} />
+        <Route path="/orderFailure/:msg" element={<PaymentFailure/>} />
       </Routes>
       <CreateFooter />
     </div>
