@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/home/Home'

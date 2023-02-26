@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React from "react";
 import style from "./CreateLogin.module.css";
@@ -60,8 +61,7 @@ const CreateLogin = () => {
                   <button
                       type="submit"
                       onClick={() =>
-                          (window.location.href =
-                              "https://apiexpressfood.up.railway.app/auth/google")
+                          (window.location.href = `${process.env.REACT_APP_APIURL}auth/google` || `${process.env.REACT_APP_URL_DEPLOY}auth/google`)
                       }>
                       Google
                   </button>

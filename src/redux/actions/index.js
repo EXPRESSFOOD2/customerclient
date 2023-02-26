@@ -57,7 +57,7 @@ export const changeCartTotal = (obj) => {
 
 export const getFullMenu = () => {
   return async (dispatch) => {
-    const result = await axios.get(`http://localhost:3001/menu/get`);
+    const result = await axios.get(`/menu/get`);
     let data = result.data;
     dispatch({ type: GET_FULL_MENU, payload: data });
   };
@@ -101,4 +101,10 @@ export const getImageUrl = (imageStr, imageFn) => {
       dispatch({ type: ERROR, payload: error.response.data.error });
     }
   };
+};
+
+export const sendPayment = async(cart) => {
+ const postPayment =  await axios.post("/payments/create",cart )
+
+return window.location.href = postPayment.data
 };
