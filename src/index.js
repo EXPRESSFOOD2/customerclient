@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store/index"
 import axios from "axios"
 
-axios.defaults.baseURL = process.env.REACT_APP_APIURL || process.env.REACT_APP_URL_DEPLOY;
+axios.defaults.baseURL ="https://apiexpressfood.up.railway.app/";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
