@@ -10,6 +10,7 @@ export const ERROR = "ERROR";
 export const RESET_FILTER = "RESET_FILTER";
 export const CHANGE_CART_COUNT = "CHANGE_CART_COUNT";
 export const CHANGE_CART_TOTAL = "CHANGE_CART_TOTAL";
+export const DELETE_AFTER_PAYMENT = "DELETE_AFTER_PAYMENT";
 
 //*
 export const GET_TAGS = "GET_TAGS";
@@ -22,7 +23,6 @@ export const processFilterAction = (filters) => async (dispatch) => {
 export const getTagsAction = () => {
   return async (dispatch) => {
     try {
-
       const result = await axios.get(`/tags/get`);
 
       let data = result.data;
@@ -105,8 +105,20 @@ export const getImageUrl = (imageStr, imageFn) => {
   };
 };
 
-export const sendPayment = async(cart) => {
- const postPayment =  await axios.post("/payments/create",cart )
+export const sendPayment = async (cart) => {
+  const postPayment = await axios.post("/payments/create", cart);
 
-return window.location.href = postPayment.data
+  return (window.location.href = postPayment.data);
+};
+
+export const deleteAfterPayment = () => {
+  window.localStorage.setItem("order", JSON.stringify([]));
+  return async (dispatch) => {
+    try {
+      dispatch({ type: CHANGE_CART_COUNT, payload: 0 });
+      dispatch({ type: CHANGE_CART_TOTAL, payload: { type: "reset" } });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 };
