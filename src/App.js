@@ -30,7 +30,6 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Loading notfound={true} />}></Route>
-        {/* <Route path="/orderSuccess" component={<PaymentSuccess />}></Route> */}
         <Route path="/orderSuccess/:code" element={<PaymentSuccess/>} />
         <Route path="/orderFailure/:msg" element={<PaymentFailure/>} />
       </Routes>
