@@ -3,8 +3,8 @@
 import React from "react";
 import style from "./CreateLogin.module.css";
 import img from "./image/logoSinFondo.png";
-// const redirectDeploy = "https://apiexpressfood.up.railway.app"
-const redirectLocal = "http://localhost:3002"
+//const redirectDeploy = "https://apiexpressfood.up.railway.app"
+const redirectLocal = "http://localhost:3000"
 const CreateLogin = () => {
   return (
       <div className={style.superDiv}>

@@ -4,7 +4,12 @@ import logo from "./logo.jpg";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
-import { getFullMenu, getFullIngredients, changeCartCount } from "../../redux/actions/index";
+import {
+  getFullMenu,
+  getFullIngredients,
+  changeCartCount,
+  deleteAfterPayment,
+} from "../../redux/actions/index";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Navbar() {
