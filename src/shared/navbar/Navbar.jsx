@@ -4,7 +4,12 @@ import logo from "./logo.jpg";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
-import { getFullMenu, getFullIngredients, changeCartCount } from "../../redux/actions/index";
+import {
+  getFullMenu,
+  getFullIngredients,
+  changeCartCount,
+  deleteAfterPayment,
+} from "../../redux/actions/index";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Navbar() {
@@ -17,17 +22,17 @@ export default function Navbar() {
   const user = queryParams.get("user");
   const fullMenu = useSelector((state) => state.fullMenu);
   const cartCount = useSelector((state) => state.cartCount);
-  const localCartCount = JSON.parse(window.localStorage.getItem("cartCount")) || 0;
-  const [width, setWidth] = useState(screen.width)
+  const localCartCount =
+    JSON.parse(window.localStorage.getItem("cartCount")) || 0;
+  const [width, setWidth] = useState(screen.width);
 
-  window.addEventListener('resize', () => setWidth(screen.width))
-
-  
- 
+  window.addEventListener("resize", () => setWidth(screen.width));
 
   if (user && !localStorage.getItem("user")) {
     localStorage.setItem("user", user);
   }
+
+  console.log(user);
 
   const { photo, userName } = JSON.parse(localStorage.getItem("user")) || {};
 
@@ -41,8 +46,13 @@ export default function Navbar() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   });
   useEffect(() => {
-    if(localCartCount) dispatch(changeCartCount(localCartCount))
-  },[]);
+    if (localCartCount) dispatch(changeCartCount(localCartCount));
+  }, []);
+
+  function handleLogout() {
+    localStorage.removeItem("user")
+    dispatch(deleteAfterPayment())
+  }
 
   return (
     <div className={isOpen ? style.container : style.containerClose}>
@@ -56,19 +66,21 @@ export default function Navbar() {
         {userName && <span>{userName}</span>}
       </div>
       <div className={style.linkContainer} hidden={width < 600 && !isOpen}>
-       {!(width < 600 && !isOpen) && <NavLink to="/store" hidden={width < 600 && !isOpen}>
-          <p className={location === "store" ? style.current : ""}>Tienda</p>
-        </NavLink>} 
-        {!userName && !(width < 600 && !isOpen) && 
+        {!(width < 600 && !isOpen) && (
+          <NavLink to="/store" hidden={width < 600 && !isOpen}>
+            <p className={location === "store" ? style.current : ""}>Tienda</p>
+          </NavLink>
+        )}
+        {!userName && !(width < 600 && !isOpen) && (
           <NavLink to="/login">
             <p className={location === "login" ? style.current : ""}>Login</p>
           </NavLink>
-        }
-        {!(width < 600 && !isOpen) && 
+        )}
+        {!(width < 600 && !isOpen) && (
           <NavLink to="/">
             <p className={location === "" ? style.current : ""}>Home</p>
           </NavLink>
-        }
+        )}
         {/* {!userName && (
           <NavLink to={"/register"}>
             <p className={location === "register" ? style.current : ""}>
@@ -77,16 +89,31 @@ export default function Navbar() {
           </NavLink>
         )} */}
         {userName && (
-          <NavLink to="/" onClick={() => localStorage.removeItem("user")} hidden={width < 600 && !isOpen}>
+          <NavLink
+            to="/"
+            onClick={() => handleLogout()}
+            hidden={width < 600 && !isOpen}
+          >
             <p className={location === "login" ? style.current : ""}>Salir</p>
           </NavLink>
         )}
 
-        <NavLink to={"/cart"} className={style.center} hidden={width < 600 && !isOpen}>
-          {!(width < 600 && !isOpen) && <ShoppingCartIcon sx={{ fontSize: "25px"}} />} 
-          <div className={style.cartCount} hidden={width < 600 && !isOpen}>{cartCount} </div>
+        <NavLink
+          to={"/cart"}
+          className={style.center}
+          hidden={width < 600 && !isOpen}
+        >
+          {!(width < 600 && !isOpen) && (
+            <ShoppingCartIcon sx={{ fontSize: "25px" }} />
+          )}
+          <div className={style.cartCount} hidden={width < 600 && !isOpen}>
+            {cartCount}{" "}
+          </div>
         </NavLink>
-        <div className={isOpen ? style.burgerOpen : style.burgerClose} onClick={() => setIsOpen(!isOpen)}>
+        <div
+          className={isOpen ? style.burgerOpen : style.burgerClose}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <span></span>
           <span></span>
           <span></span>

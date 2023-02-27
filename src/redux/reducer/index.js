@@ -65,7 +65,7 @@ const rootReducer = (state = initialState, action) => {
           result = action.payload;
           break;
         case "+":
-          result = state.cartCount + 1;          
+          result = state.cartCount + 1;
           break;
         case "-":
           result = state.cartCount - 1;
@@ -74,7 +74,7 @@ const rootReducer = (state = initialState, action) => {
           result = action.payload;
           break;
       }
-      window.localStorage.setItem("cartCount",JSON.stringify(result))
+      window.localStorage.setItem("cartCount", JSON.stringify(result));
       return result < 0
         ? { ...state, cartCount: 0 }
         : { ...state, cartCount: result };
@@ -87,9 +87,9 @@ const rootReducer = (state = initialState, action) => {
         cartTotal = state.cartTotal + action.payload.value;
       if (action.payload.type === "reset") cartTotal = 0;
       if (action.payload.type === "init") cartTotal = action.payload.value;
-      return cartTotal < 0
-        ? { ...state, cartTotal: 0 }
-        : { ...state, cartTotal };
+      if (cartTotal < 0) cartTotal = 0;
+      window.localStorage.setItem("totalOrder", JSON.stringify(cartTotal));
+      return { ...state, cartTotal };
     }
     case ERROR:
       return { ...state, error: action.payload };
