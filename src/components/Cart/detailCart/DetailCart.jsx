@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeCartTotal } from "../../../redux/actions";
+import { changeCartTotal, saveCart } from "../../../redux/actions";
 import style from "./detailCart.module.css";
 import { sendPayment } from "../../../redux/actions";
 
@@ -17,6 +17,10 @@ export default function DetailCart() {
     
   },[])
 
+    const sendCart = () => {
+        dispatch(saveCart(cart));
+        // sendPayment(cart);
+  }
 
 
   return (
@@ -28,7 +32,7 @@ export default function DetailCart() {
                           <h3>Total pedido:</h3>
                           <span>${totalRedux}.00</span>
                       </div>
-                      <button onClick={()=>sendPayment(cart)}>Finalizar la compra</button>
+                      <button onClick={sendCart}>Finalizar la compra</button>
                   </div>
               </>
           ) : (
