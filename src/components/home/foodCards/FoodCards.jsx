@@ -1,16 +1,19 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, {  useState } from "react";
 import style from "./foodCards.module.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 // import Swiper and modules styles
-import "swiper/css";
 import "swiper/css/navigation";
 import "./swiper.css";
 import Card from "./card/Card";
 
 export default function FoodCards({ menus }) {
+
+  const [width, setWidth] = useState(screen.width)
+
+  window.addEventListener('resize', () => setWidth(screen.width))
   return (
     <div className={style.container}>
       <div className={style.titleCol}>
@@ -19,10 +22,9 @@ export default function FoodCards({ menus }) {
       <div className={style.carousel}>
         <Swiper
           modules={[Navigation]}
-          slidesPerView={4}
-          spaceBetween={40}
+          slidesPerView={width > 600 ? 4 : 1}
+          spaceBetween={width > 600 ? 40 : 0}
           navigation={true}
-          className="mySwiper"
         >
           {menus.map((menu, i) => {
             return (
