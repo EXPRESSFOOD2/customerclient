@@ -17,7 +17,7 @@ const CreateLogin = () => {
                   <button
                       type="submit"
                       onClick={() =>
-                          (window.location.href = "https://apiexpressfood.up.railway.app/</div>auth/google")
+                          (window.location.href = "https://apiexpressfood.up.railway.app/auth/google")
                       }>
                       Google
                   </button>
