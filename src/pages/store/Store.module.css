@@ -1,92 +1,108 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 3rem;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+  gap: 1rem;
 }
 
-.line{
+.line {
   width: 100%;
-  height: .2rem;
+  height: 0.2rem;
   background-color: rgb(179, 179, 179);
 }
 
 .subContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    min-height: 25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  min-height: 25rem;
 }
 
 .divFilters {
-    display: flex;
-    flex-direction: column;
-    width: 23%;
-    align-items: center;
-    padding-top: 1rem;
-    border: 1px solid rgb(179, 179, 179);
-    border-radius: 1rem;
-    background-color: white;
-    gap: .5rem;
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  align-items: center;
+  padding-top: 1rem;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 1rem;
+  background-color: white;
+  gap: 0.5rem;
 }
-.divFilters span{
-    font-family: "Rubik", sans-serif;
-    text-align: center;
-    font-size:larger;
-    font-weight: 900;
-    padding: 1rem 0 .5rem 0;
-    width: 85%;
-    border-bottom: 1px solid rgb(190, 190, 190);
+.divFilters span {
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  font-size: larger;
+  font-weight: 900;
+  padding: 1rem 0 0.5rem 0;
+  width: 85%;
+  border-bottom: 1px solid rgb(190, 190, 190);
 }
 
 .containerButtonFilters {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 15rem;
-    width: 14rem;
-    background-color: #eaeaea;
-    border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 15rem;
+  width: 14rem;
+  border-radius: 3%;
 }
 
 .containerMenu {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    background-color: white;
-    border-radius: 1rem;
-    border: 1px solid rgb(179, 179, 179);
-    width: 77%;
-    padding: 1rem 1.5rem 1rem 2rem;
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(179, 179, 179);
+  width: 77%;
+  padding: 1rem 1.5rem 1rem 2rem;
+  gap: 2rem;
 }
 
 .button {
-    color: #090909;
-    padding: .5rem 0;
-    font-size: 80%;
-    font-family: "Rubik", sans-serif;
-    font-weight: 700;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all 0.3s;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-    width: 80%;
-    cursor: pointer;
+  color: #090909;
+  padding: 0.5rem 0;
+  font-size: 80%;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  width: 80%;
+  cursor: pointer;
 }
 
 .buttonactive {
-    color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-    padding: .5rem 0;
-    font-size: 80%;
-    font-family: "Rubik", sans-serif;
-    font-weight: 700;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all 0.3s;
-    cursor: pointer;
-    width: 80%;
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  padding: 0.5rem 0;
+  font-size: 80%;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  cursor: pointer;
+  width: 80%;
+}
+
+@media screen AND (max-width: 600px) {
+  .container {
+    padding: 10px 40px;
+  }
+  .subContainer {
+    flex-direction: column;
+  }
+  .divFilters {
+    width: 100%;
+  }
+  .containerMenu {
+    gap: 5rem;
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 100px;
+  }
 }

@@ -4,11 +4,9 @@ import style from "./CreateFooter.module.css";
 const CreateFooter = () => {
   return (
     <div className={style.CreateFooter}>
-      <div className={style.top}>
+      <div className={style.col}>
         <h3>Space Food</h3>
-        <div className={style.top1}>
           <p>Garantía de confianza</p>
-        </div>
       </div>
       <footer className={style.footer}>
         <hr />

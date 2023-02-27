@@ -2,8 +2,9 @@
   margin: 0%;
   padding: 0px;
 }
+
 .contentCard {
-  width: 300px;
+  width: auto;
   height: 230px;
   flex-direction: row;
   justify-content: center;
@@ -51,6 +52,6 @@
 .km {
   display: flex;
   flex-direction: row;
- /*justify-content: end;*/
+  /*justify-content: end;*/
   margin: 10px;
 }

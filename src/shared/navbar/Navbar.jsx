@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./navbar.module.css";
 import logo from "./logo.jpg";
 import { useEffect } from "react";
@@ -11,12 +11,16 @@ export default function Navbar() {
   /* Siempre que está el Navbar se carga el State */
   const location = useLocation().pathname.split("/").at(1);
   const dispatch = useDispatch(); // Dispachador de Redux
+  const [isOpen, setIsOpen] = useState(false);
 
   const queryParams = new URLSearchParams(window.location.search);
   const user = queryParams.get("user");
   const fullMenu = useSelector((state) => state.fullMenu);
   const cartCount = useSelector((state) => state.cartCount);
   const localCartCount = JSON.parse(window.localStorage.getItem("cartCount")) || 0;
+  const [width, setWidth] = useState(screen.width)
+
+  window.addEventListener('resize', () => setWidth(screen.width))
 
   
  
@@ -41,7 +45,7 @@ export default function Navbar() {
   },[]);
 
   return (
-    <div className={style.container}>
+    <div className={isOpen ? style.container : style.containerClose}>
       <div className={style.logo}>
         <NavLink to="/">
           <img src={logo} className={style.logo} alt="" />
@@ -51,15 +55,20 @@ export default function Navbar() {
         {photo && <img src={photo} alt="" />}
         {userName && <span>{userName}</span>}
       </div>
-      <div className={style.linkContainer}>
-        <NavLink to="/store">
+      <div className={style.linkContainer} hidden={width < 600 && !isOpen}>
+       {!(width < 600 && !isOpen) && <NavLink to="/store" hidden={width < 600 && !isOpen}>
           <p className={location === "store" ? style.current : ""}>Tienda</p>
-        </NavLink>
-        {!userName && (
+        </NavLink>} 
+        {!userName && !(width < 600 && !isOpen) && 
           <NavLink to="/login">
             <p className={location === "login" ? style.current : ""}>Login</p>
           </NavLink>
-        )}
+        }
+        {!(width < 600 && !isOpen) && 
+          <NavLink to="/">
+            <p className={location === "" ? style.current : ""}>Home</p>
+          </NavLink>
+        }
         {/* {!userName && (
           <NavLink to={"/register"}>
             <p className={location === "register" ? style.current : ""}>
@@ -68,15 +77,20 @@ export default function Navbar() {
           </NavLink>
         )} */}
         {userName && (
-          <NavLink to="/" onClick={() => localStorage.removeItem("user")}>
+          <NavLink to="/" onClick={() => localStorage.removeItem("user")} hidden={width < 600 && !isOpen}>
             <p className={location === "login" ? style.current : ""}>Salir</p>
           </NavLink>
         )}
 
-        <NavLink to={"/cart"} className={style.center}>
-          <ShoppingCartIcon sx={{ fontSize: "25px" }} />
-          <div className={style.cartCount}>{cartCount}</div>
+        <NavLink to={"/cart"} className={style.center} hidden={width < 600 && !isOpen}>
+          {!(width < 600 && !isOpen) && <ShoppingCartIcon sx={{ fontSize: "25px"}} />} 
+          <div className={style.cartCount} hidden={width < 600 && !isOpen}>{cartCount} </div>
         </NavLink>
+        <div className={isOpen ? style.burgerOpen : style.burgerClose} onClick={() => setIsOpen(!isOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   );
