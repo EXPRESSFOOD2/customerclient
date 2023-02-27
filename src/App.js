@@ -11,10 +11,7 @@ import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login"
 import PaymentSuccess from "./pages/payment/payment_success"
 import PaymentFailure from "./pages/payment/payment_failure"
-//! socket
 
-// import io from 'socket.io-client'
-// export const socket = io('')
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
