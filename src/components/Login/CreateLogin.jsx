@@ -3,7 +3,8 @@
 import React from "react";
 import style from "./CreateLogin.module.css";
 import img from "./image/logoSinFondo.png";
-
+// const redirectDeploy = "https://apiexpressfood.up.railway.app"
+const redirectLocal = "http://localhost:3002/"
 const CreateLogin = () => {
   return (
       <div className={style.superDiv}>
@@ -17,7 +18,7 @@ const CreateLogin = () => {
                   <button
                       type="submit"
                       onClick={() =>
-                          (window.location.href = "https://apiexpressfood.up.railway.app/auth/google")
+                          (window.location.href = `${redirectLocal}/auth/google` )
                       }>
                       Google
                   </button>
