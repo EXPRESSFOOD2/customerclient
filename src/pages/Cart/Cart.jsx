@@ -11,7 +11,7 @@ export default function Cart() {
 
   return (
       <div>
-          { !userName && <CreateLogin />}
+          { userName && <CreateLogin />}
           <div className={style.container}>
               <div className={style.cart}>
               <CardsContainer />

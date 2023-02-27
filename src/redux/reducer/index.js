@@ -9,6 +9,7 @@ import {
   RESET_FILTER,
   CHANGE_CART_COUNT,
   CHANGE_CART_TOTAL,
+  SAVE_CART,
 } from "../actions/index";
 
 // @initialState == estado inicial del REDUCER
@@ -23,12 +24,15 @@ const initialState = {
   cartCount: 0,
   cartTotal: 0,
   error: "",
+  cartSaved:[]
 };
 
 // @state   = Estado Actual
 // @action  = Accion despachada
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SAVE_CART:
+      return {...state, cartSaved:[...action.payload] }
     case GET_TAGS:
       return { ...state, tags: [...action.payload] };
     // Menu

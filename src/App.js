@@ -11,6 +11,7 @@ import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login"
 import PaymentSuccess from "./pages/payment/payment_success"
 import PaymentFailure from "./pages/payment/payment_failure"
+import OrderPage from "./pages/OrderPage/OrderPage";
 
 
 /*
@@ -32,6 +33,7 @@ function App() {
         <Route path="*" element={<Loading notfound={true} />}></Route>
         <Route path="/orderSuccess/:code" element={<PaymentSuccess/>} />
         <Route path="/orderFailure/:msg" element={<PaymentFailure/>} />
+        <Route path="/pedidos" element={<OrderPage />} />
       </Routes>
       <CreateFooter />
     </div>
