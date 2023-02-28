@@ -51,7 +51,7 @@ const OrderPage = () => {
                     ))
                 ) : (
                     <div className={styles.message}>
-                        <h2>¿Aún no haces tu primer compra... 🫣?</h2>
+                        <h2>¿Aún no haces tu primer compra hoy... 🫣?</h2>
                         <Link to="/store">
                             <span>Haz tu compra ahora 😎</span>
                         </Link>
