@@ -76,7 +76,7 @@ export default function Navbar() {
                 )}
                 {userName && !(width < 600 && !isOpen) && (
                     <NavLink to="/pedidos" hidden={width < 600 && !isOpen}>
-                        <p className={location === "login" ? style.current : ""}>
+                        <p className={location === "pedidos" ? style.current : ""}>
                             Mis Pedidos
                         </p>
                     </NavLink>
