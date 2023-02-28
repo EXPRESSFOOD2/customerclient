@@ -32,3 +32,9 @@
   width: 80%;
   max-width: 80%;
 }
+
+@media screen AND (max-width: 600px) {
+  .carousel {
+    width: auto !important;
+  }
+}

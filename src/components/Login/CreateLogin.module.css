@@ -1,14 +1,39 @@
 .superDiv {
     background-color: rgba(70, 69, 69, 0.466);
     width: 100vw;
-    height: 120vh;
+    height: 100vh;
     display: grid;
     place-items: center;
     position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.superDivInLogin {
+    background-color: white;
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    top: 0;
     z-index: 10;
 }
 
 .createLogin {
+    width: 20rem;
+    height: fit-content;
+    background-color: rgb(189, 189, 189);
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: "Rubik", sans-serif;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: -10rem; */
+}
+.createLoginInLogin {
     width: 20rem;
     height: fit-content;
     background-color: rgb(216, 216, 216);
@@ -20,7 +45,7 @@
     color: black;
     justify-content: center;
     align-items: center;
-    margin-top: -17rem;
+    margin-top: -4rem;
 }
 
 .image {

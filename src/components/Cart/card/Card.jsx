@@ -26,6 +26,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
 
     if (op === "-") {
       if (count === 1) {
+        alert("El monto minimo por producto es de 1")
         return;
       }
       else if (aux[id].quantity === 1) {
@@ -59,8 +60,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
     dispatch(changeCartCount(countRedux - count));
     dispatch(changeCartTotal({ type: "init", value: totalRedux - totalPrice }));
   };
-
-  //  [{"id":1,"quantity":1},{"id":2,"quantity":1},{"id":3,"quantity":1}]
+  
   return (
     <div className={style.container} id={`card${id}`}>
       <div className={style.col}>

@@ -1,0 +1,12 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 15rem;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+}
+.card img{
+    width: 4rem;
+    height: 4rem;
+}

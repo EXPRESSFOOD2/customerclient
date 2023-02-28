@@ -4,12 +4,15 @@
 }
 
 .img {
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.swiper-slide img {
+.swiper-slide > img {
   display: block;
-  width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.mySwiper {
+  max-width: 100vw;
 }
