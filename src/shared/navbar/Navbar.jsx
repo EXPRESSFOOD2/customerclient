@@ -8,6 +8,7 @@ import {
   getFullMenu,
   getFullIngredients,
   changeCartCount,
+  deleteAfterPayment
   
 } from "../../redux/actions/index";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
