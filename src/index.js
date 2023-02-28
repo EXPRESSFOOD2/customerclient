@@ -10,7 +10,7 @@ import store from "./redux/store/index"
 import axios from "axios"
 
 
-axios.defaults.baseURL = "https://apiexpressfood.up.railway.app" 
+axios.defaults.baseURL = process.env.REACT_APP_URLDEPLOY
 //axios.defaults.baseURL =  "http://localhost:3002";
 
 
