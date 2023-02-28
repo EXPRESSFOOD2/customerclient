@@ -4,8 +4,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import style from "./CreateLogin.module.css";
 import img from "./image/logoSinFondo.png";
-//const redirect = "https://apiexpressfood.up.railway.app"
-const redirect = "http://localhost:3002"
+
 const CreateLogin = () => {
     const { pathname } = useLocation()
   return (
@@ -20,7 +19,7 @@ const CreateLogin = () => {
                   <button
                       type="submit"
                       onClick={() =>
-                          (window.location.href = `${redirect}/auth/google` )
+                          (window.location.href = `${process.env.REACT_APP_GOOGLE_REDIRECT_URL_LOGINCOMPONENT_LOCAL || process.env.REACT_APP_GOOGLE_REDIRECT_URL_LOGINCOMPONENT_DEPLOY}` )
                       }>
                       Google
                   </button>

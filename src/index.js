@@ -10,6 +10,8 @@ import store from "./redux/store/index"
 import axios from "axios"
 
 
+
+
 axios.defaults.baseURL = process.env.REACT_APP_URLDEPLOY || process.env.REACT_APP_APIURLOCAL
 
 
