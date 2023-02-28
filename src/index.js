@@ -10,7 +10,9 @@ import store from "./redux/store/index"
 import axios from "axios"
 
 // axios.defaults.baseURL ="https://apiexpressfood.up.railway.app/";
+
 axios.defaults.baseURL ="http://localhost:3002/";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
