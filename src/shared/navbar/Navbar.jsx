@@ -46,6 +46,11 @@ export default function Navbar() {
         if (localCartCount) dispatch(changeCartCount(localCartCount));
     }, []);
 
+    function handleLogout() {
+        localStorage.removeItem("user");
+        dispatch(deleteAfterPayment());
+    }
+
     return (
         <div className={isOpen ? style.container : style.containerClose}>
             <div className={style.logo}>
@@ -83,7 +88,7 @@ export default function Navbar() {
                 {userName && !(width < 600 && !isOpen) && (
                     <NavLink
                         to="/"
-                        onClick={() => localStorage.removeItem("user")}
+                        onClick={() => handleLogout()}
                         hidden={width < 600 && !isOpen}>
                         <p className={location === "login" ? style.current : ""}>Salir</p>
                     </NavLink>
