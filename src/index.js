@@ -11,7 +11,7 @@ import axios from "axios"
 
 // axios.defaults.baseURL ="https://apiexpressfood.up.railway.app/";
 
-axios.defaults.baseURL ="http://localhost:3002/";
+axios.defaults.baseURL ="http://localhost:3002";
 
 
 
