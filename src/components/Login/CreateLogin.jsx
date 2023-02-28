@@ -1,14 +1,16 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React from "react";
+import { useLocation } from "react-router-dom";
 import style from "./CreateLogin.module.css";
 import img from "./image/logoSinFondo.png";
 // const redirect = "https://apiexpressfood.up.railway.app"
 const redirect = "http://localhost:3002"
 const CreateLogin = () => {
+    const { pathname } = useLocation()
   return (
-      <div className={style.superDiv}>
-          <div className={style.createLogin}>
+      <div className={pathname === "/login"? style.superDivInLogin :style.superDiv}>
+          <div className={pathname === "/login"? style.createLoginInLogin :style.createLogin}>
           
               <img src={img} alt="not found" className={style.image} />
               <p>Por favor logueate para hacer tu pago</p>

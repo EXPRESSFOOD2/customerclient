@@ -1,0 +1,32 @@
+.page{
+    min-height: 80vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.container{
+    border: 1px solid green;
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.message{
+    border: 1px solid rgb(124, 124, 124);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: fit-content;
+    padding: 2rem;
+    font-family: "Rubik", sans-serif;
+}
+
+.message h2{
+    font-size: 3rem;
+}
+
+.message span{
+    font-size: xx-large;
+}

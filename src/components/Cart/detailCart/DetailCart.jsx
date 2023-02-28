@@ -17,12 +17,6 @@ export default function DetailCart() {
     
   },[])
 
-    const sendCart = () => {
-        dispatch(saveCart(cart));
-        sendPayment(cart);
-  }
-
-
   return (
       <div className={style.container}>
           {totalRedux > 0 ? (
@@ -32,7 +26,7 @@ export default function DetailCart() {
                           <h3>Total pedido:</h3>
                           <span>${totalRedux}.00</span>
                       </div>
-                      <button onClick={sendCart}>Finalizar la compra</button>
+                      <button onClick={()=>sendPayment(cart)}>Finalizar la compra</button>
                   </div>
               </>
           ) : (

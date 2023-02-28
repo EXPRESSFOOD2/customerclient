@@ -107,11 +107,9 @@ export const getImageUrl = (imageStr, imageFn) => {
     };
 };
 
-export const saveCart = (cart) => async(dispatch) => {
-  const promises = cart.map((item) => axios.get(`/menu/get/${item.id}`).then(res=>res.data));
-  const results = await Promise.all(promises);
-  dispatch({type:SAVE_CART, payload:results})
-  localStorage.setItem("myOrder", JSON.stringify(results))
+export const saveCart = (userEmail) => async (dispatch) => {
+    const results = await axios.get("/orders/get", userEmail)
+  dispatch({type:SAVE_CART, payload:[...results.data]})
 }
 
 export const sendPayment = async(cart) =>{
