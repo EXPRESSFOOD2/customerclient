@@ -1,35 +1,12 @@
 .card{
     display: flex;
     flex-direction: row;
-    background-color: rgb(214, 214, 214);
-    border-radius: .5rem;
-    margin: 5rem;
-    width: fit-content;
+    width: 15rem;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
-    justify-content: center;
-    padding: 1rem;
+    font-family: "Rubik", sans-serif;
 }
-
 .card img{
-    width: 5rem;
-    height: 5rem;
-    border-radius: .5rem;
-}
-
-.detail{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    justify-content: center;
-}
-
-.statusOrder{
-    display: flex;
-    flex-direction: column;
-}
-
-.status{
-    border: 1px solid green;
-    color: rgb(1, 97, 1);
+    width: 4rem;
+    height: 4rem;
 }
