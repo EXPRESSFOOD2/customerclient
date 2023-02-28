@@ -19,7 +19,7 @@ export default function DetailCart() {
 
     const sendCart = () => {
         dispatch(saveCart(cart));
-        // sendPayment(cart);
+        sendPayment(cart);
   }
 
 
@@ -37,7 +37,7 @@ export default function DetailCart() {
               </>
           ) : (
               <>
-                  <h2>No tienes elementos en el carrito :(</h2>
+                  <h2>No tienes elementos en el carrito ☹</h2>
               </>
           )}
       </div>
