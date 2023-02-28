@@ -28,6 +28,7 @@
     border-radius: 0.5rem;
     border: none;
     background-color: rgb(89, 169, 235);
+    cursor: pointer;
 }
 
 .title {

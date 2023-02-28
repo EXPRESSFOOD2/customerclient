@@ -13,6 +13,7 @@ export default function DetailCart() {
   let cart = JSON.parse(window.localStorage.getItem("order"));
   let userEmail = JSON.parse(window.localStorage.getItem("user")).email;
 
+
   useEffect(() => {
     dispatch(changeCartTotal({ type: "init", value: total }));
   }, []);
@@ -41,5 +42,6 @@ export default function DetailCart() {
         </>
       )}
     </div>
+
   );
 }
