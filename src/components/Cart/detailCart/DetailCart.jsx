@@ -11,7 +11,7 @@ export default function DetailCart() {
   total = JSON.parse(total);
   const dispatch = useDispatch();
   let cart = JSON.parse(window.localStorage.getItem("order"));
-  let userEmail = JSON.parse(window.localStorage.getItem("user")).email;
+  let user = JSON.parse(window.localStorage.getItem("user"));
 
 
   useEffect(() => {
@@ -20,8 +20,8 @@ export default function DetailCart() {
 
   const sendCart = () => {
     dispatch(saveCart(cart));
-    sendPayment({ products: cart, client_data: { email: userEmail } });
-   
+    sendPayment({ products: cart, client_data: { email: user.email } });
+  //  console.log({ products: cart, client_data: { email: user.email } })
   };
 
   return (
