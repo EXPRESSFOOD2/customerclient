@@ -12,7 +12,7 @@ import Login from "./pages/Login/Login";
 import PaymentSuccess from "./pages/payment/payment_success";
 import PaymentFailure from "./pages/payment/payment_failure";
 import OrderPage from "./pages/OrderPage/OrderPage";
-import Reviews from "./pages/reviews/Reviews";
+// import Reviews from "./pages/reviews/Reviews";
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
@@ -33,7 +33,7 @@ function App() {
         <Route path="/orderSuccess/" element={<PaymentSuccess />} />
         <Route path="/orderFailure/" element={<PaymentFailure />} />
         <Route path="/pedidos" element={<OrderPage />} />
-        <Route path="/reviews/:order" element={<Reviews />} />
+        {/* <Route path="/reviews/:order" element={<Reviews />} /> */}
       </Routes>
       <CreateFooter />
     </div>
