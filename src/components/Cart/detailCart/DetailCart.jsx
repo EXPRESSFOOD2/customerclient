@@ -18,9 +18,9 @@ export default function DetailCart() {
     dispatch(changeCartTotal({ type: "init", value: total }));
   }, []);
 
-  const sendCart = () => {
+  const sendCart = async () => {
     dispatch(saveCart(cart));
-    sendPayment({ products: cart, client_data: { email: user.email } });
+    await  sendPayment({ products: cart, client_data: { email: user.email } });
   //  console.log({ products: cart, client_data: { email: user.email } })
   };
 
