@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import {
   getFullMenu,
-  getFullIngredients,
   changeCartCount,
   deleteAfterPayment
   
@@ -38,7 +37,7 @@ export default function Navbar() {
         if (!fullMenu.length) {
             dispatch(getFullMenu());
         }
-        dispatch(getFullIngredients());
+
     }, [dispatch, fullMenu]); // Precarga los elementos a mostrar
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

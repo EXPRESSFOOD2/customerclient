@@ -67,14 +67,6 @@ export const getFullMenu = () => {
     };
 };
 
-export const getFullIngredients = () => {
-    return async (dispatch) => {
-        const result = await axios.get(`/ingredients/get`);
-
-        let data = result.data;
-        dispatch({ type: GET_FULL_INGREDIENTS, payload: data });
-    };
-};
 
 export const getMenuById = (id) => {
     return async (dispatch) => {

@@ -2,7 +2,6 @@ import {
   GET_FULL_MENU,
   GET_MENU_BY_ID,
   GET_TAGS,
-  GET_FULL_INGREDIENTS,
   FILTER_MENU,
   GET_MENU_RECOMMENDED,
   ERROR,
@@ -16,7 +15,7 @@ import {
 const initialState = {
   fullMenu: [],
   filteredMenu: [],
-  allIngredients: [],
+
   recommendedMenu: [],
   tags: [],
   detailMenu: {},
@@ -24,7 +23,7 @@ const initialState = {
   cartCount: 0,
   cartTotal: 0,
   error: "",
-  cartSaved:[]
+  cartSaved: [],
 };
 
 // @state   = Estado Actual
@@ -32,7 +31,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case SAVE_CART:
-      return {...state, cartSaved:[...action.payload] }
+      return { ...state, cartSaved: [...action.payload] };
     case GET_TAGS:
       return { ...state, tags: [...action.payload] };
     // Menu
@@ -46,9 +45,7 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, detailMenu: action.payload };
     case GET_MENU_RECOMMENDED:
       return { ...state, recommendedMenu: action.payload };
-    // ingredientes
-    case GET_FULL_INGREDIENTS:
-      return { ...state, allIngredients: action.payload };
+
     case RESET_FILTER:
       return { ...state, filteredMenu: state.fullMenu };
     /* 
