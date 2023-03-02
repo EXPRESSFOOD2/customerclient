@@ -1,15 +1,21 @@
 import React, { useEffect } from "react";
 import style from "./payment_success.module.css";
-import { useParams } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { deleteAfterPayment } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 
 const PaymentSuccess = () => {
   const dispatch = useDispatch();
-  const { code } = useParams();
+  
+  
   useEffect(() => {
     dispatch(deleteAfterPayment());
   }, []);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const code = searchParams.get('code');
+  console.log(code)
+  
 
   return (
     <div>

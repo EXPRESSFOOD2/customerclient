@@ -1,18 +1,18 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from "react-router-dom";
-import Home from './pages/home/Home'
-import Store from './pages/store/Store'
+import Home from "./pages/home/Home";
+import Store from "./pages/store/Store";
 import Navbar from "./shared/navbar/Navbar";
 import DetailMenu from "./pages/detailMenu/DetailMenu";
 import CreateFooter from "./shared/Footer/CretaeFooter";
 import Loading from "./shared/Loading/Loading";
 import Cart from "./pages/Cart/Cart";
-import Login from "./pages/Login/Login"
-import PaymentSuccess from "./pages/payment/payment_success"
-import PaymentFailure from "./pages/payment/payment_failure"
+import Login from "./pages/Login/Login";
+import PaymentSuccess from "./pages/payment/payment_success";
+import PaymentFailure from "./pages/payment/payment_failure";
 import OrderPage from "./pages/OrderPage/OrderPage";
-
+import Reviews from "./pages/reviews/Reviews";
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
@@ -20,7 +20,6 @@ import Home from './components/Home/Home';
 */
 
 function App() {
-
   return (
     <div>
       <Navbar />
@@ -31,9 +30,10 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Loading notfound={true} />}></Route>
-        <Route path="/orderSuccess/:code" element={<PaymentSuccess/>} />
-        <Route path="/orderFailure/:msg" element={<PaymentFailure/>} />
+        <Route path="/orderSuccess/" element={<PaymentSuccess />} />
+        <Route path="/orderFailure/" element={<PaymentFailure />} />
         <Route path="/pedidos" element={<OrderPage />} />
+        <Route path="/reviews/:order" element={<Reviews />} />
       </Routes>
       <CreateFooter />
     </div>
