@@ -1,5 +1,4 @@
 import axios from "axios";
-import { async } from "q";
 
 // Action Type!!
 export const GET_FULL_MENU = "GET_ALL_MENU";
@@ -69,6 +68,7 @@ export const getFullMenu = () => {
 };
 
 
+
 export const getMenuById = (id) => {
     return async (dispatch) => {
         const result = await axios.get(`/menu/get/${id}`);
@@ -121,8 +121,3 @@ export const deleteAfterPayment = () => {
     }
   };
 };
-
-export const getOrderById = async()=>{
-    return await a    
-
-}
