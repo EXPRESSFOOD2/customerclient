@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable react/prop-types */
 import React, {  useState } from "react";
 import style from "./foodCards.module.css";
