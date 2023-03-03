@@ -29,11 +29,11 @@ function App() {
         <Route path="/menu/:id" element={<DetailMenu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<Loading notfound={true} />}></Route>
-        <Route path="/orderSuccess/" element={<PaymentSuccess />} />
+        <Route path="/orderSuccess/:code" element={<PaymentSuccess />} />
         <Route path="/orderFailure/" element={<PaymentFailure />} />
         <Route path="/pedidos" element={<OrderPage />} />
         <Route path="/reviews/:orderId" element={<Reviews />} />
+        <Route path="*" element={<Loading notfound={true} />}></Route>
       </Routes>
       <CreateFooter />
     </div>
