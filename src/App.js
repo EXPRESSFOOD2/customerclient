@@ -33,7 +33,7 @@ function App() {
         <Route path="/orderSuccess/" element={<PaymentSuccess />} />
         <Route path="/orderFailure/" element={<PaymentFailure />} />
         <Route path="/pedidos" element={<OrderPage />} />
-        <Route path="/reviews/:order" element={<Reviews />} />
+        <Route path="/reviews/:orderId" element={<Reviews />} />
       </Routes>
       <CreateFooter />
     </div>

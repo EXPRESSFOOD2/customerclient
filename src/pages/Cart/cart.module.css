@@ -5,7 +5,8 @@
   padding: 3rem;
 }
 
-.cart{
+.cart {
   width: 80vw;
-    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.089), -5px -5px 50px rgba(0, 0, 0, 0.089);
+  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.089),
+    -5px -5px 50px rgba(0, 0, 0, 0.089);
 }
