@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 // eslint-disable-next-line no-alert
 import axios from "axios";
 import React, { useEffect, useState } from "react";

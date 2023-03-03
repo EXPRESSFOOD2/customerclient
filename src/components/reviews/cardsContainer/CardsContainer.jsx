@@ -2,10 +2,10 @@
 import React from "react";
 import style from "./cards.module.css";
 
-export default function CardsContainer({ id, MenuItems }) {
+export default function CardsContainer({  MenuItems, code }) {
   return (
     <div className={style.container}>
-      <div className={style.title}>{`Califica tu pedido # ${id}`}</div>
+      <div className={style.title}>{`Califica tu pedido # ${code}`}</div>
       <div className={style.titleCol}></div>
       <div className={style.itemsContainer}>
         {MenuItems
