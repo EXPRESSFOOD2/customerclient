@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CardsContainer from "../../components/reviews/cardsContainer/CardsContainer";
-import DetailReview from "../../components/reviews/detailReview/detailReview";
+
 import style from "./Reviews.module.css"
 
 export default function reviews() {
@@ -29,8 +29,7 @@ export default function reviews() {
     return (
       <div className={style.container}>
         <div className={style.cart}>
-          <CardsContainer {...pedido} />
-          <DetailReview id={orderId} />
+          <CardsContainer {...pedido} />          
         </div>
       </div>
     );
