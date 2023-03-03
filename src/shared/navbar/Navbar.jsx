@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
 import style from "./navbar.module.css";
 import logo from "./logo.jpg";

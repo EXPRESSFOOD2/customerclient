@@ -12,7 +12,7 @@ import Login from "./pages/Login/Login";
 import PaymentSuccess from "./pages/payment/payment_success";
 import PaymentFailure from "./pages/payment/payment_failure";
 import OrderPage from "./pages/OrderPage/OrderPage";
-// import Reviews from "./pages/reviews/Reviews";
+import Reviews from "./pages/reviews/Reviews";
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
