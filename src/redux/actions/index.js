@@ -1,7 +1,6 @@
 import axios from "axios";
 // Action Type!!
 export const GET_FULL_MENU = "GET_ALL_MENU";
-export const GET_FULL_INGREDIENTS = "GET_FULL_INGREDIENTS";
 export const GET_MENU_BY_ID = "GET_MENU_BY_ID";
 export const FILTER_MENU = "FILTER_MENU";
 export const GET_MENU_RECOMMENDED = "GET_MENU_RECOMMENDED";
@@ -73,6 +72,7 @@ export const getFullIngredients = () => {
     dispatch({ type: GET_FULL_INGREDIENTS, payload: data });
   };
 };
+
 
 export const getMenuById = (id) => {
   return async (dispatch) => {
