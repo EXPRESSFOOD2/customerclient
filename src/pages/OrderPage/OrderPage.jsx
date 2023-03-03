@@ -26,7 +26,7 @@ const OrderPage = () => {
                     myOrders.map((item) => (
                         <div key={item.id} className={styles.subContainer}>
                             <div className={styles.data}>
-                                <span>{`Pedido número: ${item.code}`}</span>
+                                <span>{`Codigo de pedido #: ${item.id}`}</span>
                                 <span>{`Estdo: ${item.status}`}</span>
                                 <span>{`Total compra: ${item.total}`}</span>
                                 <img
