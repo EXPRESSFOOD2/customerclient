@@ -44,6 +44,8 @@ export default function CardsContainer({ id, MenuItems, code }) {
   return (
     <div className={style.container}>
       <div className={style.title}>{`Califica tu orden # ${code}`}</div>
+
+
       <div className={style.titleCol}></div>
       <div className={style.itemsContainer}>
         {MenuItems

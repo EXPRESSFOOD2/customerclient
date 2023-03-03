@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCartTotal, saveCart } from "../../../redux/actions";
 import style from "./detailCart.module.css";
@@ -12,16 +12,16 @@ export default function DetailCart() {
   const dispatch = useDispatch();
   let cart = JSON.parse(window.localStorage.getItem("order"));
   let user = JSON.parse(window.localStorage.getItem("user"));
-
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   useEffect(() => {
     dispatch(changeCartTotal({ type: "init", value: total }));
   }, []);
 
   const sendCart = () => {
+    setButtonDisabled(true)
     dispatch(saveCart(cart));
     sendPayment({ products: cart, client_data: { email: user.email } });
-  //  console.log({ products: cart, client_data: { email: user.email } })
   };
 
   return (
@@ -33,7 +33,7 @@ export default function DetailCart() {
               <h3>Total pedido:</h3>
               <span>${totalRedux}.00</span>
             </div>
-            <button onClick={sendCart}>Finalizar la compra</button>
+            <button onClick={sendCart} disabled={buttonDisabled}>Finalizar la compra</button>
           </div>
         </>
       ) : (
