@@ -3,31 +3,31 @@ import React, { useState } from "react";
 import style from "./cards.module.css";
 import axios from "axios";
 
-export default function CardsContainer({ id, MenuItems, code }) {
+export default function CardsContainer({ id, MenuItems, code, hasReview }) {
   const [rating, setRating] = useState({});
-
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   async function sendReview(item) {
-    const review = await axios.post("/review/post", {
+    await axios.post("/review/post", {
       rating: rating[item],
       OrdersMenuId: id,
       MenuItemId: item,
     });
-    console.log(review);
+
   }
 
   async function handledReview() {
-    if (MenuItems.length != Object.values(rating).length) {
+    if (MenuItems.length !== Object.values(rating).length) {
       return alert("No olvides calificar todos los productos");
     }
 
+    setButtonDisabled(true)
     try {
       for (const item in rating) {
         await sendReview(item);
 
-        console.log(`${item}: ${rating[item]}`);
       }
     } catch (error) {
-      console.log(error);
+ 
     }
 
     /*
@@ -74,7 +74,7 @@ export default function CardsContainer({ id, MenuItems, code }) {
             })
           : "loading..."}
       </div>
-      <button className={style.btn} onClick={handledReview}>
+      <button className={style.btn} onClick={handledReview} disabled={buttonDisabled}>
         Envia tu calificacion
       </button>
     </div>

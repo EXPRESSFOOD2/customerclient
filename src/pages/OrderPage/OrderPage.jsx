@@ -28,7 +28,7 @@ const OrderPage = () => {
                         <div key={item.id} className={styles.subContainer}>
                             <div className={styles.data}>
                                 <span>{`Pedido: ${item.code}`}</span>
-                                <span>{`Estdo: ${item.status}`}</span>
+                                <span>{`Estado: ${item.status}`}</span>
                                 <span>{`Total compra: ${item.total}`}</span>
                                 <img
                                     className={isOpen ? styles.icoOpen : styles.icoClose}
