@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 // eslint-disable-next-line no-alert
 import axios from "axios";
@@ -17,7 +18,7 @@ export default function reviews() {
   useEffect(() => {
     async function data() {
       try {
-        const response = await axios.get(`/orders/get/${orderId}`, userEmail);
+        const response = await axios.post(`/orders/get/${orderId}`, userEmail);
         setPedido(response.data);
       } catch (error) {
         return error.message;

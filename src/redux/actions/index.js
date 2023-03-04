@@ -106,12 +106,12 @@ export const saveCart = (userEmail) => async (dispatch) => {
 export const getOrders = async (userEmail) => {
 
   const results = await axios.post("/orders/get", userEmail)
-console.log(userEmail);
+
   return results.data;
 };
 export const getOrderById = async (userEmail, id) => {
  
-  return await ( axios.get(`/orders/get/${id}`, userEmail)).data;
+  return await ( axios.post(`/orders/get/${id}`, userEmail)).data;
 };
 
 export const sendPayment = async (cart) => {
