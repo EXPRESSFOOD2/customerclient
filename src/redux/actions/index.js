@@ -99,9 +99,8 @@ export const getImageUrl = (imageStr, imageFn) => {
 };
 
 export const saveCart = (userEmail) => async (dispatch) => {
-  //   const results = await axios.get("/orders/get", userEmail);
+    // const results = await axios.get("/orders/get", userEmail);
   const results = await getOrders(userEmail);
-  
   dispatch({ type: SAVE_CART, payload: [...results] });
 };
 export const getOrders = async (userEmail) => {
