@@ -8,17 +8,27 @@ import ReactDOM from 'react-dom'
 export default function Alert ({
   title = 'Correcto',
   message = 'Todo salio bien',
-  type = 'danger'
+  type = 'danger',
+  setStateAlert,
+  setStatebutton,
+  stateAlert
+
 }) {
   const img = data[type]?.icon || data.success.icon
-
+const [isVisible, setIsVisible] = useState(stateAlert)
   setTimeout(() => remove(), 5000)
 
   const remove = () => {
-    ReactDOM.unmountComponentAtNode(document.getElementById('alert'))
+    setStateAlert(false)
+    setStatebutton(false)
   }
-
+  
+  setTimeout(() => {
+    setStateAlert(false)
+    setStatebutton(false)
+  }, 5000);
   return (
+    isVisible &&
     <div className={style.container} id="alertBox">
       <div className={style.box}>
         <img

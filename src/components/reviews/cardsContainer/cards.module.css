@@ -6,7 +6,7 @@
   flex-direction: column;
   background-color: aliceblue;
   
-  height: auto;
+  min-height: 43vw ;
   /* box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.089), -5px -5px 50px rgba(0, 0, 0, 0.089); */
   padding: 5px 10px;
   padding-bottom: 10px;
@@ -146,5 +146,11 @@ margin-top: 2vw;
 }
 .textReviewRepetida h1{
   margin-top: -35vw;
+}
+
+.divAlert{
+  position: fixed;
+  margin-left: 55vw;
+  margin-top: 20vw;
 }
 

@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import style from "./cards.module.css";
 import axios from "axios";
 import Alert from "../../../shared/Alert/Alert";
+import { useNavigate } from 'react-router-dom';
+
 
 export default function CardsContainer({
   id,
@@ -14,6 +17,10 @@ export default function CardsContainer({
 }) {
   const [rating, setRating] = useState({});
   const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [alertVisibleBeforeReview, setAlertVisibleBeforeReview] = useState(false);
+  const [alertVisibleAfterReview, setAlertVisibleAfterReview] = useState(true);
+  const navigate = useNavigate()
+
   async function sendReview(item) {
     await axios.post("/review/post", {
       rating: rating[item],
@@ -24,16 +31,23 @@ export default function CardsContainer({
 
   async function handledReview() {
     if (MenuItems.length !== Object.values(rating).length) {
-      return alert("No olvides calificar todos los productos");
+ 
+      setAlertVisibleBeforeReview(true)
+ 
     }
+   else{
 
     setButtonDisabled(true);
+
+      navigate('/store')
+  
+
     try {
       for (const item in rating) {
         await sendReview(item);
       }
     } catch (error) {}
-
+  }
     /*
     Enviar : rating, tittle,comment,ordersMenuId,MenuItemId
     */
@@ -89,7 +103,16 @@ export default function CardsContainer({
         disabled={buttonDisabled}
       >
         Envia tu calificacion
-      </button>
+      </button><div className={style.divAlert}>
+     {alertVisibleBeforeReview && <Alert 
+ title="Calificacion en curso!"
+ message="Por favor puntua todos los productos de tu orden"
+ type="danger"
+stateAlert ={alertVisibleBeforeReview}
+setStateAlert ={setAlertVisibleBeforeReview}
+setStatebutton={setButtonDisabled}
+
+/>} </div>
     </div>
   ) : (
     <div className={style.container}>
@@ -120,11 +143,16 @@ export default function CardsContainer({
           );
         })}
       </div>
-      <Alert
-        title="Orden con reseña"
-        message="Ya valoraste esta orden, compra mas para seguir puntuando nuestros productos"
-        type="alert"
-      />
+      <div className={style.divAlert}>
+     {alertVisibleAfterReview && <Alert 
+ title="Orden con Reseña"
+ message="Parece qua ya puntuaste esta orden, compra mas para seguir puntuando nuestros productos!"
+ type="success"
+stateAlert ={alertVisibleAfterReview}
+setStateAlert ={setAlertVisibleAfterReview}
+setStatebutton={setButtonDisabled}
+
+/>} </div>
     </div>
   );
 }

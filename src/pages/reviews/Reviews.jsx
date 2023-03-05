@@ -5,17 +5,20 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CardsContainer from "../../components/reviews/cardsContainer/CardsContainer";
+import CreateLogin from "../../components/Login/CreateLogin";
 
 import style from "./Reviews.module.css"
 
 export default function reviews() {
   const { orderId } = useParams();
-  const userEmail = { email: JSON.parse(localStorage.getItem("user")).email };
   const [pedido, setPedido] = useState();
-
-  //no hace el get
-
+  
+  const dataClient = localStorage.getItem("user")
+  if(dataClient !== null){
   useEffect(() => {
+    const userEmail = { email: JSON.parse(dataClient).email };
+    
+    if(Object.keys(userEmail).length){
     async function data() {
       try {
         const response = await axios.post(`/orders/get/${orderId}`, userEmail);
@@ -25,9 +28,9 @@ export default function reviews() {
         return error.message;
       }
     }
-    data();
-  }, []);
-
+    data();}
+  }, []);}
+if(dataClient !== null){
   if (pedido) {
     return (
       <div className={style.container}>
@@ -38,5 +41,11 @@ export default function reviews() {
     );
   } else {
     return <h1>loading...</h1>;
+  }}else{
+    return (
+      <div >
+ <CreateLogin/>
+      </div>
+    );
   }
 }
