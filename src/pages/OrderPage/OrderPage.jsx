@@ -13,8 +13,11 @@ const OrderPage = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        dispatch(saveCart(userdata));
-    }, []);
+        setTimeout(()=>{
+            dispatch(saveCart(userdata));
+        }, 30000)
+      
+    }, [dispatch, myOrders]);
 
     const handleOrder = () => {
         setIsOpen(isOpen ? false : true);
