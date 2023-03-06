@@ -5,17 +5,48 @@ import OrdersComponent from "../../components/Orders/Orders";
 import { useDispatch, useSelector } from "react-redux";
 import { saveCart } from "../../redux/actions";
 import { Link } from "react-router-dom";
+import io from 'socket.io-client'
+import { socket } from "../../App";
+
 
 const OrderPage = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     const myOrders = useSelector((state) => state.cartSaved);
     const dispatch = useDispatch();
+    const [orderDB , setOrderDB] = useState([])
+    const [reload,setReload] = useState(false)
     const [isOpen, setIsOpen] = useState(false);
+    let renderMyOrders = myOrders
 
+    
     useEffect(() => {
-        dispatch(saveCart({ email: user.email }));
-    }, []);
 
+            // socket.emit('updateOrders',({"email":user.email}))
+            
+
+        dispatch(saveCart({ email: user.email }));
+        
+        
+    }, []);
+    
+    useEffect(() => {
+        const socket = io.connect('http://localhost:3002')
+        socket.on('sendOrders',(data)=>{
+            console.log(data);
+            dispatch(saveCart({ email: user.email }));
+            // renderMyOrders= myOrders
+          })
+      setInterval(() => {
+        // console.log('hola');
+        socket.emit('updateOrders',({"email":user.email}))
+      }, 5000);  
+      return () => {
+        clearInterval()
+        socket.disconnect()
+      }
+    }, [myOrders])
+    
+   
     const handleOrder = () => {
         setIsOpen(isOpen ? false : true);
     };
@@ -23,6 +54,7 @@ const OrderPage = () => {
     return (
         <div className={styles.page}>
             <div className={styles.container}>
+            {console.log(orderDB)}
                 {myOrders.length ? (
                     myOrders.map((item) => (
                         <div key={item.id} className={styles.subContainer}>

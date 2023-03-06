@@ -13,6 +13,8 @@ import PaymentSuccess from "./pages/payment/payment_success";
 import PaymentFailure from "./pages/payment/payment_failure";
 import OrderPage from "./pages/OrderPage/OrderPage";
 import Reviews from "./pages/reviews/Reviews";
+import io from 'socket.io-client'
+export const socket = io.connect('http://localhost:3002')
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
