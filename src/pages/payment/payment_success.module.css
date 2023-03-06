@@ -1,25 +1,37 @@
 .contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-  .checkmark {
-    width: 30%;
-    height: 30%;
+.checkmark {
+  width: 30%;
+  height: 30%;
 
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424');
-    background-repeat: no-repeat;
-    background-position: center;
-
-  }
-  .failure {
-    width: 30%;
-    height: 30%;
-    background-image: url('https://png.pngtree.com/element_our/20200610/ourmid/pngtree-red-error-icon-image_2248553.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-
-  }
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.failure {
+  width: 30%;
+  height: 30%;
+  background-image: url("https://png.pngtree.com/element_our/20200610/ourmid/pngtree-red-error-icon-image_2248553.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contenedor > button {
+  width: fit-content;
+  font-family: "Rubik One", sans-serif;
+  font-weight: 700;
+  font-size: larger;
+  padding: 0.2rem 3rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgb(89, 169, 235);
+  cursor: pointer;
+}
+.contenedor > button:hover {
+  transform: scale(1.1);
+}

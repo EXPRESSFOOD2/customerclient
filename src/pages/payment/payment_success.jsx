@@ -1,15 +1,19 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import style from "./payment_success.module.css";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams} from "react-router-dom";
 import { deleteAfterPayment } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 
 const PaymentSuccess = () => {
   const dispatch = useDispatch();
-  const { code } = useParams();
+  const {code} = useParams();
+
   useEffect(() => {
     dispatch(deleteAfterPayment());
   }, []);
+
+  
 
   return (
     <div>

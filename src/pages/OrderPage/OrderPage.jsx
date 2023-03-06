@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import styles from "./OrderPage.module.css";
 import OrdersComponent from "../../components/Orders/Orders";
@@ -26,8 +27,8 @@ const OrderPage = () => {
                     myOrders.map((item) => (
                         <div key={item.id} className={styles.subContainer}>
                             <div className={styles.data}>
-                                <span>{`Pedido número: ${item.code}`}</span>
-                                <span>{`Estdo: ${item.status}`}</span>
+                                <span>{`Pedido: ${item.code}`}</span>
+                                <span>{`Estado: ${item.status}`}</span>
                                 <span>{`Total compra: ${item.total}`}</span>
                                 <img
                                     className={isOpen ? styles.icoOpen : styles.icoClose}

@@ -5,19 +5,17 @@ import DetailCart from "../../components/Cart/detailCart/DetailCart";
 import CreateLogin from "../../components/Login/CreateLogin";
 
 export default function Cart() {
-
-      const userName = JSON.parse(localStorage.getItem("user"));
-
+  const userName = JSON.parse(localStorage.getItem("user"));
 
   return (
-      <div>
-          { !userName && <CreateLogin />}
-          <div className={style.container}>
-              <div className={style.cart}>
-              <CardsContainer />
-              <DetailCart />
-              </div>
-          </div>
+    <div>
+      {!userName && <CreateLogin />}
+      <div className={style.container}>
+        <div className={style.cart}>
+          <CardsContainer />
+          <DetailCart />
+        </div>
       </div>
+    </div>
   );
 }
