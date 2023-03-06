@@ -30,7 +30,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
         return;
       }
       else if (aux[id].quantity === 1) {
-        aux = aux.filter((i) => i.id != menu.id);
+        aux = aux.filter((i) => i.id !== menu.id);
         localStorage.setItem("order", JSON.stringify(aux));
         deleteItem(menu.id);
       } else {
@@ -52,7 +52,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
   const hanldeDelete = () => {
     const data = localStorage.getItem("order");
     let aux = JSON.parse(data);
-    aux = aux.filter((i) => i.id != menu.id);
+    aux = aux.filter((i) => i.id !== menu.id);
     localStorage.setItem("order", JSON.stringify(aux));
     localStorage.setItem("totalOrder", totalRedux - totalPrice);
 
