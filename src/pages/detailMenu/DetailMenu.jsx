@@ -175,9 +175,9 @@ const DetailMenu = () => {
               <div className={styles.tags}>
                 <span>Categorías:</span>
                 <div>
-                  {Tags?.map((element) => (
+                {Tags?.map((element) => (
                     <span key={element.id}>
-                      {element.name[0].toUpperCase() + element.name.slice(1)}
+                       {element[0].toUpperCase() + element.slice(1)}
                     </span>
                   ))}
                 </div>
