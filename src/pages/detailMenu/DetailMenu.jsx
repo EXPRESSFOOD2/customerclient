@@ -13,13 +13,17 @@ import CreateLogin from "../../components/Login/CreateLogin";
 
 const DetailMenu = () => {
   const { id } = useParams();
-  const [punctuation] = useState(3);
+  const [punctuation, setPunctuation] = useState(0);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMenuById(id));
   }, [dispatch, id]);
   const detail = useSelector((state) => state.detailMenu);
-  const { name, url_image, price, Tags, stock, description } = detail;
+  const { name, url_image, price, Tags, stock, description, rating } = detail;
+
+  useEffect(() => {
+    detail.rating && setPunctuation(detail.rating.slice(0, 3));
+  }, [detail]);
 
   const [loged, setLoged] = useState(true);
 
@@ -149,7 +153,7 @@ const DetailMenu = () => {
                   />
                 </svg>
               </div>
-              <span>(3.3)</span>
+              <span>({punctuation})</span>
             </div>
             {detail.recomend_first && <span>Producto recomendado</span>}
             <span className={styles.price}>$ {price}</span>
@@ -175,9 +179,9 @@ const DetailMenu = () => {
               <div className={styles.tags}>
                 <span>Categorías:</span>
                 <div>
-                {Tags?.map((element) => (
+                  {Tags?.map((element) => (
                     <span key={element.id}>
-                       {element[0].toUpperCase() + element.slice(1)}
+                      {element[0].toUpperCase() + element.slice(1)}
                     </span>
                   ))}
                 </div>
