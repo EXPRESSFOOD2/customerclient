@@ -7,13 +7,13 @@ import { saveCart } from "../../redux/actions";
 import { Link } from "react-router-dom";
 
 const OrderPage = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const userdata = JSON.parse(localStorage.getItem("user"));
     const myOrders = useSelector((state) => state.cartSaved);
     const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        dispatch(saveCart(user));
+        dispatch(saveCart(userdata));
     }, []);
 
     const handleOrder = () => {
