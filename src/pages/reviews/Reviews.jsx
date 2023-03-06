@@ -21,7 +21,7 @@ export default function reviews() {
       if (Object.keys(userEmail).length) {
         async function data() {
           try {
-            const response = await axios.get(
+            const response = await axios.post(
               `/orders/get/${orderId}`,
               userEmail
             );

@@ -19,7 +19,7 @@ const DetailMenu = () => {
     dispatch(getMenuById(id));
   }, [dispatch, id]);
   const detail = useSelector((state) => state.detailMenu);
-  const { name, url_image, price, Tags, stock, description, rating } = detail;
+  const { name, url_image, price, Tags, stock, description, rating,totalSold } = detail;
 
   useEffect(() => {
     detail.rating && setPunctuation(detail.rating.slice(0, 3));
@@ -71,6 +71,7 @@ const DetailMenu = () => {
             </div>
           </div>
           <div className={styles.info}>
+            <h3>{`+${totalSold} vendidos`}</h3>            
             <h1>{name}</h1>
             <div className={styles.punctuation}>
               <div>
