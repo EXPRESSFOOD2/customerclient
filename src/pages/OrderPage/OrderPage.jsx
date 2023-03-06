@@ -13,7 +13,7 @@ const OrderPage = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        dispatch(saveCart({ email: user.email }));
+        dispatch(saveCart(user));
     }, []);
 
     const handleOrder = () => {
