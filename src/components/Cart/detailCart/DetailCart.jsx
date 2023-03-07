@@ -32,7 +32,7 @@ export default function DetailCart() {
           <div className={style.totalDiv}>
             <div className={style.title}>
               <h3>Total pedido:</h3>
-              <span>${totalRedux}.00</span>
+              <span>${totalRedux.toFixed(2)}</span>
             </div>
             <button onClick={sendCart} disabled={buttonDisabled}>Finalizar la compra</button>
           </div>

@@ -33,7 +33,7 @@ export default function FoodCards({ menus }) {
                 <Card
                   img={menu.url_image}
                   name={menu.name}
-                  price={menu.price}
+                  price={menu.price.toFixed(2)}
                   id={menu.id}
                   menu = {menu}
                 />
