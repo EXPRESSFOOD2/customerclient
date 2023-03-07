@@ -31,7 +31,7 @@ const OrderPage = () => {
               <div className={styles.data}>
                 <span>{`Pedido: ${item.code}`}</span>
                 <span>{`Estado: ${item.status}`}</span>
-                <span>{`Total compra: ${item.total}`}</span>
+                <span>{`Total compra: ${item.total.toFixed(2)}`}</span>
                 <img
                   className={isOpen ? styles.icoOpen : styles.icoClose}
                   onClick={handleOrder}
