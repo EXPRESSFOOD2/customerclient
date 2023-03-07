@@ -13,6 +13,7 @@ import PaymentSuccess from "./pages/payment/payment_success";
 import PaymentFailure from "./pages/payment/payment_failure";
 import OrderPage from "./pages/OrderPage/OrderPage";
 import Reviews from "./pages/reviews/Reviews";
+import About from "./pages/About/About";
 
 /*
 import PageNotFound from './components/PageNotFound/PageNotFound';
@@ -32,6 +33,7 @@ function App() {
         <Route path="/orderSuccess/:code" element={<PaymentSuccess />} />
         <Route path="/orderFailure/" element={<PaymentFailure />} />
         <Route path="/pedidos" element={<OrderPage />} />
+        <Route path="/about" element={<About />} />
         <Route path="/reviews/:orderId" element={<Reviews />} />
         <Route path="*" element={<Loading notfound={true} />}></Route>
       </Routes>
