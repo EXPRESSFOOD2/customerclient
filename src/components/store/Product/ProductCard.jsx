@@ -12,7 +12,7 @@ const ProductCard = ({ menuItem }) => {
               <img src={url_image} alt={name + "image"} />
           </div>
           <h2 className={style.title}>{name}</h2>
-          <span className={style.price}>${price}</span>
+          <span className={style.price}>${price?price.toFixed(2):0}</span>
       </div>
   );
 };

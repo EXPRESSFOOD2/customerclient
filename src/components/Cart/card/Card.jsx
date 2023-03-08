@@ -102,7 +102,7 @@ export default function Card({ data, menu, id, deleteItem, handleChange }) {
       <div className={style.buyCont}>
         <div>
           {" $"}
-          {totalPrice + ".00"}
+          {totalPrice.toFixed(2)}
         </div>
       </div>
       <div></div>
