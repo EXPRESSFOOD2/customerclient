@@ -13,9 +13,9 @@ import PaymentSuccess from "./pages/payment/payment_success";
 import PaymentFailure from "./pages/payment/payment_failure";
 import OrderPage from "./pages/OrderPage/OrderPage";
 import Reviews from "./pages/reviews/Reviews";
-import io from 'socket.io-client'
+//import io from 'socket.io-client'
 import About from "./pages/About/About";
-export const socket = io.connect(process.env.REACT_APP_APIURLOCAL||process.env.REACT_APP_URLDEPLOY)
+//export const socket = io.connect(process.env.REACT_APP_APIURLOCAL||process.env.REACT_APP_URLDEPLOY)
 
 
 /*
