@@ -54,10 +54,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
-<<<<<<< HEAD
-=======
     
->>>>>>> 38635ffeeba2c7d145dc58223f33fc547a103665
     "webpack": "^5.75.0"
   }
 }
