@@ -88,6 +88,7 @@ const rootReducer = (state = initialState, action) => {
       if (action.payload.type === "reset") cartTotal = 0;
       if (action.payload.type === "init") cartTotal = action.payload.value;
       if (cartTotal < 0) cartTotal = 0;
+      cartTotal = Number(cartTotal.toFixed(2))
       window.localStorage.setItem("totalOrder", JSON.stringify(cartTotal));
       return { ...state, cartTotal };
     }
