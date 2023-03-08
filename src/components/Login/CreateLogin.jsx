@@ -24,10 +24,7 @@ const CreateLogin = () => {
                       Google
                   </button>
               </div>
-              <div className={style.loginsFa}>
-                  <img src="https://cdn-icons-png.flaticon.com/128/747/747543.png" alt="" />
-                  <button>Facebook</button>
-              </div>
+              
           </div>
       </div>
   );
