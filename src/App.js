@@ -37,7 +37,7 @@ function App() {
         <Route path="/orderSuccess/:code" element={<PaymentSuccess />} />
         <Route path="/orderFailure/" element={<PaymentFailure />} />
         <Route path="/pedidos" element={<OrderPage />} />
-        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} />
         <Route path="/reviews/:orderId" element={<Reviews />} />
         <Route path="*" element={<Loading notfound={true} />}></Route>
       </Routes>
