@@ -22,7 +22,14 @@ export const processFilterAction = (filters) => async (dispatch) => {
 export const getTagsAction = () => {
   return async (dispatch) => {
     try {
-      const result = await axios.get(`/tags/get`);
+      const user = JSON.parse(window.localStorage.getItem("user"))
+      const storeName = JSON.parse(window.localStorage.getItem("storeName"))
+      const email = user && user.email ? user.email : ""
+      const headers = {
+          "storename": storeName,
+          "user_email": email
+      }
+      const result = await axios.get(`/tags/get`, {headers});
 
       let data = result.data;
       dispatch({ type: GET_TAGS, payload: data });
@@ -35,7 +42,14 @@ export const getTagsAction = () => {
 export const getRecommendedMenu = () => {
   return async (dispatch) => {
     try {
-      const result = await axios.get(`/menu/get/recommended`);
+      const user = JSON.parse(window.localStorage.getItem("user"))
+      const storeName = JSON.parse(window.localStorage.getItem("storeName"))
+      const email = user && user.email ? user.email : ""
+      const headers = {
+          "storename": storeName,
+          "user_email": email
+      }
+      const result = await axios.get(`/menu/get/recommended`, {headers});
 
       let data = result.data;
       dispatch({ type: GET_MENU_RECOMMENDED, payload: data });
@@ -58,7 +72,14 @@ export const changeCartTotal = (obj) => {
 
 export const getFullMenu = () => {
   return async (dispatch) => {
-    const result = await axios.get(`/menu/get`);
+    const user = JSON.parse(window.localStorage.getItem("user"))
+    const storeName = JSON.parse(window.localStorage.getItem("storeName"))
+    const email = user && user.email ? user.email : ""
+            const headers = {
+                "storename": storeName,
+                "user_email": email
+            }
+    const result = await axios.get(`/menu/get`, { headers });
     let data = result.data;
     dispatch({ type: GET_FULL_MENU, payload: data });
   };
@@ -66,21 +87,32 @@ export const getFullMenu = () => {
 
 
 
-
 export const getMenuById = (id) => {
   return async (dispatch) => {
-    const result = await axios.get(`/menu/get/${id}`);
+    const user = JSON.parse(window.localStorage.getItem("user"))
+    const storeName = JSON.parse(window.localStorage.getItem("storeName"))
+    const email = user && user.email ? user.email : ""
+            const headers = {
+                "storename": storeName,
+                "user_email": email
+            }
+    const result = await axios.get(`/menu/get/${id}`, { headers });
 
     let data = result.data;
     dispatch({ type: GET_MENU_BY_ID, payload: data });
   };
 };
+
+
 export const filterMenu = (category) => (dispatch) => {
   dispatch({ type: FILTER_MENU, payload: category });
 };
+
+
 export const resetFilter = () => (dispatch) => {
   dispatch({ type: RESET_FILTER });
 };
+
 
 export const getImageUrl = (imageStr, imageFn) => {
   return async (dispatch) => {
@@ -99,24 +131,44 @@ export const getImageUrl = (imageStr, imageFn) => {
 };
 
 export const saveCart = (userEmail) => async (dispatch) => {
-    // const results = await axios.get("/orders/get", userEmail);
-  const results = await getOrders(userEmail);
+
+  const results = await getOrders();
 
   dispatch({ type: SAVE_CART, payload: [...results] });
 };
-export const getOrders = async (userEmail) => {
 
-  const results = await axios.post("/orders/get", userEmail)
+export const getOrders = async () => {
+  const user = JSON.parse(window.localStorage.getItem("user"))
+  const storeName = JSON.parse(window.localStorage.getItem("storeName"))
+  const email = user && user.email ? user.email : ""
+  const headers = {
+      "storename": storeName,
+      "user_email": email
+  }
+  const results = await axios.get("/orders/get", {headers})
 
   return results.data;
 };
-export const getOrderById = async (userEmail, id) => {
- 
-  return await ( axios.post(`/orders/get/${id}`, userEmail)).data;
+export const getOrderById = async (id) => {
+  const user = JSON.parse(window.localStorage.getItem("user"))
+  const storeName = JSON.parse(window.localStorage.getItem("storeName"))
+  const email = user && user.email ? user.email : ""
+  const headers = {
+      "storename": storeName,
+      "user_email": email
+  }
+  return await ( axios.post(`/orders/get/${id}`, {headers})).data;
 };
 
 export const sendPayment = async (cart) => {
-  const postPayment = await axios.post("/payments/create", cart);
+  const user = JSON.parse(window.localStorage.getItem("user"))
+  const storeName = JSON.parse(window.localStorage.getItem("storeName"))
+  const email = user && user.email ? user.email : ""
+  const headers = {
+      "storename": storeName,
+      "user_email": email
+  }
+  const postPayment = await axios.post("/payments/create", cart, {headers});
   return (window.location.href = postPayment.data);
 };
 
