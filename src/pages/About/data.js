@@ -30,7 +30,7 @@ export const  devsData = [
     },
     {
       nombre: "Nadia Carrizo",
-      titulo: "Designer, Frontend Developer",
+      titulo: "Frontend Dev / Diseñadora",
       imagen:" https://media.licdn.com/dms/image/D4D03AQE05gMdoq7b1A/profile-displayphoto-shrink_800_800/0/1664561673406?e=1683763200&v=beta&t=TIqz0VLGBAK9OaAdCHQt4G0CYbqKWBWtOogcR-pzyJM",
         linkedin: "https://www.linkedin.com/in/nadia-carrizo-75b131250/",
         github:"https://github.com/ninak8"
@@ -46,15 +46,17 @@ export const  devsData = [
     {
       nombre: "Breyner Arias",
       titulo: "Backend Developer",
-      imagen:"https://www.seekpng.com/png/detail/133-1334822_default-staff-image-person-icon.png",
+      imagen:"https://i.ibb.co/T1pvTGL/breiner.jpg",
         linkedin: "https://www.linkedin.com/in/breyner-eduardo-arias-urbina-4568a7202/",
         github:"https://github.com/Eduar2arias"
     },
     {
       nombre: "Luis Viña",
       titulo: "Frontend Developer",
-      imagen:"https://avatars.githubusercontent.com/u/95317803?v=4",
-        linkedin: "",
+      imagen:"https://media.licdn.com/dms/image/D4D03AQHCSH4jk7vmvw/profile-displayphoto-shrink_400_400/0/1678237906933?e=1683763200&v=beta&t=3uyYAW0UnVBNfl4szqpjNUTQNbyoMOb3crlnmYT6HwQ",
+        linkedin: "https://www.linkedin.com/in/luis-vi%C3%B1a-03b7137a/",
         github:"https://github.com/luisito9"
     },
+    
   ];
+

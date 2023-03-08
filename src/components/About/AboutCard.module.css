@@ -1,63 +1,46 @@
+
 .container{
- 
-   height: 20vw;
-  width: 15.5vw;
+  height: 18vw;
+  width: 12vw;
   border-radius: 10%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.253);
-  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 
 }
-.sectionLinks{
 
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-  border-radius: 10%;
-}
-
-.containerImg{
-    height: 9vw;
-
-    border-radius: 10%;
-    
-}
 .containerImg img{
-    width: 100%;
-    height: 115%;
-
-    border-radius: 10% 10% 0 0;
+  width: 100%;
+  height: 100%;
+  height: 10vw;
+  border-radius: 10%;
+  border-radius: 10% 10% 0 0;
 }
-.dataSection{
-    margin-left: .3vw;
-    margin-bottom: 1vw;
-    display: flex;
-    flex-direction: column ;
-    align-content: center;
-    text-align: center;
-    justify-content: space-evenly;
-    
-    height: 7.5vw;
-    width: 14.5vw;
-    position: absolute;
-    margin-top: 10%;
+
+.dataSection span {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+	font-size: 15px;
+  display: flex;
+	justify-content: center;
+  margin-top: 20px;
 
 }
 
-.dataSection span{
-
-   
+.dataSection h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+	font-size: 13px;
+  display: flex;
+	justify-content: center;
+  margin-top:2px;
 }
+
+
 .sectionLinks {
 display: flex;
 flex-direction: row;
-justify-content: space-evenly;
-
+justify-content: space-around;
 }
 
-.sectionLinks a{
-
-}
