@@ -21,6 +21,7 @@ import Home from './components/Home/Home';
 */
 
 function App() {
+  window.localStorage.setItem("storeName", JSON.stringify("pepitas"))
   return (
     <div>
       <Navbar />
