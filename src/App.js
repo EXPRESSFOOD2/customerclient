@@ -14,7 +14,7 @@ import PaymentFailure from "./pages/payment/payment_failure";
 import OrderPage from "./pages/OrderPage/OrderPage";
 import Reviews from "./pages/reviews/Reviews";
 //import io from 'socket.io-client'
-//import About from "./pages/About/About";
+import About from "./pages/About/About";
 //export const socket = io.connect('http://localhost:3002')
 
 
