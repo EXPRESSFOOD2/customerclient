@@ -5,6 +5,9 @@ import OrdersComponent from "../../components/Orders/Orders";
 import { useDispatch, useSelector } from "react-redux";
 import { saveCart } from "../../redux/actions";
 import { Link } from "react-router-dom";
+import io from 'socket.io-client'
+import { socket } from "../../App";
+
 
 const OrderPage = () => {
   const userdata = JSON.parse(localStorage.getItem("user"));
