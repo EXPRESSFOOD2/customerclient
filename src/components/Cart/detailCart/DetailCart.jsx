@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,7 +32,7 @@ export default function DetailCart() {
           <div className={style.totalDiv}>
             <div className={style.title}>
               <h3>Total pedido:</h3>
-              <span>${totalRedux}.00</span>
+              <span>${totalRedux.toFixed(2)}</span>
             </div>
             <button onClick={sendCart} disabled={buttonDisabled}>Finalizar la compra</button>
           </div>

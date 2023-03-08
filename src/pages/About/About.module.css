@@ -1,0 +1,21 @@
+.container{
+    margin-top: 5vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: .5vw;
+
+    grid-auto-rows: minmax(10vw, 23vw);
+place-items: center;
+    background-color: whitesmoke;
+    min-height: 60vw;
+ 
+}
+.page{
+    background-color: whitesmoke;
+}
+.page h1{
+    margin-left: 43%;
+    margin-top: -3%;
+   position: absolute;
+   
+}

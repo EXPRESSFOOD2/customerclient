@@ -10,7 +10,7 @@ export default function CardsContainer() {
   const [cart, setCart] = useState(order);
   const menus = useSelector((state) => state.fullMenu);
   function deleteItem(id) {
-    setCart(cart.filter((item) => item.id != id));
+    setCart(cart.filter((item) => item.id !== id));
   }
   function handleChange(aux) {
     setCart(aux);

@@ -13,13 +13,19 @@ import CreateLogin from "../../components/Login/CreateLogin";
 
 const DetailMenu = () => {
   const { id } = useParams();
-  const [punctuation] = useState(3);
+  const [punctuation, setPunctuation] = useState(0);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMenuById(id));
   }, [dispatch, id]);
   const detail = useSelector((state) => state.detailMenu);
-  const { name, url_image, price, Tags, stock, description } = detail;
+  const { name, url_image, Tags,price, stock, description, rating, totalSold } =
+    detail;
+  
+
+  useEffect(() => {
+    detail.rating && setPunctuation(detail.rating.slice(0, 3));
+  }, [detail]);
 
   const [loged, setLoged] = useState(true);
 
@@ -67,6 +73,7 @@ const DetailMenu = () => {
             </div>
           </div>
           <div className={styles.info}>
+            <h3>{`+${totalSold} vendidos`}</h3>
             <h1>{name}</h1>
             <div className={styles.punctuation}>
               <div>
@@ -81,7 +88,7 @@ const DetailMenu = () => {
                   <path
                     d="M104.171 82.6263L131 29.35L157.829 82.6263C160.678 88.2835 166.159 92.1491 172.444 92.9341L232.55 100.442L189.295 139.349C184.328 143.816 182.073 150.563 183.354 157.119L194.397 213.632L139.69 185.496C134.236 182.692 127.764 182.692 122.31 185.496L67.6026 213.632L78.6462 157.119C79.9274 150.563 77.6717 143.816 72.7053 139.349L29.4504 100.442L89.5559 92.9341C95.8411 92.1491 101.322 88.2835 104.171 82.6263Z"
                     stroke="#FFB800"
-                    stroke-width="30"
+                    strokeWidth="30"
                   />
                 </svg>
               </div>
@@ -97,7 +104,7 @@ const DetailMenu = () => {
                   <path
                     d="M104.171 82.6263L131 29.35L157.829 82.6263C160.678 88.2835 166.159 92.1491 172.444 92.9341L232.55 100.442L189.295 139.349C184.328 143.816 182.073 150.563 183.354 157.119L194.397 213.632L139.69 185.496C134.236 182.692 127.764 182.692 122.31 185.496L67.6026 213.632L78.6462 157.119C79.9274 150.563 77.6717 143.816 72.7053 139.349L29.4504 100.442L89.5559 92.9341C95.8411 92.1491 101.322 88.2835 104.171 82.6263Z"
                     stroke="#FFB800"
-                    stroke-width="30"
+                    strokeWidth="30"
                   />
                 </svg>
               </div>
@@ -113,7 +120,7 @@ const DetailMenu = () => {
                   <path
                     d="M104.171 82.6263L131 29.35L157.829 82.6263C160.678 88.2835 166.159 92.1491 172.444 92.9341L232.55 100.442L189.295 139.349C184.328 143.816 182.073 150.563 183.354 157.119L194.397 213.632L139.69 185.496C134.236 182.692 127.764 182.692 122.31 185.496L67.6026 213.632L78.6462 157.119C79.9274 150.563 77.6717 143.816 72.7053 139.349L29.4504 100.442L89.5559 92.9341C95.8411 92.1491 101.322 88.2835 104.171 82.6263Z"
                     stroke="#FFB800"
-                    stroke-width="30"
+                    strokeWidth="30"
                   />
                 </svg>
               </div>
@@ -129,7 +136,7 @@ const DetailMenu = () => {
                   <path
                     d="M104.171 82.6263L131 29.35L157.829 82.6263C160.678 88.2835 166.159 92.1491 172.444 92.9341L232.55 100.442L189.295 139.349C184.328 143.816 182.073 150.563 183.354 157.119L194.397 213.632L139.69 185.496C134.236 182.692 127.764 182.692 122.31 185.496L67.6026 213.632L78.6462 157.119C79.9274 150.563 77.6717 143.816 72.7053 139.349L29.4504 100.442L89.5559 92.9341C95.8411 92.1491 101.322 88.2835 104.171 82.6263Z"
                     stroke="#FFB800"
-                    stroke-width="30"
+                    strokeWidth="30"
                   />
                 </svg>
               </div>
@@ -145,14 +152,14 @@ const DetailMenu = () => {
                   <path
                     d="M104.171 82.6263L131 29.35L157.829 82.6263C160.678 88.2835 166.159 92.1491 172.444 92.9341L232.55 100.442L189.295 139.349C184.328 143.816 182.073 150.563 183.354 157.119L194.397 213.632L139.69 185.496C134.236 182.692 127.764 182.692 122.31 185.496L67.6026 213.632L78.6462 157.119C79.9274 150.563 77.6717 143.816 72.7053 139.349L29.4504 100.442L89.5559 92.9341C95.8411 92.1491 101.322 88.2835 104.171 82.6263Z"
                     stroke="#FFB800"
-                    stroke-width="30"
+                    strokeWidth="30"
                   />
                 </svg>
               </div>
-              <span>(3.3)</span>
+              <span>({punctuation})</span>
             </div>
             {detail.recomend_first && <span>Producto recomendado</span>}
-            <span className={styles.price}>$ {price}</span>
+            <span className={styles.price}>$ {price?price.toFixed(2):0}</span>
             <span className={styles.targetName}>tarjetas débito y crédito</span>
             <div className={styles.targets}>
               <img
@@ -177,7 +184,7 @@ const DetailMenu = () => {
                 <div>
                   {Tags?.map((element) => (
                     <span key={element.id}>
-                      {element.name[0].toUpperCase() + element.name.slice(1)}
+                      {element[0].toUpperCase() + element.slice(1)}
                     </span>
                   ))}
                 </div>

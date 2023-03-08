@@ -1,0 +1,14 @@
+{
+  "success": {
+    "icon": "https://cdn-icons-png.flaticon.com/512/5610/5610944.png",
+    "color": "rgb(115, 255, 96)"
+  },
+  "danger": {
+    "icon": "https://cdn-icons-png.flaticon.com/512/564/564619.png",
+    "color": "rgb(255, 0, 0)"
+  },
+  "alert": {
+    "icon": "https://cdn-icons-png.flaticon.com/512/497/497738.png",
+    "color": "rgb(255, 255, 0)"
+  }
+}
