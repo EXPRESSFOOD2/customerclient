@@ -157,7 +157,7 @@ export const getOrderById = async (id) => {
       "storename": storeName,
       "user_email": email
   }
-  return await ( axios.post(`/orders/get/${id}`, {headers})).data;
+  return await ( axios.get(`/orders/get/${id}`, {headers})).data;
 };
 
 export const sendPayment = async (cart) => {
