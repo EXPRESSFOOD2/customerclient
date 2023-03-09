@@ -35,7 +35,7 @@ export default function reviews() {
     }, []);
   }
   if (dataClient !== null) {
-    if (pedido) {
+    // if (pedido) {
       return (
         <div className={style.container}>
           <div className={style.cart}>
@@ -43,13 +43,13 @@ export default function reviews() {
           </div>
         </div>
       );
-    } else {
-      return (
-        <div className={style.container}>
-          <h1>Oops no tenemos esta orden asociada a tu cuenta! ☹</h1>
-        </div>
-      );
-    }
+    // } else {
+    //   return (
+    //     <div className={style.container}>
+    //       <h1>Oops no tenemos esta orden asociada a tu cuenta! ☹</h1>
+    //     </div>
+    //   );
+    // }
   } else {
     return (
       <div>
