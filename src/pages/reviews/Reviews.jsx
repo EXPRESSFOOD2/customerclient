@@ -25,7 +25,9 @@ export default function reviews() {
               `/orders/get/${orderId}`,
               userEmail
             );
+            console.log(response.data)
             setPedido(response.data);
+            console.log(response.data)
           } catch (error) {
             return error.message;
           }
