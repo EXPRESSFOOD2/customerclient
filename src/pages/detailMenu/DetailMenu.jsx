@@ -19,7 +19,7 @@ const DetailMenu = () => {
     dispatch(getMenuById(id));
   }, [dispatch, id]);
   const detail = useSelector((state) => state.detailMenu);
-  const { name, url_image, Tags,price, stock, description, rating, totalSold } =
+  const { name, url_image, Tags,price, stock, description, totalSold } =
     detail;
   
 
