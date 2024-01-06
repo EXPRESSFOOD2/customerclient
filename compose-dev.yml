@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  client:
+    container_name: clientgamersland
+
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+
+    ports:
+      - "3001:3001"
+    networks:
+      - main
+
+networks:
+  main:
+    driver: bridge
+    external: true

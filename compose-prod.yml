@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  client:
+    container_name: customerclient
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    volumes:
+      - .:/app
+    ports:
+      - "3003:80"
+    networks:
+      - main
+
+networks:
+  main:
+    driver: bridge
+    external: true

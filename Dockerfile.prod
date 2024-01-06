@@ -1,0 +1,31 @@
+# Etapa de construcción
+FROM node:latest AS builder
+
+WORKDIR /app
+
+# Copiamos solo los archivos necesarios para la instalación de dependencias
+COPY package.json ./
+
+# Instalamos dependencias
+RUN yarn install --frozen-lockfile
+
+# Copiamos el resto de los archivos
+COPY . .
+
+# Construimos la aplicación
+RUN yarn build
+
+# Etapa de producción
+FROM nginx:alpine
+
+# Copiamos los archivos de construcción desde la etapa de construcción
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Configuramos Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Exponemos el puerto 80
+EXPOSE 80
+
+# Comando para iniciar Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]
