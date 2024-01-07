@@ -5,7 +5,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3001,
-    host: true,
+    proxy: {
+      "/api": {
+        target: "http://spacefood_api:3000", // Reemplaza con la dirección de tu proxy de Nginx
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
 });
